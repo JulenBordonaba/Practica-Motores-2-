@@ -6,7 +6,7 @@ public class Break : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Breakable" && Input.GetKeyDown(KeyCode.E))
+        if (other.tag == "Breakable" && (Input.GetButtonDown("Button1" + InputManager.controles[gameObject.GetComponent<PlayerController>().jugador].InputCode)))
         {
             Destroy(other.gameObject);//se destruye el bloque
             //animación jugador romper cubo
