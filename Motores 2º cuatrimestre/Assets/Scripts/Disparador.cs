@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Disparador : MonoBehaviour {
 
-    public int jugador = 0;
+    //public int jugador = 0;
     public Transform spawnPoint;
     public GameObject shotPrefab;
     public float maxRotation = 30;
@@ -34,7 +34,7 @@ public class Disparador : MonoBehaviour {
         }
         else
         {
-            if (Input.GetButtonDown("Button2" + InputManager.controles[jugador].InputCode))
+            if (Input.GetButtonDown("Button2" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode))
             {
                 Shot();
             }
@@ -63,7 +63,7 @@ public class Disparador : MonoBehaviour {
 
     public void Rotate()
     {
-        rotation += Input.GetAxis("Horizontal" + InputManager.controles[jugador].InputCode) * velocidadRotacion;
+        rotation += Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) * velocidadRotacion;
         rotation = Mathf.Clamp(rotation, minRotation, maxRotation);
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, rotation, transform.localEulerAngles.z);
     }

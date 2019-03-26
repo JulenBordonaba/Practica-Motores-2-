@@ -4,6 +4,18 @@ using UnityEngine;
 
 public static class G {
 
+
+    public static Dictionary<int, int> positions = new Dictionary<int, int>
+    {
+        {0,0 },
+        {1,0 },
+        {2,0 },
+        {3,0 }
+    };
+    //public static int[] positions = new int[4];
+
+    public static int activePlayers = 4;
+
     public static float ClampAngle(float angle, float min, float max)
     {
         angle = Mathf.Repeat(angle, 360);
