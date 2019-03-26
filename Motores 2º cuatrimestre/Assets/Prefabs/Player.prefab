@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 114102261112721440}
   - component: {fileID: 8900027393866790728}
   - component: {fileID: 7607155708900314292}
+  - component: {fileID: 1013592650306087554}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -128,7 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 2
-  jugador: 1
   horizontalMovement: 1
   verticalMovement: 1
 --- !u!114 &114640492920160536
@@ -194,3 +194,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7417e76ab30b1468a96e9a4182306c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 0
+  position: 0
+  Lap: 0
+--- !u!114 &1013592650306087554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092857327246088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b27438a6ddc8448af126b32740fcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPlayer: 0
+  eliminated: 0
+  puntos: 0
