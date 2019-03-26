@@ -3673,7 +3673,7 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: jugador
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -9384,7 +9384,7 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: jugador
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -10682,6 +10682,11 @@ PrefabInstance:
         type: 3}
       propertyPath: velocity
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: jugador
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 54098581922298406, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -19932,7 +19937,7 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: jugador
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -21967,10 +21972,10 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  m_HorizontalAxis: HorizontalTeclado1
+  m_VerticalAxis: VerticalTeclado1
+  m_SubmitButton: Button1Teclado1
+  m_CancelButton: Button2Teclado1
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
