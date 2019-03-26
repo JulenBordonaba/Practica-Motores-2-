@@ -2679,6 +2679,16 @@ PrefabInstance:
       propertyPath: fuerza
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -6206,6 +6216,21 @@ PrefabInstance:
         type: 3}
       propertyPath: fuerza
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: eliminated
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -14457,6 +14482,16 @@ PrefabInstance:
         type: 3}
       propertyPath: fuerza
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
