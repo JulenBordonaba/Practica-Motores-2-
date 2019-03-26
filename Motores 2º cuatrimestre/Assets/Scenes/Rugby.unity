@@ -901,6 +901,11 @@ PrefabInstance:
       propertyPath: fuerza
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -1107,6 +1112,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -1579,6 +1589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fuerza
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -3734,6 +3749,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3987,6 +4007,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fuerza
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}

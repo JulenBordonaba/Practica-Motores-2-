@@ -2679,6 +2679,16 @@ PrefabInstance:
       propertyPath: fuerza
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -6207,6 +6217,21 @@ PrefabInstance:
       propertyPath: fuerza
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: eliminated
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -8881,6 +8906,8 @@ MonoBehaviour:
   bombPrefab: {fileID: 158120019893931244, guid: c6f53c9db3f236a4aa755ba722e6085a,
     type: 3}
   gemPrefab: {fileID: 1498333586628543700, guid: 50175eed75b9cf040bfe15340ed0d652,
+    type: 3}
+  gemSpecialPrefab: {fileID: 1498333586628543700, guid: 0071c1f7f534cd2498bc2d3070e4a5da,
     type: 3}
   cubeReference: {fileID: 99864405}
   cubeSeparation: 1.6
@@ -14457,6 +14484,16 @@ PrefabInstance:
         type: 3}
       propertyPath: fuerza
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
