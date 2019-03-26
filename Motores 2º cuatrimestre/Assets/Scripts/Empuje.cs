@@ -39,9 +39,9 @@ public class Empuje : MonoBehaviour {
             if (bajarMasa)
             {
                 rb.mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
+                collision.gameObject.GetComponent<Rigidbody>().mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
             }
             collision.gameObject.GetComponent<Rigidbody>().AddForce(-force, ForceMode.VelocityChange);
-            collision.gameObject.GetComponent<Rigidbody>().mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
         }
     }
 }

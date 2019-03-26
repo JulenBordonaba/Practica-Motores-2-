@@ -12,18 +12,18 @@ public class CountDown : MonoBehaviour {
 
     public void On()
     {
-        GameObject.FindGameObjectWithTag("Car1").GetComponent<MovimientoCoche>().enabled = true;
-        GameObject.FindGameObjectWithTag("Car2").GetComponent<MovimientoCoche>().enabled = true;
-        GameObject.FindGameObjectWithTag("Car3").GetComponent<MovimientoCoche>().enabled = true;
-        GameObject.FindGameObjectWithTag("Car4").GetComponent<MovimientoCoche>().enabled = true;
+        GameObject.Find("Jugador0").GetComponent<MovimientoCoche>().enabled = true;
+        GameObject.Find("Jugador1").GetComponent<MovimientoCoche>().enabled = true;
+        GameObject.Find("Jugador2").GetComponent<MovimientoCoche>().enabled = true;
+        GameObject.Find("Jugador3").GetComponent<MovimientoCoche>().enabled = true;
 
     }
 
     public void Off()
     {
-        GameObject.FindGameObjectWithTag("Car1").GetComponent<MovimientoCoche>().enabled = false;
-        GameObject.FindGameObjectWithTag("Car2").GetComponent<MovimientoCoche>().enabled = false;
-        GameObject.FindGameObjectWithTag("Car3").GetComponent<MovimientoCoche>().enabled = false;
-        GameObject.FindGameObjectWithTag("Car4").GetComponent<MovimientoCoche>().enabled = false;
+        GameObject.Find("Jugador0").GetComponent<MovimientoCoche>().enabled = false;
+        GameObject.Find("Jugador1").GetComponent<MovimientoCoche>().enabled = false;
+        GameObject.Find("Jugador2").GetComponent<MovimientoCoche>().enabled = false;
+        GameObject.Find("Jugador3").GetComponent<MovimientoCoche>().enabled = false;
     }
 }

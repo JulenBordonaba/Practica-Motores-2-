@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class MovimientoCoche : MonoBehaviour
 {
 
+
+    private void Start()
+    {
+        Physics.gravity = new Vector3(0,-27,0);
+    }
     public float acceleration = 50;
     public float vel = 30;
     public float manejo = 90;

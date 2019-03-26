@@ -20,10 +20,9 @@ public class TiempoVuelta : MonoBehaviour {
 
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Car1").GetComponent<MovimientoCoche>().enabled == false && GameObject.FindGameObjectWithTag("Car2").GetComponent<MovimientoCoche>().enabled == false && GameObject.FindGameObjectWithTag("Car3").GetComponent<MovimientoCoche>().enabled == false && GameObject.FindGameObjectWithTag("Car4").GetComponent<MovimientoCoche>().enabled == false && Time.deltaTime >= 3)
+        if (GameObject.Find("Jugador0").GetComponent<MovimientoCoche>().enabled == false && GameObject.Find("Jugador1").GetComponent<MovimientoCoche>().enabled == false && GameObject.Find("Jugador2").GetComponent<MovimientoCoche>().enabled == false && GameObject.Find("Jugador3").GetComponent<MovimientoCoche>().enabled == false && Time.deltaTime >= 3)
         {
             tiempos.SetActive(true);
-
             Jugadores[0].text = "Jugador" + coches[0].GetComponent<MovimientoCoche>().jugador.ToString() + ":    " + ((int)coches[0].GetComponent<MovimientoCoche>().tiempoCarrera / 60).ToString() + ":" + (coches[0].GetComponent<MovimientoCoche>().tiempoCarrera % 60).ToString("f2");
             Jugadores[1].text = "Jugador" + coches[1].GetComponent<MovimientoCoche>().jugador.ToString() + ":    " + ((int)coches[1].GetComponent<MovimientoCoche>().tiempoCarrera / 60).ToString() + ":" + (coches[1].GetComponent<MovimientoCoche>().tiempoCarrera % 60).ToString("f2");
             Jugadores[2].text = "Jugador" + coches[2].GetComponent<MovimientoCoche>().jugador.ToString() + ":    " + ((int)coches[2].GetComponent<MovimientoCoche>().tiempoCarrera / 60).ToString() + ":" + (coches[2].GetComponent<MovimientoCoche>().tiempoCarrera % 60).ToString("f2");
