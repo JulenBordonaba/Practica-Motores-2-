@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1993477107039263780}
   - component: {fileID: 9057957619399678444}
   - component: {fileID: 9203470060781087597}
+  - component: {fileID: 2414454483919332134}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Gem
@@ -105,3 +106,16 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.2270256
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2414454483919332134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498333586628543700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d792cf43f9babb4eb7a47775e277d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 10

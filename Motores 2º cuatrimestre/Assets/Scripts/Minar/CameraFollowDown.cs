@@ -8,7 +8,7 @@ public class CameraFollowDown : MonoBehaviour
     public Camera camera;
     [Tooltip("La lista se generará a partir de una variable global para todo el juego que tiene la cantidad de jugadores que estan jugando")]
     public List<GameObject> players = new List<GameObject>();//
-    [Tooltip("El margen que deja la camara por enciama de los jugadores. 2 es un buen número.")]
+    [Tooltip("El margen que deja la camara por enciama de los jugadores. -3 es un buen número.")]
     public float cameraDisntaceWithTarget;
 
     // Update is called once per frame
