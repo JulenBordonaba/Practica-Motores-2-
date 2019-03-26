@@ -175,10 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798b49da7b410594fa7065f512abb447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida1: {fileID: 1841682008753800, guid: d8810c751130f7b4fa1a568ac6c88136, type: 3}
-  comida2: {fileID: 1821036643574940, guid: 5d9267d5760854643bae8caab5a86bbd, type: 3}
-  comida3: {fileID: 1714323311883026, guid: 91e50ffdcbef0764593c0b8a4b79e539, type: 3}
-  comida4: {fileID: 1803553726617056, guid: c3d0eded85a5b5d449c07ca7433ab760, type: 3}
+  comidas: []
   platoVacio: 0
 --- !u!65 &120014919
 BoxCollider:
@@ -430,10 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798b49da7b410594fa7065f512abb447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida1: {fileID: 1841682008753800, guid: d8810c751130f7b4fa1a568ac6c88136, type: 3}
-  comida2: {fileID: 1821036643574940, guid: 5d9267d5760854643bae8caab5a86bbd, type: 3}
-  comida3: {fileID: 1714323311883026, guid: 91e50ffdcbef0764593c0b8a4b79e539, type: 3}
-  comida4: {fileID: 1803553726617056, guid: c3d0eded85a5b5d449c07ca7433ab760, type: 3}
+  comidas: []
   platoVacio: 0
 --- !u!1 &534669902
 GameObject:
@@ -510,12 +504,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0, y: -0, z: -2.2737365e-13, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.30848283, y: 7.014087e-14, z: -2.1628463e-13, w: 0.95123}
+  m_LocalPosition: {x: -0.09, y: 3.87, z: -5.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 964662345}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 41.356003, y: 0, z: -0.001}
 --- !u!1 &660231923 stripped
 GameObject:
@@ -535,10 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798b49da7b410594fa7065f512abb447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida1: {fileID: 1841682008753800, guid: d8810c751130f7b4fa1a568ac6c88136, type: 3}
-  comida2: {fileID: 1821036643574940, guid: 5d9267d5760854643bae8caab5a86bbd, type: 3}
-  comida3: {fileID: 1714323311883026, guid: 91e50ffdcbef0764593c0b8a4b79e539, type: 3}
-  comida4: {fileID: 1803553726617056, guid: c3d0eded85a5b5d449c07ca7433ab760, type: 3}
+  comidas: []
   platoVacio: 0
 --- !u!65 &660231928
 BoxCollider:
@@ -753,37 +744,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71233de667cfc6644b2e8cf11d6c5720, type: 3}
---- !u!1 &964662344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 964662345}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &964662345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964662344}
-  m_LocalRotation: {x: 0.30848283, y: -0, z: -0, w: 0.95123}
-  m_LocalPosition: {x: -0.09, y: 3.87, z: -5.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 534669905}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 35.936, y: 0, z: 0}
 --- !u!4 &983648388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4558969056595566, guid: ff75363a715e12f4296b0d5e7395e4f1,
@@ -821,10 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798b49da7b410594fa7065f512abb447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida1: {fileID: 1841682008753800, guid: d8810c751130f7b4fa1a568ac6c88136, type: 3}
-  comida2: {fileID: 1821036643574940, guid: 5d9267d5760854643bae8caab5a86bbd, type: 3}
-  comida3: {fileID: 1714323311883026, guid: 91e50ffdcbef0764593c0b8a4b79e539, type: 3}
-  comida4: {fileID: 1803553726617056, guid: c3d0eded85a5b5d449c07ca7433ab760, type: 3}
+  comidas: []
   platoVacio: 0
 --- !u!1001 &1472392677
 PrefabInstance:
@@ -885,10 +842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798b49da7b410594fa7065f512abb447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida1: {fileID: 1841682008753800, guid: d8810c751130f7b4fa1a568ac6c88136, type: 3}
-  comida2: {fileID: 1821036643574940, guid: 5d9267d5760854643bae8caab5a86bbd, type: 3}
-  comida3: {fileID: 1714323311883026, guid: 91e50ffdcbef0764593c0b8a4b79e539, type: 3}
-  comida4: {fileID: 1803553726617056, guid: c3d0eded85a5b5d449c07ca7433ab760, type: 3}
+  comidas: []
   platoVacio: 0
 --- !u!65 &1539185489
 BoxCollider:
@@ -1046,7 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 1
-  jugador: 1
+  jugador: 0
   horizontalMovement: 1
   verticalMovement: 1
 --- !u!54 &1760164450
@@ -1141,10 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798b49da7b410594fa7065f512abb447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida1: {fileID: 1841682008753800, guid: d8810c751130f7b4fa1a568ac6c88136, type: 3}
-  comida2: {fileID: 1821036643574940, guid: 5d9267d5760854643bae8caab5a86bbd, type: 3}
-  comida3: {fileID: 1714323311883026, guid: 91e50ffdcbef0764593c0b8a4b79e539, type: 3}
-  comida4: {fileID: 1803553726617056, guid: c3d0eded85a5b5d449c07ca7433ab760, type: 3}
+  comidas: []
   platoVacio: 0
 --- !u!1001 &1899301374
 PrefabInstance:
@@ -1209,10 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798b49da7b410594fa7065f512abb447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comida1: {fileID: 1841682008753800, guid: d8810c751130f7b4fa1a568ac6c88136, type: 3}
-  comida2: {fileID: 1821036643574940, guid: 5d9267d5760854643bae8caab5a86bbd, type: 3}
-  comida3: {fileID: 1714323311883026, guid: 91e50ffdcbef0764593c0b8a4b79e539, type: 3}
-  comida4: {fileID: 1803553726617056, guid: c3d0eded85a5b5d449c07ca7433ab760, type: 3}
+  comidas: []
   platoVacio: 0
 --- !u!65 &1947053019
 BoxCollider:
@@ -1290,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc326730e1a24844889c615e6d3eaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 1
+  velocidad: 30
 --- !u!4 &2103035574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ae78876c0e9200d4890a0a98ab36e589,
