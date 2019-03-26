@@ -6,7 +6,9 @@ public static class G {
 
 
     public static Dictionary<int, int> positions = new Dictionary<int, int>
-    {
+    //dicionario con las posiciones de los jugadores en los minijuegos
+    {//la columna de la izquieda es el jugador, la columna de la derecha es la poscición en la que ha quedado en el último minijuego
+     // en la columna de la derecha 0 significa que no participa, 1 primera posición, 2 segunda posición, 3 tercera posición 4 cuarta posición
         {0,0 },
         {1,0 },
         {2,0 },
@@ -18,6 +20,8 @@ public static class G {
 
     public static float ClampAngle(float angle, float min, float max)
     {
+
+
         angle = Mathf.Repeat(angle, 360);
         min = Mathf.Repeat(min, 360);
         max = Mathf.Repeat(max, 360);
