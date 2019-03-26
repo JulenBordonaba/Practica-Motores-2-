@@ -9,10 +9,12 @@ public class GenerteCubeWall : MonoBehaviour
     [Header("Prefabs")]
     [Tooltip("Hay que arrastra el prefab de los cubos para romper")]
     public GameObject cubePrefab;
-    [Tooltip("Hay que arrastrar el prefab de la bomba")]
+    [Tooltip("Hay que arrastrar el prefab de la bomba. Quita puntos al recogerla")]
     public GameObject bombPrefab;
-    [Tooltip("Hay que arrastrar el prefab de la gema")]
+    [Tooltip("Hay que arrastrar el prefab de la gema. Da puntos al recogerla")]
     public GameObject gemPrefab;
+    [Tooltip("Hay que arrastrar el prefab de la gema especial. Da mas puntos al recogerla")]
+    public GameObject gemSpecialPrefab;
 
     [Header("CubeReference")]
     [Tooltip("Arrastra el cubo de referencia para generar la pared. Lo ideal es el primer cubo de la línea del suelo. El más a la izquierda")]
@@ -46,10 +48,16 @@ public class GenerteCubeWall : MonoBehaviour
                     Instantiate(bombPrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), cubeReference.transform.rotation);
                 }
 
-                if (randomCube >= 75 && randomCube <= 91)
+                if (randomCube >= 75 && randomCube <= 89)
                 {
                     //crear cubo en su posicion
                     Instantiate(gemPrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), cubeReference.transform.rotation);
+                }
+
+                if (randomCube >= 90 && randomCube <= 91)
+                {
+                    //crear cubo en su posicion
+                    Instantiate(gemSpecialPrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), cubeReference.transform.rotation);
                 }
 
 
