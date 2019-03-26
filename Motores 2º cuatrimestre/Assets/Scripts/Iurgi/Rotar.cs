@@ -8,6 +8,6 @@ public class Rotar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.Rotate(0, velocidad, 0);
+        transform.Rotate(0, velocidad * Time.deltaTime, 0);
 	}
 }
