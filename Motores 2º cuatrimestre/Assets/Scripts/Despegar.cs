@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CollisionType
+{
+    trigger,collision
+}
+
 public class Despegar : MonoBehaviour {
 
     public float fuerza;
+    public string collisionTag = "";
+    public CollisionType collisionType;
 
     private Rigidbody rb;
 
@@ -18,17 +25,19 @@ public class Despegar : MonoBehaviour {
 		
 	}
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Ball")
-    //    {
-    //        rb.AddForce(Vector3.up * fuerza, ForceMode.VelocityChange);
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (collisionType != CollisionType.trigger) return;
+        if (other.tag == collisionTag)
+        {
+            rb.AddForce(Vector3.up * fuerza, ForceMode.VelocityChange);
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (collisionType != CollisionType.collision) return;
+        if (collision.gameObject.tag == collisionTag)
         {
             rb.AddForce(Vector3.up * fuerza, ForceMode.VelocityChange);
         }
