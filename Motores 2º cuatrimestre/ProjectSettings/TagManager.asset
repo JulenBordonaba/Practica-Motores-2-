@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Ball
   - Death
+  - Car4
+  - Car2
+  - Car3
+  - Car1
+  - GameEnd
+  - Breakable
+  - Gem
   layers:
   - Default
   - TransparentFX
