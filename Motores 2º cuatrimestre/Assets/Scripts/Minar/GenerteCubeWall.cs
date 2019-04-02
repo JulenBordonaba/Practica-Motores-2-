@@ -27,7 +27,8 @@ public class GenerteCubeWall : MonoBehaviour
     public float rows;
 
     private int randomCube;
-    
+    private int randomCubeRotation;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,10 +37,46 @@ public class GenerteCubeWall : MonoBehaviour
             for (int k = 1; k < rows; k++)
             {
                 randomCube = Random.Range(1, 100);//numero aleatorio de 1 a 100. De 1 a 70 es un cubo, de 71 a 76 es una bomba, de 77 a 86 es una gema, el resto es un espacio en blanco
-                if(randomCube>=1 && randomCube <= 70)
+                randomCubeRotation = Random.Range(1, 10);// numero aleatorio de 1 a 10 para todas las rotaciones posibles del cubo.
+                if (randomCube>=1 && randomCube <= 70)
                 {
                     //crear cubo en su posicion
-                    Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i* cubeSeparation), cubeReference.transform.position.y - (k*cubeSeparation), cubeReference.transform.position.z), cubeReference.transform.rotation);
+                    switch (randomCubeRotation)
+                    {
+                        case 1:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(0, 0, 0));
+                            break;
+                        case 2:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(90, 0, 0));
+                            break;
+                        case 3:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(-90, 0, 0));
+                            break;
+                        case 4:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(180, 0, 0));
+                            break;
+                        case 5:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(0, 90, 0));
+                            break;
+                        case 6:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(0, -90, 0));
+                            break;
+                        case 7:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(0, 180, 0));
+                            break;
+                        case 8:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(0, 0, 90));
+                            break;
+                        case 9:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(0, 0, -90));
+                            break;
+                        case 10:
+                            Instantiate(cubePrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), Quaternion.Euler(0, 0, 180));
+                            break;
+
+                        default:
+                            break;
+                    }
                 }
 
                 if (randomCube >= 71 && randomCube <= 74)
