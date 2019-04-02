@@ -5,15 +5,15 @@ using UnityEngine;
 public class ScoreObject : MonoBehaviour
 {
 
-    public Rigidbody rb;
+    private Rigidbody rb;
 
 
 
     // Use this for initialization
     void Start()
     {
-        Destroy(gameObject, 1.5f);
-        GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-1, 1), 3, Random.Range(-1, 1));
+        Destroy(gameObject, 10f);
+        GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(-2, 2), 3, Random.Range(-2, 2));
     }
 
     // Update is called once per frame

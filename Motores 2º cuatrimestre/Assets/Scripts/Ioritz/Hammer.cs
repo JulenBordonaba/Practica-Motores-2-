@@ -8,9 +8,9 @@ public class Hammer : MonoBehaviour
     //static public Hammer i;
 
     //private Vector3 direction;
-    //private Rigidbody rb;
+    private Rigidbody rb;
     //private Vector3 rotation;
-
+    
     //public float Vel;
     //public float RotVel;
     public int score;
@@ -24,7 +24,7 @@ public class Hammer : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         //i = this;
     }
 
@@ -32,7 +32,7 @@ public class Hammer : MonoBehaviour
     void Update()
     {
 
-        //rb.velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
         /* if (stun == 0)
          {
              transform.Rotate(rotation * RotVel);

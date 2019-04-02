@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MiniGameScores : MonoBehaviour
 {
+    
     [Tooltip("Puntos que tiene el jugador en el minijuego")]
     public int points;
     [Tooltip("Posición que tiene el jugador en el minijuego")]
