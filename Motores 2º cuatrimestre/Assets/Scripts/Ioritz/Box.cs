@@ -28,7 +28,8 @@ public class Box : MonoBehaviour
             Instantiate(ScorePrefab, transform.position, Quaternion.identity);
         }
         //Player.i.Take(amount);
+        
         Destroy(gameObject);
     }
-
+    
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
 
-    static public Hammer i;
+    //static public Hammer i;
 
     //private Vector3 direction;
     //private Rigidbody rb;
@@ -25,7 +25,7 @@ public class Hammer : MonoBehaviour
     void Start()
     {
         //rb = GetComponent<Rigidbody>();
-        i = this;
+        //i = this;
     }
 
     // Update is called once per frame
@@ -43,8 +43,7 @@ public class Hammer : MonoBehaviour
 
         if (usableObject && (Input.GetButtonDown("Button1" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode)) && stun == 0)
         {
-            Debug.Log("a");
-            usableObject.SendMessage("Martillo", SendMessageOptions.DontRequireReceiver);
+                        usableObject.SendMessage("Martillo", SendMessageOptions.DontRequireReceiver);
         }
         /*if (stun > 0)
         {
