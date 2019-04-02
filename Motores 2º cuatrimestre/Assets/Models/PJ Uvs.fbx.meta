@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: d70294fe8d136694cbc1bc36d1a252b7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: cabeza
+    100002: clavicula_L
+    100004: clavicula_R
+    100006: codo_L
+    100008: codo_R
+    100010: columna1
+    100012: columna3
+    100014: columna_2
+    100016: cuello1
+    100018: cuello2
+    100020: dedo_L
+    100022: dedo_R
+    100024: dedos_L
+    100026: dedos_R
+    100028: dgordo2_L
+    100030: dgordo2_R
+    100032: dgordo_L
+    100034: dgordo_L 1
+    100036: dgordo_R
+    100038: dgordo_R 1
+    100040: hombro_L
+    100042: hombro_R
+    100044: mano_L
+    100046: mano_R
+    100048: muneca_L
+    100050: muneca_R
+    100052: pie_L
+    100054: pie_R
+    100056: pierna_L
+    100058: pierna_R
+    100060: //RootNode
+    100062: polySurface1
+    100064: root
+    400000: cabeza
+    400002: clavicula_L
+    400004: clavicula_R
+    400006: codo_L
+    400008: codo_R
+    400010: columna1
+    400012: columna3
+    400014: columna_2
+    400016: cuello1
+    400018: cuello2
+    400020: dedo_L
+    400022: dedo_R
+    400024: dedos_L
+    400026: dedos_R
+    400028: dgordo2_L
+    400030: dgordo2_R
+    400032: dgordo_L
+    400034: dgordo_L 1
+    400036: dgordo_R
+    400038: dgordo_R 1
+    400040: hombro_L
+    400042: hombro_R
+    400044: mano_L
+    400046: mano_R
+    400048: muneca_L
+    400050: muneca_R
+    400052: pie_L
+    400054: pie_R
+    400056: pierna_L
+    400058: pierna_R
+    400060: //RootNode
+    400062: polySurface1
+    400064: root
+    2100000: lambert1
+    4300000: polySurface1
+    9500000: //RootNode
+    13700000: polySurface1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
