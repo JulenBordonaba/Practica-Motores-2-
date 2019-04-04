@@ -29,7 +29,7 @@ public class ManagerCollisiones : MonoBehaviour
             }
             else if (nombreCollider == "ColliderAtras")
             {
-                other.gameObject.GetComponent<ManagerCollisiones>().
+                //other.gameObject.GetComponent<ManagerCollisiones>().
             }
             else if (nombreCollider == "ColliderLados")
             {
