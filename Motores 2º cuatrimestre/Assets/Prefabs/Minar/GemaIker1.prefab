@@ -83,6 +83,8 @@ GameObject:
   - component: {fileID: 1024474651723324706}
   - component: {fileID: 3154793657488258827}
   - component: {fileID: 9130701959712888657}
+  - component: {fileID: 8075848003914162646}
+  - component: {fileID: 8636001060165945796}
   m_Layer: 0
   m_Name: GemaIker1
   m_TagString: Untagged
@@ -189,3 +191,31 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 200.2736
   m_Center: {x: 0, y: 11.497397, z: 0}
+--- !u!114 &8075848003914162646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024474653019152245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad87c187a7f60624e93981b37525a9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &8636001060165945796
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024474653019152245}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
