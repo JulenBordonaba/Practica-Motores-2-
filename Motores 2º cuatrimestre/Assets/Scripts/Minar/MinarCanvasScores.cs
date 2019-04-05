@@ -13,6 +13,7 @@ public class MinarCanvasScores : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.GetComponent<RectTransform>().rotation = new Quaternion(0f, 0f, 0f,180f);
        pointsText.text = player.GetComponent<MiniGameScores>().points.ToString();//actualiza el UI con los puntos de cada jugador
     }
 }
