@@ -8,9 +8,9 @@ public class Break : MonoBehaviour
     {
         if (other.tag == "Breakable" && (Input.GetButtonDown("Button1" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode)))
         {
-            Destroy(other.gameObject);//se destruye el bloque
+            Destroy(other.gameObject);//se destruye el bloque, al ser destruido de forma automática llama a la animación y el sonido
             //animación jugador romper cubo
-            //animación cubo al ser destruido
+            //sonido de minar
         }
     }
 }
