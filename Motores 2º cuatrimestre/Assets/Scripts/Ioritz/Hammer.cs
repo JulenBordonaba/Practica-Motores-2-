@@ -52,7 +52,7 @@ public class Hammer : MonoBehaviour
         }*/
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Caja" || collision.tag == "Player")
         {

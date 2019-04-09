@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 309901642}
   - component: {fileID: 309901641}
   - component: {fileID: 309901640}
+  - component: {fileID: 309901646}
   m_Layer: 0
   m_Name: Jugador (3)
   m_TagString: Untagged
@@ -380,6 +381,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309901646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309901639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b27438a6ddc8448af126b32740fcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPlayer: 3
+  eliminated: 0
+  puntos: 0
 --- !u!1 &320476280
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,7 +644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &526139520
 GameObject:
@@ -789,7 +805,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 41.356003, y: 0, z: -0.001}
 --- !u!1 &539573597
 GameObject:
@@ -805,6 +821,7 @@ GameObject:
   - component: {fileID: 539573600}
   - component: {fileID: 539573599}
   - component: {fileID: 539573598}
+  - component: {fileID: 539573604}
   m_Layer: 0
   m_Name: Jugador (2)
   m_TagString: Untagged
@@ -916,6 +933,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539573604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539573597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b27438a6ddc8448af126b32740fcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPlayer: 2
+  eliminated: 0
+  puntos: 0
 --- !u!1001 &555867094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1574,10 +1606,10 @@ MonoBehaviour:
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
+  m_HorizontalAxis: HorizontalTeclado1
+  m_VerticalAxis: VerticalTeclado1
+  m_SubmitButton: Button1Teclado1
+  m_CancelButton: Button2Teclado1
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
@@ -1735,6 +1767,7 @@ GameObject:
   - component: {fileID: 1257173157}
   - component: {fileID: 1257173156}
   - component: {fileID: 1257173155}
+  - component: {fileID: 1257173161}
   m_Layer: 0
   m_Name: Jugador (1)
   m_TagString: Untagged
@@ -1846,6 +1879,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1257173161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257173154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b27438a6ddc8448af126b32740fcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPlayer: 1
+  eliminated: 0
+  puntos: 0
 --- !u!1 &1341337093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,7 +1968,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4558969056595566, guid: ff75363a715e12f4296b0d5e7395e4f1, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff75363a715e12f4296b0d5e7395e4f1, type: 3}
@@ -2086,6 +2134,7 @@ GameObject:
   - component: {fileID: 1760164449}
   - component: {fileID: 1760164450}
   - component: {fileID: 1760164451}
+  - component: {fileID: 1760164452}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -2164,7 +2213,7 @@ Transform:
   m_LocalScale: {x: 0.55463, y: 0.55463, z: 0.55463}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1760164449
 MonoBehaviour:
@@ -2209,6 +2258,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fa7911137dc6040870716abf25ecd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1760164452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760164444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b27438a6ddc8448af126b32740fcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numPlayer: 0
+  eliminated: 0
+  puntos: 0
 --- !u!1 &1880358093
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour {
     public float velocity = 1;
     public bool horizontalMovement = true;
     public bool verticalMovement = true;
+
+    private Rigidbody rb;
     
 
 	// Use this for initialization
 	void Start () {
-        
+        rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
     {
         //Debug.Log(InputManager.controles[jugador].InputCode);
         transform.Translate( horizontalMovement ? Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) * velocity * Time.deltaTime : 0f, 0, verticalMovement ? Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) * velocity * Time.deltaTime : 0f,Space.World);
+        rb.angularVelocity = Vector3.zero;
     }
 
     
