@@ -11,4 +11,6 @@ public class MiniGameScores : MonoBehaviour
     public int position;
     [Tooltip("Vuelta de la carrera en la que se encuentra el jugador")]
     public int Lap;
+    [Tooltip("Booleana, vedadero si ha llegado a la meta")]
+    public bool onGoal;
 }

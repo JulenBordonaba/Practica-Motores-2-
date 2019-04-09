@@ -8,7 +8,7 @@ public class GameEnd : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<Player>().onGoal = true;
+            other.GetComponent<MiniGameScores>().onGoal = true;
         }
     }
 }
