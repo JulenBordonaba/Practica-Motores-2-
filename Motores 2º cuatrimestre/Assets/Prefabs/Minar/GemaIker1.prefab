@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 9130701959712888657}
   - component: {fileID: 8075848003914162646}
   - component: {fileID: 8636001060165945796}
-  - component: {fileID: 3067345682271087591}
+  - component: {fileID: 3839871759524326901}
   m_Layer: 0
   m_Name: GemaIker1
   m_TagString: Untagged
@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 10
+  txtPoints: {fileID: 2374160522425480962, guid: caa10d6d526a1784ab87d5b85677e700,
+    type: 3}
 --- !u!135 &9130701959712888657
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -220,7 +222,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3067345682271087591
+--- !u!114 &3839871759524326901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

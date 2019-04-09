@@ -11,6 +11,6 @@ public class ParticleSystemOnDestroy : MonoBehaviour
     {
         Instantiate(particleSystemOnDestroy, transform.position, Quaternion.identity);//crea el sistema de particulas en el centro del objeto
         //llamar al sonido del objeto destruido
-        Destroy(particleSystemOnDestroy, 3f);
+       // Destroy(particleSystemOnDestroy, 3f);
     }
 }

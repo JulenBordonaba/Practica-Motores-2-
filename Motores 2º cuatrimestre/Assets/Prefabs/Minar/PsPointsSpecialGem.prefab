@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.092196584, g: 1, b: 0, a: 0.5529412}
+      maxColor: {r: 0, g: 1, b: 0.022976637, a: 0.5529412}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4810,7 +4810,7 @@ GameObject:
   - component: {fileID: 8201141831047990666}
   - component: {fileID: 7717659412652860541}
   m_Layer: 0
-  m_Name: PsPoints
+  m_Name: PsPointsSpecialGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9556,7 +9556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.004989147, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.023529412, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -9576,9 +9576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '+10
-
-'
+  m_Text: +30
 --- !u!95 &3202643647430455107
 Animator:
   serializedVersion: 3

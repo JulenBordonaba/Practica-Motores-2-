@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 4312241896535995745}
   - component: {fileID: 2070715298512999376}
   - component: {fileID: 1368060813807806353}
+  - component: {fileID: 1998144072557813247}
   m_Layer: 0
   m_Name: IkerGema2
   m_TagString: Untagged
@@ -219,3 +220,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1998144072557813247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2508450519024642213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7c292b07e6d3f49b61cf3b6b6e99c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystemOnDestroy: {fileID: 8201141831047990666, guid: 445e2710123224c46af0b87c5fbe8a68,
+    type: 3}
