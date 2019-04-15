@@ -29,7 +29,7 @@ public class DeathCollision : MonoBehaviour {
             //se "elimina"
             gameObject.GetComponent<Player>().eliminated = true;
             //y se le quitan todos los puntos
-            gameObject.GetComponent<MiniGameScores>().points = 0;
+            gameObject.GetComponent<MiniGameScores>().points = -1000;
             //Destroy(gameObject);
         }
         else if (other.tag == "Death")

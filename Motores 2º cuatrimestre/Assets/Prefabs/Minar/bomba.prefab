@@ -14197,7 +14197,7 @@ GameObject:
   - component: {fileID: 2084513508412123305}
   - component: {fileID: 7436767635628919971}
   - component: {fileID: 8542783351108710986}
-  - component: {fileID: 4530453206876187778}
+  - component: {fileID: 2214360291204827819}
   m_Layer: 0
   m_Name: bomba
   m_TagString: Untagged
@@ -14261,6 +14261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad87c187a7f60624e93981b37525a9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cuartoOscuro: {fileID: 0}
 --- !u!54 &7436767635628919971
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14291,7 +14292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleSystemOnDestroy: {fileID: 2333109510844556912, guid: 03bc1c0ef6099754694ff538f2749a7f,
     type: 3}
---- !u!114 &4530453206876187778
+--- !u!114 &2214360291204827819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

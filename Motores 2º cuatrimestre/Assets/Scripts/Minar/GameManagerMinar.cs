@@ -41,462 +41,98 @@ public class GameManagerMinar : MonoBehaviour
     private void finDeJuego()//esta función controla el ganador y las posiciones de los demás, llama a las animaciones de fin de juego y luego pasa a la escena del podio
     {
         finJuego = true;//se pone a true la variable auxiliar que controla que el juego ha acabado
-        int auxGanador=0;//variable auxiliar con la mayor puntiacion
-        int auxSegundo = 0;//variable auxiliar con la segunda mayor puntiacion
-        int auxTercero = 0;//variable auxiliar con la tercera mayor puntiacion
-       
-        
+        GameObject temporal;
+        int auxGanador=-10000;//variable auxiliar con la mayor puntiacion
+        int auxSegundo = -10000;//variable auxiliar con la segunda mayor puntiacion
+        int auxTercero = -10000;//variable auxiliar con la tercera mayor puntiacion
+
+
+        //primero ordeno los jugadores que han llegado a la meta de mayor a menor puntuación
+        for (int i = 0; i < players.Capacity; i++)
+        {
+            for (int j = 0; j < players.Capacity -1 ; j++)
+            {
+                if ((players[j].GetComponent<MiniGameScores>().onGoal == true) && (players[j + 1].GetComponent<MiniGameScores>().onGoal == true) && (players[j].GetComponent<MiniGameScores>().points < players[j + 1].GetComponent<MiniGameScores>().points))
+                { // Ordena el array de mayor a menor
+                    temporal = players[j];
+                    players[j] = players[j + 1];
+                    players[j + 1] = temporal;
+                }
+            }
+        }
         //guardar los puntos de la primera posición
-        if ((players[0].GetComponent<MiniGameScores>().onGoal==true) && players[0].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points && players[0].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points && players[0].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-        {//si es el jugador 1
+        //if (players[0].GetComponent<MiniGameScores>().onGoal == true)
             auxGanador = players[0].GetComponent<MiniGameScores>().points;
-        }
-        if ((players[1].GetComponent<MiniGameScores>().onGoal == true) && players[1].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points && players[1].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points && players[1].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-        {//si es el jugador 2
-            auxGanador = players[1].GetComponent<MiniGameScores>().points;
-        }
-        if ((players[2].GetComponent<MiniGameScores>().onGoal == true) && players[2].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points && players[2].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points && players[2].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-        {//si es el jugador 3
-            auxGanador = players[2].GetComponent<MiniGameScores>().points;
-        }
-        if ((players[3].GetComponent<MiniGameScores>().onGoal == true) && players[3].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points && players[3].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points && players[3].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points)
-        {//si es el jugador 4
-            auxGanador = players[3].GetComponent<MiniGameScores>().points;
-        }
         Debug.Log(auxGanador + "auxGanador");
-       
-        
-        
-        //guardar los puntos de la segunda posición
-        bool segundoBool = false; // variable auxiliar para ir controlando si cumple los requisitos para ser la seunda mejor puntuación o no
-        if (players[0].GetComponent<MiniGameScores>().points < auxGanador && (players[0].GetComponent<MiniGameScores>().onGoal == true) && (players[0].GetComponent<MiniGameScores>().points < auxSegundo))
-        {//si es el jugador 1
-            if (players[1].GetComponent<MiniGameScores>().points < auxGanador)
+
+        //guardar los puntos de la segunda y tercera posición
+        foreach (GameObject player in players)
+        {
+            //segunda posicion
+            if (player.GetComponent<MiniGameScores>().points < auxGanador && player.GetComponent<MiniGameScores>().points > auxSegundo)
             {
-                if (players[0].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
+                auxSegundo = player.GetComponent<MiniGameScores>().points;
             }
 
-            if (players[2].GetComponent<MiniGameScores>().points < auxGanador)
+            //tercera posicion
+            else if (player.GetComponent<MiniGameScores>().points < auxSegundo && player.GetComponent<MiniGameScores>().points > auxTercero)
             {
-                if (players[0].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (players[3].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[0].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (segundoBool)
-            {//es la segunda mejor posición
-                auxSegundo = players[0].GetComponent<MiniGameScores>().points;
-            }
-        }
-        if (players[1].GetComponent<MiniGameScores>().points < auxGanador && (players[1].GetComponent<MiniGameScores>().onGoal == true) && (players[1].GetComponent<MiniGameScores>().points < auxSegundo))
-        {//si es el jugador 2
-            if (players[0].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[1].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (players[2].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[1].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (players[3].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[1].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (segundoBool)
-            {//es la segunda mejor posición
-                auxSegundo = players[1].GetComponent<MiniGameScores>().points;
-            }
-        }
-        if (players[2].GetComponent<MiniGameScores>().points < auxGanador && (players[2].GetComponent<MiniGameScores>().onGoal == true) && (players[2].GetComponent<MiniGameScores>().points < auxSegundo))
-        {//si es el jugador 3
-            if (players[0].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[2].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (players[1].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[2].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (players[3].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[2].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (segundoBool)
-            {//es la segunda mejor posición
-                auxSegundo = players[2].GetComponent<MiniGameScores>().points;
-            }
-        }
-        if (players[3].GetComponent<MiniGameScores>().points < auxGanador && (players[3].GetComponent<MiniGameScores>().onGoal == true) && (players[3].GetComponent<MiniGameScores>().points < auxSegundo))
-        {//si es el jugador 4
-            if (players[0].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[3].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (players[1].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[3].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (players[2].GetComponent<MiniGameScores>().points < auxGanador)
-            {
-                if (players[3].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points)
-                {
-                    segundoBool = true;
-                }
-                else
-                {
-                    segundoBool = false;
-                }
-            }
-
-            if (segundoBool)
-            {//es la segunda mejor posición
-                auxSegundo = players[3].GetComponent<MiniGameScores>().points;
+                auxTercero = player.GetComponent<MiniGameScores>().points;
             }
         }
         Debug.Log(auxSegundo + "auxSegundo");
-
-
-
-        //guardar los puntos de la tercera posicion
-        bool terceroBool = false; // variable auxiliar para ir controlando si cumple los requisitos para ser la tercera mejor puntuación o no
-        if (players[0].GetComponent<MiniGameScores>().points < auxSegundo && (players[0].GetComponent<MiniGameScores>().onGoal == true) && (players[0].GetComponent<MiniGameScores>().points < auxTercero))
-        {//si es el jugador 1
-            if (players[1].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[0].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[2].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[0].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[3].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[0].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (terceroBool)
-            {//es la segunda mejor posición
-                auxTercero = players[0].GetComponent<MiniGameScores>().points;
-            }
-        }
-        if (players[1].GetComponent<MiniGameScores>().points < auxSegundo && (players[1].GetComponent<MiniGameScores>().onGoal == true) && (players[1].GetComponent<MiniGameScores>().points < auxTercero))
-        {//si es el jugador 2
-            if (players[0].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[1].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[2].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[1].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[3].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[1].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (terceroBool)
-            {//es la segunda mejor posición
-                auxTercero = players[1].GetComponent<MiniGameScores>().points;
-            }
-        }
-        if (players[2].GetComponent<MiniGameScores>().points < auxSegundo && (players[2].GetComponent<MiniGameScores>().onGoal == true) && (players[2].GetComponent<MiniGameScores>().points < auxTercero))
-        {//si es el jugador 3
-            if (players[0].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[2].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[1].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[2].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[3].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[2].GetComponent<MiniGameScores>().points >= players[3].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (terceroBool)
-            {//es la segunda mejor posición
-                auxTercero = players[2].GetComponent<MiniGameScores>().points;
-            }
-        }
-        if (players[3].GetComponent<MiniGameScores>().points < auxSegundo && (players[3].GetComponent<MiniGameScores>().onGoal == true) && (players[3].GetComponent<MiniGameScores>().points < auxTercero))
-        {//si es el jugador 4
-            if (players[0].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[3].GetComponent<MiniGameScores>().points >= players[0].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[1].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[3].GetComponent<MiniGameScores>().points >= players[1].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (players[2].GetComponent<MiniGameScores>().points < auxSegundo)
-            {
-                if (players[3].GetComponent<MiniGameScores>().points >= players[2].GetComponent<MiniGameScores>().points)
-                {
-                    terceroBool = true;
-                }
-                else
-                {
-                    terceroBool = false;
-                }
-            }
-
-            if (terceroBool)
-            {//es la segunda mejor posición
-                auxTercero = players[3].GetComponent<MiniGameScores>().points;
-            }
-        }
         Debug.Log(auxTercero + "auxTercero");
 
+        foreach (GameObject player in players)
+        {
+            Debug.Log(player.GetComponent<MiniGameScores>().points + "puntos jugador " + player.GetComponent<Player>().numPlayer + " en meta " + player.GetComponent<MiniGameScores>().onGoal);
+        }
 
+
+        //hay que añadir cada jugador a la lista correspondiente
 
         //añadir jugadores a las listas de posicion
         foreach (GameObject player in players)
         {
-
-
-            if (ganadores.Capacity==0 && player.GetComponent<MiniGameScores>().onGoal == true)
+            if (player.GetComponent<MiniGameScores>().points == auxGanador)
             {
+                player.GetComponent<MiniGameScores>().position = 1;
                 ganadores.Add(player);
-                Debug.Log("añadido ganador2");
-               
             }
-            else
+            else if (player.GetComponent<MiniGameScores>().points == auxSegundo)
             {
-                foreach (GameObject ganador in ganadores)
-                {
-                    Debug.Log(ganador.GetComponent<MiniGameScores>().points + "puntos ganador");
-                    Debug.Log(player.GetComponent<MiniGameScores>().points + "puntos jugador");
-                    if (ganador)
-                    {
-                        if (player.GetComponent<MiniGameScores>().onGoal == true && (player.GetComponent<MiniGameScores>().points >= ganador.GetComponent<MiniGameScores>().points))
-                        {
-                            ganadores.Add(player);
-                            Debug.Log("añadido ganador");
-                            break;
-                        }
-                    }
-                }
+                player.GetComponent<MiniGameScores>().position = 2;
+                segundos.Add(player);
             }
+            else if (player.GetComponent<MiniGameScores>().points == auxTercero)
+            {
+                player.GetComponent<MiniGameScores>().position = 3;
+                terceros.Add(player);
+            }
+
             if (player.GetComponent<Player>().eliminated == true)
             {
                 player.GetComponent<MiniGameScores>().position = 4;
                 cuartos.Add(player);
-                Debug.Log("añadido cuarto");
             }
 
+        }
 
-
-                //if (player.GetComponent<Player>().eliminated == true)
-                //{
-                //    if (segundos[0])
-                //    {
-                //        if (player.GetComponent<Player>().puntos == segundos[0].GetComponent<Player>().puntos)
-                //        {
-                //            segundos.Add(player);
-                //            break;
-                //        }
-                //    }
-                //    else
-                //    {
-
-                //    }
-
-                //    if (terceros[0])
-                //    {
-                //        if (player.GetComponent<Player>().puntos == terceros[0].GetComponent<Player>().puntos)
-                //        {
-                //            terceros.Add(player);
-                //            break;
-                //        }
-                //    }
-
-                //    if (cuartos[0])
-                //    {
-                //        if (player.GetComponent<Player>().puntos == cuartos[0].GetComponent<Player>().puntos)
-                //        {
-                //            cuartos.Add(player);
-                //            break;
-                //        }
-                //    }
-                //}
-
-
-
-
-            }
+        foreach (GameObject player in ganadores)
+        {
+            Debug.Log("Ganador: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
+        }
+        foreach (GameObject player in segundos)
+        {
+            Debug.Log("Segundo: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
+        }
+        foreach (GameObject player in terceros)
+        {
+            Debug.Log("Tercero: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
+        }
+        foreach (GameObject player in cuartos)
+        {
+            Debug.Log("Perdedor: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
+        }
     }
 }
