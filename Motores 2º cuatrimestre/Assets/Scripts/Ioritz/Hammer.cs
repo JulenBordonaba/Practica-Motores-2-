@@ -6,7 +6,7 @@ public class Hammer : MonoBehaviour
 {   
     private Rigidbody rb;
     private int stun = 0;
-    private GameObject usableObject;
+    public GameObject usableObject;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -24,8 +24,12 @@ public class Hammer : MonoBehaviour
         {
             stun -= 1;
             //Animación de estuneado (pajaritos en la cabeza)
-            
-            
+            if (stun == 0)
+            {
+                GetComponent<PlayerController>().enabled = true;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+
         }
     }
 
@@ -49,7 +53,9 @@ public class Hammer : MonoBehaviour
     {
         if (stun == 0)
         {
-            stun = 60;
+            stun = 90;
+            GetComponent<PlayerController>().enabled = true;
+            transform.localScale = new Vector3(1, 0.33f,1);
         }
     }
 
