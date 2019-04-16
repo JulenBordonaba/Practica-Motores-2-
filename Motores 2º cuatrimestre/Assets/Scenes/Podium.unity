@@ -1086,7 +1086,11 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &1578921613
+=======
+--- !u!1001 &1617830273
+>>>>>>> parent of a69393b... podios colocados
 =======
 --- !u!1001 &1617830273
 >>>>>>> parent of a69393b... podios colocados
@@ -1186,6 +1190,7 @@ PrefabInstance:
     m_RemovedComponents: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 28d1bdfc20549d446ad83e60aec4ec4a, type: 3}
 --- !u!4 &1578921614 stripped
 Transform:
@@ -1201,6 +1206,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 =======
 >>>>>>> 51aa86cc89e0e5b8e97f1a2a2c4bc806f9890df7
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: 299abbda0cacbc143b6b5f49154f0cd1, type: 3}
+>>>>>>> parent of a69393b... podios colocados
 =======
   m_SourcePrefab: {fileID: 100100000, guid: 299abbda0cacbc143b6b5f49154f0cd1, type: 3}
 >>>>>>> parent of a69393b... podios colocados
@@ -1383,8 +1391,13 @@ Transform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalEulerAnglesHint: {x: 25.057001, y: 0, z: 0}
 --- !u!1001 &2082531915
+=======
+  m_LocalEulerAnglesHint: {x: 27.750002, y: 0, z: 0}
+--- !u!1001 &1951154220
+>>>>>>> parent of a69393b... podios colocados
 =======
   m_LocalEulerAnglesHint: {x: 27.750002, y: 0, z: 0}
 --- !u!1001 &1951154220
@@ -1575,6 +1588,7 @@ PrefabInstance:
     m_RemovedComponents: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 28d1bdfc20549d446ad83e60aec4ec4a, type: 3}
 --- !u!4 &2082531916 stripped
 Transform:
@@ -1591,6 +1605,9 @@ GameObject:
 =======
   m_LocalEulerAnglesHint: {x: 27.750002, y: 0, z: 0}
 >>>>>>> 51aa86cc89e0e5b8e97f1a2a2c4bc806f9890df7
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: b8696cb875a0b854ba06531dd32b6ccb, type: 3}
+>>>>>>> parent of a69393b... podios colocados
 =======
   m_SourcePrefab: {fileID: 100100000, guid: b8696cb875a0b854ba06531dd32b6ccb, type: 3}
 >>>>>>> parent of a69393b... podios colocados
@@ -1691,7 +1708,11 @@ MeshFilter:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1001 &2116380167
+=======
+--- !u!1001 &2122677313
+>>>>>>> parent of a69393b... podios colocados
 =======
 --- !u!1001 &2122677313
 >>>>>>> parent of a69393b... podios colocados
@@ -1844,9 +1865,13 @@ PrefabInstance:
     m_RemovedComponents: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 28d1bdfc20549d446ad83e60aec4ec4a, type: 3}
 =======
 >>>>>>> 51aa86cc89e0e5b8e97f1a2a2c4bc806f9890df7
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: 3bcacd2a71f4c7a499124751f3fe78c6, type: 3}
+>>>>>>> parent of a69393b... podios colocados
 =======
   m_SourcePrefab: {fileID: 100100000, guid: 3bcacd2a71f4c7a499124751f3fe78c6, type: 3}
 >>>>>>> parent of a69393b... podios colocados
