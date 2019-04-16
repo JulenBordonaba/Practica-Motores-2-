@@ -178,7 +178,7 @@ public class GameManagerMinar : MonoBehaviour
         {
             G.positions[player.GetComponent<Player>().numPlayer] = player.GetComponent<MiniGameScores>().position;
         }
-
+        //cargar siguiente escena
         SceneManager.LoadScene("Podium");
 
     }

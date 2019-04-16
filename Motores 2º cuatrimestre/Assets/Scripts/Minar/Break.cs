@@ -5,7 +5,7 @@ using UnityEngine;
 public class Break : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
-    {
+    {//rompe un cubo si estas en el boxcollider del cubo y pulsas el boton
         if (other.tag == "Breakable" && (Input.GetButtonDown("Button1" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode)))
         {
             Destroy(other.gameObject);//se destruye el bloque, al ser destruido de forma automática llama a la animación y el sonido

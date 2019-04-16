@@ -81,19 +81,19 @@ public class GenerteCubeWall : MonoBehaviour
 
                 if (randomCube >= 71 && randomCube <= 74)
                 {
-                    //crear cubo en su posicion
+                    //crear bomba en su posicion
                     Instantiate(bombPrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), cubeReference.transform.rotation);
                 }
 
                 if (randomCube >= 75 && randomCube <= 89)
                 {
-                    //crear cubo en su posicion
+                    //crear gema en su posicion
                     Instantiate(gemPrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), cubeReference.transform.rotation);
                 }
 
                 if (randomCube >= 90 && randomCube <= 91)
                 {
-                    //crear cubo en su posicion
+                    //crear gema especial en su posicion
                     Instantiate(gemSpecialPrefab, new Vector3(cubeReference.transform.position.x + (i * cubeSeparation), cubeReference.transform.position.y - (k * cubeSeparation), cubeReference.transform.position.z), cubeReference.transform.rotation);
                 }
 
