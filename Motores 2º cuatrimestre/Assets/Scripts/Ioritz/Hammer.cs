@@ -45,11 +45,12 @@ public class Hammer : MonoBehaviour
         {
                         usableObject.SendMessage("Martillo", SendMessageOptions.DontRequireReceiver);
         }
-        /*if (stun > 0)
+        if (stun > 0)
         {
             stun -= 1;
-            //stuned = 2;
-        }*/
+            //GetComponent<PlayerControler>.setActive = false;
+            //transform.localscale
+        }
     }
 
     private void OnTriggerStay(Collider collision)
@@ -81,7 +82,10 @@ public class Hammer : MonoBehaviour
         if (stun == 0)
         {
             stun = 60;
+            //GetComponent<PlayerControler>.setActive = false;
         }
+
+
     }
 
 }
