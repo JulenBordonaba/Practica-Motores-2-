@@ -13,6 +13,7 @@ TagManager:
   - GameEnd
   - Breakable
   - Gem
+  - Atraible
   layers:
   - Default
   - TransparentFX
