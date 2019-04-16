@@ -51,7 +51,7 @@ public class Podium : MonoBehaviour
         float time = 0;
         do
         {
-            podiums[player].transform.position = Vector3.Lerp(startPosition, startPosition + new Vector3(0, (4 - position) * 2, 0), time);
+            podiums[player].transform.position = Vector3.Lerp(startPosition, startPosition + new Vector3(0, (4 - position) * 1.2f, 0), time);
             time += tiempoSubida / 100;
             yield return null;
 
