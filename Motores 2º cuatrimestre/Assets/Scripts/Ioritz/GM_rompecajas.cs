@@ -6,7 +6,7 @@ public class GM_rompecajas : MonoBehaviour
 {
 
     static public GM_rompecajas i;
-
+    [Tooltip("Tiempo que durara el minijuego")]
     public int time;
 
     private bool intime = false;
@@ -18,7 +18,6 @@ public class GM_rompecajas : MonoBehaviour
         i = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (intime == false && time > 0)
@@ -28,7 +27,7 @@ public class GM_rompecajas : MonoBehaviour
             StartCoroutine(Second());
         }
     }
-
+    //Probablemente la manera mas cutre de hacer un contador de segundos
     IEnumerator Second()
     {
         yield return new WaitForSeconds(1f);

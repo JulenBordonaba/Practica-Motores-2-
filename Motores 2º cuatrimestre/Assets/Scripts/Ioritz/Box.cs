@@ -5,14 +5,17 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
 
-    public int amount;
-    public int max = 10;
+    private int amount;
+    
+    [Tooltip("Objeto que soltara al destruirse")]
     public GameObject ScorePrefab;
+    [Tooltip("Score maximo que podra soltar")]
+    public int max = 10;
 
     // Use this for initialization
     void Start()
     {
-        amount = Random.Range(0, max);
+        amount = Random.Range(0, max);  //Las cajas soltaran una cantidad aleatoria de scores entre 0 y el maximo
     }
 
     // Update is called once per frame
@@ -21,13 +24,12 @@ public class Box : MonoBehaviour
 
     }
 
-    public void Martillo()
+    public void Martillo()  //Destrulle la caja y genera los drops
     {
         for (int n = 0; n < amount; n++)
         {
             Instantiate(ScorePrefab, transform.position, Quaternion.identity);
-        }
-        //Player.i.Take(amount);
+        }       
         
         Destroy(gameObject);
     }
