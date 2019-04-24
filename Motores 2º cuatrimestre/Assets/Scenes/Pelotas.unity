@@ -356,11 +356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda02a6e3c4b68a4db43496301b56399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  playerPrefab: {fileID: 0}
+  raza: 00000000000000000000000000000000
   spawns:
   - {fileID: 0}
   - {fileID: 0}
