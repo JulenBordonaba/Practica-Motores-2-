@@ -24,7 +24,7 @@ public class CrearLaberinto : MonoBehaviour
                         GameObject bloque = Instantiate(b.bloque, padre.transform);
                         bloque.transform.position = new Vector3(i, 0.5f, j);
 
-                        switch(Random.Range(0,10))
+                        switch(Random.Range(4,7))
                         {
                             case 0:
                                 bloque.transform.rotation = Quaternion.Euler(0, 0, 0);

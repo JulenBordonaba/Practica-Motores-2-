@@ -3,7 +3,8 @@ guid: 372e3e17e42cb044084e140fc8b576ed
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - laberinto: {fileID: 2800000, guid: 1fa5293e9a06788459b04ad42823ed96, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
