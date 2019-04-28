@@ -24,10 +24,12 @@ public class CrearLaberinto : MonoBehaviour
                         GameObject bloque = Instantiate(b.bloque, padre.transform);
                         bloque.transform.position = new Vector3(i, 0.5f, j);
 
-                        switch(Random.Range(4,7))
+                        //switch(Random.Range(0,10))
+                        switch(Random.Range(3,7))
                         {
                             case 0:
-                                bloque.transform.rotation = Quaternion.Euler(0, 0, 0);
+                                //bloque.transform.rotation = Quaternion.Euler(0, 0, 0);
+                                bloque.transform.rotation = Quaternion.Euler(180, 0, 0);
                                 break;
                             case 1:
                                 bloque.transform.rotation = Quaternion.Euler(90, 0, 0);
@@ -36,7 +38,8 @@ public class CrearLaberinto : MonoBehaviour
                                 bloque.transform.rotation = Quaternion.Euler(-90, 0, 0);
                                 break;
                             case 3:
-                                bloque.transform.rotation = Quaternion.Euler(180, 0, 0);
+                                //bloque.transform.rotation = Quaternion.Euler(180, 0, 0);
+                                bloque.transform.rotation = Quaternion.Euler(0, 0, 0);
                                 break;
                             case 4:
                                 bloque.transform.rotation = Quaternion.Euler(0, 90, 0);
