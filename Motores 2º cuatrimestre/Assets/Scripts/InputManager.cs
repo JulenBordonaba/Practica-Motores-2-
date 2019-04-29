@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(MandosConectados);
+        //print(MandosConectados);
 		if(mandosConectados!=MandosConectados)
         {
             print("cambio");

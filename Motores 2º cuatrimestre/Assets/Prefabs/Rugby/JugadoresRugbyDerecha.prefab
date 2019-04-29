@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1187465887608512161}
   - component: {fileID: 2600587631440305856}
+  - component: {fileID: 1731695081}
   m_Layer: 0
   m_Name: JugadoresRugbyDerecha
   m_TagString: Untagged
@@ -58,6 +59,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1731695081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187465887608512174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5937340be2c40af4b9c2830fcdbb70be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 8436042274469833174}
+  - {fileID: 8436042275308202238}
+  - {fileID: 8436042275009969637}
+  - {fileID: 8436042274626348608}
+  - {fileID: 8436042273892994477}
+  - {fileID: 8436042274606961197}
+  - {fileID: 8436042274931409784}
+  - {fileID: 8436042275023171872}
+  seconds: 4.016667
+  activarMultiplesObjetos: 1
+  aumentoDificultad: 0.005
 --- !u!1001 &1187465885967264434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69,6 +94,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -125,23 +155,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7307211539498084115, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 116915b629f0baa4fa81b205a74bc95b, type: 2}
-    - target: {fileID: 7307211539498084113, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
-        type: 3}
-      propertyPath: fuerza
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084112, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
       propertyPath: pushForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084113, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: fuerza
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084115, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 116915b629f0baa4fa81b205a74bc95b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042273892994477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465885967264434}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042273892994471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
@@ -159,6 +195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -217,6 +258,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042274469833174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465886464265929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042274469833180 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
@@ -234,6 +281,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -292,6 +344,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042274606961197 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465886811518258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042274606961191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
@@ -309,6 +367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -367,6 +430,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042274626348608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465886825644383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042274626348618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
@@ -384,6 +453,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -442,6 +516,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042275009969637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465886945942266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042275009969647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
@@ -459,6 +539,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -517,6 +602,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042275023171872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465886949447231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042275023171882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
@@ -534,6 +625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -592,6 +688,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042274931409784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465887060075623}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042274931409778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
@@ -609,6 +711,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RugbyPlayer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
@@ -667,6 +774,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
+--- !u!1 &8436042275308202238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7307211539498084127, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1187465887234871265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8436042275308202228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7307211539498084117, guid: 1e5f4d96ef089da4587e3aade61f9a2a,

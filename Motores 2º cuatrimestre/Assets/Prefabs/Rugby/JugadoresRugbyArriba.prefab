@@ -80,7 +80,9 @@ MonoBehaviour:
   - {fileID: 360650881789362935}
   - {fileID: 360650880783133935}
   - {fileID: 360650880913633171}
-  seconds: 0
+  seconds: 4.016667
+  activarMultiplesObjetos: 1
+  aumentoDificultad: 0.005
 --- !u!1001 &360650881626036442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,27 +615,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7307211539498084115, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    - target: {fileID: 7307211539498084112, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 116915b629f0baa4fa81b205a74bc95b, type: 2}
+      propertyPath: pushForce
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307211539498084113, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+        type: 3}
+      propertyPath: fuerza
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7307211539498084114, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 3a5ef24b16538e44596810bf0effdb0b,
         type: 2}
-    - target: {fileID: 7307211539498084113, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
+    - target: {fileID: 7307211539498084115, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
         type: 3}
-      propertyPath: fuerza
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7307211539498084112, guid: 1e5f4d96ef089da4587e3aade61f9a2a,
-        type: 3}
-      propertyPath: pushForce
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 116915b629f0baa4fa81b205a74bc95b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f4d96ef089da4587e3aade61f9a2a, type: 3}
 --- !u!1 &360650881462529655 stripped
