@@ -10,14 +10,13 @@ public class GameManagerBaseball : MonoBehaviour
     public Text[] marcadoresText = new Text[4];
     public Marcador[] marcadores = new Marcador[4];
     public GameObject[] players = new GameObject[4];
-    public int numPlayers;
 
     public float time;
 
     // Start is called before the first frame update
     void Start()
     {
-        G.activePlayers = numPlayers;
+        G.activePlayers = 3;
         for (int i = 0; i < 4; i++)
         {
             marcadoresText[i].gameObject.SetActive(i < G.activePlayers);
@@ -71,109 +70,60 @@ public class GameManagerBaseball : MonoBehaviour
         //    }
         //}
 
-        //int[] playerPosition = new int[G.activePlayers]; //la posición dentro del array representa el numJugador y el valor la posición en la que ha quedado
+        int[] playerPosition = new int[G.activePlayers]; //la posición dentro del array representa el numJugador y el valor la posición en la que ha quedado
 
-        //for (int i = 0 ; i < playerPosition.Length; i++)
-        //{
-        //    playerPosition[i] = i+1;
-        //}
-
-        Dictionary<int, int> posiciones = new Dictionary<int, int>
+        for (int i = 0 ; i < playerPosition.Length; i++)
         {
-            {0,1 },
-            {1,2 },
-            {2,3 },
-            {3,4 }
-        };
-
-        for (int i = 0; i < posiciones.Count; i++)
-        {
-            posiciones[i] = i+1;
+            playerPosition[i] = i+1;
         }
 
-        for (int i = 0; i < posiciones.Count - 1; i++)
+        for (int i = 0; i < playerPosition.Length-1; i++)
         {
-            for (int j = 0; j < posiciones.Count; j++)
+            for (int j = 0; j < playerPosition.Length; j++)
             {
-                if (i != j)
+                if(i!=j)
                 {
                     if (marcadores[i].puntos > marcadores[j].puntos)
                     {
-                        if (posiciones[i] > posiciones[j])
+                        if (playerPosition[i] > playerPosition[j])
                         {
 
-                            posiciones[i] = posiciones[j];
-                            for (int k = 0; k < posiciones.Count; k++)
+                            playerPosition[i] = playerPosition[j];
+                            for (int k = 0; k < playerPosition.Length;k++)
                             {
-                                if (posiciones[k] >= posiciones[i] && k != i)
+                                if (playerPosition[k]<=playerPosition[j] && k!=i)
                                 {
-                                    posiciones[k] += 1;
+                                    playerPosition[k] += 1;
                                 }
                             }
-
+                            
                         }
-                        else if (posiciones[i] == posiciones[j])
+                        else if(playerPosition[i] == playerPosition[j])
                         {
-                            for (int k = 0; k < posiciones.Count; k++)
+                            for (int k = 0; k < playerPosition.Length; k++)
                             {
-                                if (posiciones[k] >= posiciones[j] && k != i)
+                                if (playerPosition[k] >= playerPosition[j] && k != i)
                                 {
-                                    posiciones[k] += 1;
+                                    playerPosition[k] += 1;
                                 }
                             }
                         }
                     }
                     else if (marcadores[i].puntos == marcadores[j].puntos)
                     {
-                        if(posiciones[i]<posiciones[j])
+                        playerPosition[i] = playerPosition[j];
+                        for (int k = 0; k < playerPosition.Length; k++)
                         {
-                            posiciones[j] = posiciones[i];
+                            if (playerPosition[k] >= playerPosition[j] && k != i && k != j)
+                            {
+                                playerPosition[k] -= 1;
+                            }
                         }
-                        else if(posiciones[i] > posiciones[j])
-                        {
-                            posiciones[i] = posiciones[j];
-                        }
-                        //for (int k = 0; k < posiciones.Count; k++)
-                        //{
-                        //    if (posiciones[k] >= posiciones[j] && k != i && k != j)
-                        //    {
-                        //        posiciones[k] -= 1;
-                        //    }
-                        //}
                     }
                 }
             }
 
         }
-
-
-        int comprobados = 0;
-        for(int i=1;i<posiciones.Count;i++)
-        {
-            if (comprobados >= posiciones.Count) break;
-            bool hayPosicion = false;
-            for(int j=0;j<posiciones.Count;j++)
-            {
-                if(posiciones[j]==i)
-                {
-                    comprobados += 1;
-                    hayPosicion = true;
-                }
-            }
-            if(!hayPosicion)
-            {
-                for (int j = 0; j < posiciones.Count; j++)
-                {
-                    if(posiciones[j]>i)
-                    {
-                        posiciones[j] -= 1;
-                    }
-                }
-            }
-        }
-
-
-        G.positions = posiciones;
 
 
         for (int i = 0; i < 4; i++)
@@ -181,6 +131,10 @@ public class GameManagerBaseball : MonoBehaviour
             if (i >= G.activePlayers)
             {
                 G.positions[i] = 4;
+            }
+            else
+            {
+                G.positions[i] = playerPosition[i];
             }
         }
 

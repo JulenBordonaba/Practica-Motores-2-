@@ -26,7 +26,6 @@ public class Marcador : MonoBehaviour
         {
             puntos += 1;
             print("marca" + puntos);
-            other.gameObject.tag = "Untagged";
         }
     }
 }

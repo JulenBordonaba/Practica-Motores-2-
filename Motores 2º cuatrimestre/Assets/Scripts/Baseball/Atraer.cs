@@ -5,7 +5,6 @@ using UnityEngine;
 public class Atraer : MonoBehaviour
 {
     public float attractionForce = 1;
-    public Iman iman;
 
 
     private Rigidbody rb;
@@ -14,7 +13,6 @@ public class Atraer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        iman = GetComponent<Iman>();
     }
 
     // Update is called once per frame
@@ -26,11 +24,10 @@ public class Atraer : MonoBehaviour
 
     public void Attract(Rigidbody objectToAttract)
     {
-        if (Input.GetButton("Button2" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode)) return;
         Vector3 direction = rb.position - objectToAttract.position;
         float distance = direction.magnitude;
 
-        float forceMagnitude = attractionForce * (rb.mass * objectToAttract.mass)/Mathf.Clamp(distance/3,0.1f,10f);
+        float forceMagnitude = attractionForce * (rb.mass * objectToAttract.mass)/(distance/3);
 
         Vector3 force = direction.normalized * forceMagnitude;
 
@@ -39,7 +36,8 @@ public class Atraer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+        if (Input.GetButton("Button2" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode))
+        {
             if (other.gameObject.tag == "Atraible")
             {
                 if (other.gameObject.GetComponent<Rigidbody>())
@@ -47,24 +45,16 @@ public class Atraer : MonoBehaviour
                     Attract(other.gameObject.GetComponent<Rigidbody>());
                 }
             }
+        }
+            
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.gameObject.tag == "Atraible")
-        //{
-        //    if(iman!=null)
-        //    {
-        //        collision.gameObject.GetComponent<Atraer>().enabled = true;
-        //        collision.gameObject.GetComponent<Atraer>().iman = this.iman;
-        //        collision.gameObject.GetComponent<Atraer>().iman.bolas.Add(collision.gameObject);
-        //        collision.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-        //        //collision.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        //        collision.gameObject.transform.parent = iman.gameObject.transform;
-                
-        //    }
-
-        //}
+        if (collision.gameObject.tag == "Atraible")
+        {
+            collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
     }
 
 }
