@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManagerBaseball : MonoBehaviour
@@ -15,7 +16,7 @@ public class GameManagerBaseball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        G.activePlayers = 1;
+        G.activePlayers = 3;
         for (int i = 0; i < 4; i++)
         {
             marcadoresText[i].gameObject.SetActive(i < G.activePlayers);
@@ -28,19 +29,22 @@ public class GameManagerBaseball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time -= Time.deltaTime;
+        if (time > 0)
+        {
+            time -= Time.deltaTime;
+        }
         timeText.text = Mathf.FloorToInt(time).ToString();
 
-        foreach(Marcador m in marcadores)
+        foreach (Marcador m in marcadores)
         {
-            if(m.gameObject.activeInHierarchy)
+            if (m.gameObject.activeInHierarchy)
             {
                 marcadoresText[m.jugador].text = m.puntos.ToString();
             }
-            
+
         }
 
-        if(time<=0)
+        if (time <= 0)
         {
             EndGame();
         }
@@ -48,36 +52,98 @@ public class GameManagerBaseball : MonoBehaviour
 
     public void EndGame()
     {
-        int[] posiciones = new int[G.activePlayers];
-        for(int i=0;i<posiciones.Length;i++)
+        //int[] posiciones = new int[G.activePlayers];
+        //for(int i=0;i<posiciones.Length;i++)
+        //{
+        //    posiciones[i] = i;
+        //}
+        //for (int j = 0; j < posiciones.Length; j++)
+        //{
+        //    for (int i = 0; i < posiciones.Length; i++)
+        //    {
+        //        if (marcadores[i].puntos > marcadores[i + 1].puntos)
+        //        {
+        //            int aux = marcadores[i].jugador;
+        //            marcadores[i].jugador = marcadores[i + 1].jugador;
+        //            marcadores[i + 1].jugador = aux;
+        //        }
+        //    }
+        //}
+
+        int[] playerPosition = new int[G.activePlayers]; //la posición dentro del array representa el numJugador y el valor la posición en la que ha quedado
+
+        for (int i = 0 ; i < playerPosition.Length; i++)
         {
-            posiciones[i] = i;
-        }
-        for (int j = 0; j < posiciones.Length; j++)
-        {
-            for (int i = 0; i < posiciones.Length - 1; i++)
-            {
-                if (marcadores[i].puntos < marcadores[i + 1].puntos)
-                {
-                    int aux = marcadores[i].jugador;
-                    marcadores[i].jugador = marcadores[i + 1].jugador;
-                    marcadores[i + 1].jugador = aux;
-                }
-            }
+            playerPosition[i] = i+1;
         }
 
-        for(int i=0;i<4;i++)
+        for (int i = 0; i < playerPosition.Length-1; i++)
         {
-            if(i<G.activePlayers)
+            for (int j = 0; j < playerPosition.Length; j++)
             {
-                G.positions[posiciones[i]] = i;
+                if(i!=j)
+                {
+                    if (marcadores[i].puntos > marcadores[j].puntos)
+                    {
+                        if (playerPosition[i] > playerPosition[j])
+                        {
+
+                            playerPosition[i] = playerPosition[j];
+                            for (int k = 0; k < playerPosition.Length;k++)
+                            {
+                                if (playerPosition[k]<=playerPosition[j] && k!=i)
+                                {
+                                    playerPosition[k] += 1;
+                                }
+                            }
+                            
+                        }
+                        else if(playerPosition[i] == playerPosition[j])
+                        {
+                            for (int k = 0; k < playerPosition.Length; k++)
+                            {
+                                if (playerPosition[k] >= playerPosition[j] && k != i)
+                                {
+                                    playerPosition[k] += 1;
+                                }
+                            }
+                        }
+                    }
+                    else if (marcadores[i].puntos == marcadores[j].puntos)
+                    {
+                        playerPosition[i] = playerPosition[j];
+                        for (int k = 0; k < playerPosition.Length; k++)
+                        {
+                            if (playerPosition[k] >= playerPosition[j] && k != i && k != j)
+                            {
+                                playerPosition[k] -= 1;
+                            }
+                        }
+                    }
+                }
             }
-            else
+
+        }
+
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i >= G.activePlayers)
             {
                 G.positions[i] = 4;
             }
+            else
+            {
+                G.positions[i] = playerPosition[i];
+            }
         }
-        
+
+
+
+
+
+        SceneManager.LoadScene("Podium2");
+
     }
 
 }
