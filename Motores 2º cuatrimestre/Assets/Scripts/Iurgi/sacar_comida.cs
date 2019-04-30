@@ -46,7 +46,7 @@ public class sacar_comida : MonoBehaviour
         //GameObject go = gameObject;
         if (platoVacio == true)
         {
-
+            siguienteSpawn = 3f;
             PonerComida();
             //spawnComida = Random.Range(1, 5);
             //switch (spawnComida)

@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 7479113966594576919}
   m_Layer: 0
   m_Name: Setas
-  m_TagString: Untagged
+  m_TagString: comida5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
