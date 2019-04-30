@@ -27,7 +27,7 @@ public class Atraer : MonoBehaviour
         Vector3 direction = rb.position - objectToAttract.position;
         float distance = direction.magnitude;
 
-        float forceMagnitude = attractionForce * (rb.mass * objectToAttract.mass)/* / Mathf.Pow(distance, 2)*/;
+        float forceMagnitude = attractionForce * (rb.mass * objectToAttract.mass)/(distance/3);
 
         Vector3 force = direction.normalized * forceMagnitude;
 
@@ -36,16 +36,12 @@ public class Atraer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        print("z");
         if (Input.GetButton("Button2" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode))
         {
-            print("a");
             if (other.gameObject.tag == "Atraible")
             {
-                print("b");
                 if (other.gameObject.GetComponent<Rigidbody>())
                 {
-                    print("c");
                     Attract(other.gameObject.GetComponent<Rigidbody>());
                 }
             }
