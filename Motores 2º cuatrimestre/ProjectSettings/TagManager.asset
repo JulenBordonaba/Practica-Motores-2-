@@ -14,6 +14,7 @@ TagManager:
   - Breakable
   - Gem
   - Atraible
+  - Caja
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Pared
   - Shot
   - Player(notCollide)
-  - 
+  - Tope
   - 
   - 
   - 
