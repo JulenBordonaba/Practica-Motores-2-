@@ -10,7 +10,7 @@ public class MiniGameScores : MonoBehaviour
     [Tooltip("Posición que tiene el jugador en el minijuego")]
     public int position;
     [Tooltip("Tiempo total que ha permanecido el jugador en el juego. Dependiendo del minijuego será usado como una cuenta atrás")]
-    public int time;
+    public float time;
     [Tooltip("Vuelta de la carrera en la que se encuentra el jugador")]
     public int Lap;
     [Tooltip("Booleana, vedadero si ha llegado a la meta")]
