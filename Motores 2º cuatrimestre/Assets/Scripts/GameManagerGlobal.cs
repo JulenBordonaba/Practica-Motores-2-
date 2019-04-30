@@ -8,6 +8,7 @@ public class GameManagerGlobal : MonoBehaviour
     [Tooltip("Arrastra los gameObject de los jugadores")]
     public List<GameObject> jugadores = new List<GameObject>();
     public static GameManagerGlobal i;
+    public int elegirRazasJugadorActual;
 
 
     // Start is called before the first frame update
