@@ -28,9 +28,13 @@ public class TimeCount : MonoBehaviour
         timeNoFloat = (int)time;//guardo el valor sin decimales
         minutes = timeNoFloat / 60;//guardo solo los minutos
         seconds = timeNoFloat - (minutes * 60);//guardo solo los segundos
-        if(seconds<10)//si hay menos de 10 segundos añade un 0. Para que el tiempo se vea en este formato 0:00
-            timeText.text = minutes.ToString() + ":0" + seconds.ToString();//mostrar el tiempo con formato digital en la caja de texto
-        else
-            timeText.text = minutes.ToString() + ":" + seconds.ToString();//mostrar el tiempo con formato digital en la caja de texto
+        if (seconds>=0)//no muestra el tiempo en negativo. Para al llegar a 0
+        {
+            if(seconds<10)//si hay menos de 10 segundos añade un 0. Para que el tiempo se vea en este formato 0:00
+                timeText.text = minutes.ToString() + ":0" + seconds.ToString();//mostrar el tiempo con formato digital en la caja de texto
+            else
+                timeText.text = minutes.ToString() + ":" + seconds.ToString();//mostrar el tiempo con formato digital en la caja de texto
+        }
+
     }
 }
