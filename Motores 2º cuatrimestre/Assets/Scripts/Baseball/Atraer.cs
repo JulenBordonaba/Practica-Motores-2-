@@ -24,10 +24,11 @@ public class Atraer : MonoBehaviour
 
     public void Attract(Rigidbody objectToAttract)
     {
-        Vector3 direction = rb.position - objectToAttract.position;
+        if (Input.GetButton("Button2" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode)) return;
+            Vector3 direction = rb.position - objectToAttract.position;
         float distance = direction.magnitude;
 
-        float forceMagnitude = attractionForce * (rb.mass * objectToAttract.mass)/(distance/3);
+        float forceMagnitude = attractionForce * (rb.mass * objectToAttract.mass)/Mathf.Clamp(distance/3,0.1f,float.MaxValue);
 
         Vector3 force = direction.normalized * forceMagnitude;
 
@@ -36,8 +37,8 @@ public class Atraer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetButton("Button2" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode))
-        {
+        
+        
             if (other.gameObject.tag == "Atraible")
             {
                 if (other.gameObject.GetComponent<Rigidbody>())
@@ -45,7 +46,7 @@ public class Atraer : MonoBehaviour
                     Attract(other.gameObject.GetComponent<Rigidbody>());
                 }
             }
-        }
+        
             
     }
 

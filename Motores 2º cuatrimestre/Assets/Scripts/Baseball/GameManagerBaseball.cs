@@ -10,13 +10,14 @@ public class GameManagerBaseball : MonoBehaviour
     public Text[] marcadoresText = new Text[4];
     public Marcador[] marcadores = new Marcador[4];
     public GameObject[] players = new GameObject[4];
+    public int activePlayers = 4;
 
     public float time;
 
     // Start is called before the first frame update
     void Start()
     {
-        G.activePlayers = 3;
+        G.activePlayers = activePlayers;
         for (int i = 0; i < 4; i++)
         {
             marcadoresText[i].gameObject.SetActive(i < G.activePlayers);
@@ -111,18 +112,51 @@ public class GameManagerBaseball : MonoBehaviour
                     }
                     else if (marcadores[i].puntos == marcadores[j].puntos)
                     {
-                        playerPosition[i] = playerPosition[j];
-                        for (int k = 0; k < playerPosition.Length; k++)
+                        if(playerPosition[i]>playerPosition[j])
                         {
-                            if (playerPosition[k] >= playerPosition[j] && k != i && k != j)
-                            {
-                                playerPosition[k] -= 1;
-                            }
+
+                            playerPosition[i] = playerPosition[j];
                         }
+                        else if(playerPosition[i] < playerPosition[j])
+                        {
+
+                            playerPosition[j] = playerPosition[i];
+                        }
+                        //for (int k = 0; k < playerPosition.Length; k++)
+                        //{
+                        //    if (playerPosition[k] >= playerPosition[j] && k != i && k != j)
+                        //    {
+                        //        playerPosition[k] -= 1;
+                        //    }
+                        //}
                     }
                 }
             }
 
+        }
+
+        for(int i=0;i<4;i++)
+        {
+            bool hayPosicion = false;
+            
+            for(int j=0;j<playerPosition.Length;j++)
+            {
+                if(playerPosition[j]==i+1)
+                {
+                    hayPosicion = true;
+                }
+            }
+
+            if(!hayPosicion)
+            {
+                for (int j = 0; j < playerPosition.Length; j++)
+                {
+                    if (playerPosition[j] > i + 1)
+                    {
+                        playerPosition[j] -= 1;
+                    }
+                }
+            }
         }
 
 
