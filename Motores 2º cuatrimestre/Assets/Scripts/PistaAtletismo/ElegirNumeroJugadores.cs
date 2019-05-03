@@ -12,26 +12,8 @@ public class ElegirNumeroJugadores : MonoBehaviour
     public void elegirJugadores(Text txtNumero)
     {
         int aux = 0;
-        switch (int.Parse(txtNumero.text))
-        {
-            case 2:
-                GameManagerGlobal.i.numeroJugadores = 2;
-                aux = 2;
-                break;
-
-            case 3:
-                GameManagerGlobal.i.numeroJugadores = 3;
-                aux = 3;
-                break;
-
-            case 4:
-                GameManagerGlobal.i.numeroJugadores = 4;
-                aux = 4;
-                break;
-
-            default:
-                break;
-        }
+        GameManagerGlobal.i.numeroJugadores = int.Parse(txtNumero.text);
+        aux = int.Parse(txtNumero.text);
 
         for (int i = 0; i < 4; i++)
         {
@@ -51,5 +33,24 @@ public class ElegirNumeroJugadores : MonoBehaviour
     {
         yield return new WaitForSeconds(1.583f);//esperar segundos antes de la siguiente activación
         GameManagerGlobal.i.elegirRazasJugadorActual = 1;
+    }
+
+    public void VolverElegirNumeroJugadores()
+    {
+        GameManagerGlobal.i.numeroJugadores = 0;
+        GameManagerGlobal.i.elegirRazasJugadorActual = 0;
+        GameManagerGlobal.i.jugadores[0].GetComponent<Player>().racePlayer = 0;
+        canvasNumeroJugadores.GetComponent<Animator>().Play("desplazarNumerosElegirJugadoresInvertido");//reproducir el clip por defecto
+        StartCoroutine(VolverActivarElegirJugadores());
+    }
+
+    IEnumerator VolverActivarElegirJugadores()
+    {
+        yield return new WaitForSeconds(1.583f);//esperar segundos antes de la siguiente activación
+        numeros[0].SetActive(false);
+        numeros[1].SetActive(true);
+        numeros[2].SetActive(true);
+        numeros[3].SetActive(true);
+        numeros[1].GetComponent<Button>().Select();
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerRugby : MonoBehaviour
 {
 
-    [Tooltip("La lista se generará a partir de una variable global para todo el juego que tiene la cantidad de jugadores que estan jugando")]
+    [Tooltip("Arrastra los gameObject de los jugadores")]
     public List<GameObject> players = new List<GameObject>();//
     List<GameObject> ganadores = new List<GameObject>();//lista a la que se añadirán todos los ganadores
     List<GameObject> segundos = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion

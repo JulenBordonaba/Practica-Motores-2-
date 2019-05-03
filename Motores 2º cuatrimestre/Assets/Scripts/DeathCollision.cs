@@ -29,7 +29,8 @@ public class DeathCollision : MonoBehaviour {
             //se "elimina"
             gameObject.GetComponent<Player>().eliminated = true;
             //se guarda el tiempo si corresponde
-            gameObject.GetComponent<MiniGameScores>().time = TimeCount.i.time;
+            if(TimeCount.i)
+                gameObject.GetComponent<MiniGameScores>().time = TimeCount.i.time;
             //y se le quitan todos los puntos
             gameObject.GetComponent<MiniGameScores>().points = -1000;
             //Destroy(gameObject);

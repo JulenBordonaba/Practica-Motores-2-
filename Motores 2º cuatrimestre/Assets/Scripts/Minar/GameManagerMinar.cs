@@ -98,38 +98,38 @@ public class GameManagerMinar : MonoBehaviour
         {   //primera posicion
             if (player.GetComponent<MiniGameScores>().points == auxGanador)
             {
-                player.GetComponent<MiniGameScores>().position = 1;
-                ganadores.Add(player);
+                player.GetComponent<MiniGameScores>().position = 1;//se añade a la primera posicion
+                ganadores.Add(player);//se añade a la lista de segundos
             }//segunda posicion
             else if (player.GetComponent<MiniGameScores>().points == auxSegundo)
             {
-                player.GetComponent<MiniGameScores>().position = 2;
-                segundos.Add(player);
+                player.GetComponent<MiniGameScores>().position = 2;//se añade a la segunda posicion
+                segundos.Add(player);//se añade a la lista de segundos
             }//tercera posicion
             else if (player.GetComponent<MiniGameScores>().points == auxTercero)
             {
-                player.GetComponent<MiniGameScores>().position = 3;
-                terceros.Add(player);
+                player.GetComponent<MiniGameScores>().position = 3;//se añade a la tercera posicion
+                terceros.Add(player);//se añade a la lista de terceros
             }
             //ultima posicion
             if (player.GetComponent<Player>().eliminated == true)
             { //La liultima posición dependerá de una variable global para todo el juego que tiene la cantidad de jugadores que estan jugando
 
-                //switch (numeroTotalJugadores)//es nombre de esta variable es provisional, cuando se descomente el switch hay que poner la correspondiente
+                //switch (GameManagerGlobal.i.numeroJugadores)//es nombre de esta variable es provisional, cuando se descomente el switch hay que poner la correspondiente
                 //{
                 //    case 2://hay 2 jugadores
-                //        player.GetComponent<MiniGameScores>().position = 2;
-                //        segundos.Add(player);
+                //        player.GetComponent<MiniGameScores>().position = 2;//se añade a la segunda posicion
+                //        segundos.Add(player);//se añade a la lista de segundos
                 //        break;
 
                 //    case 3://hay 3 jugadores
-                //        player.GetComponent<MiniGameScores>().position = 3;
-                //        terceros.Add(player);
+                //        player.GetComponent<MiniGameScores>().position = 3;//se añade a la tercera posicion
+                //        terceros.Add(player);//se añade a la lista de terceros
                 //        break;
 
                 //    case 4://hay 4 jugadores
-                //        player.GetComponent<MiniGameScores>().position = 4;
-                //        cuartos.Add(player);
+                //        player.GetComponent<MiniGameScores>().position = 4;//se añade a la cuarta posicion
+                //        cuartos.Add(player);//se añade a la lista de cuartos
                 //        break;
 
                 //    default://por si las moscas
