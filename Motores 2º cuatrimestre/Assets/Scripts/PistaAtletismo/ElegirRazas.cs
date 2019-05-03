@@ -15,20 +15,19 @@ public class ElegirRazas : MonoBehaviour
     public List<GameObject> razas4 = new List<GameObject>();
     public GameObject elegirRazas;//arrastra el objeto con las animaciones de las razas
 
-    private bool auxActivo;
+    private bool onFocus;
+
+    private void Start()
+    {
+        onFocus = true;
+        OcultarRazas();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (!auxActivo)
+        if (onFocus)
         {
-            for (int i = 0; i < 6; i++)
-            {
-                razas1[i].SetActive(false);
-                razas2[i].SetActive(false);
-                razas3[i].SetActive(false);
-                razas4[i].SetActive(false);
-            }
-
 
             switch (GameManagerGlobal.i.elegirRazasJugadorActual)
             {
@@ -37,7 +36,8 @@ public class ElegirRazas : MonoBehaviour
                     {
                         razas1[i].SetActive(true);
                     }
-                    auxActivo = true;
+                    razas1[0].GetComponent<Button>().Select();
+                    onFocus = false;
                     break;
 
                 case 2:
@@ -45,7 +45,8 @@ public class ElegirRazas : MonoBehaviour
                     {
                         razas2[i].SetActive(true);
                     }
-                    auxActivo = true;
+                    razas2[0].GetComponent<Button>().Select();
+                    onFocus = false;
                     break;
 
                 case 3:
@@ -53,7 +54,8 @@ public class ElegirRazas : MonoBehaviour
                     {
                         razas3[i].SetActive(true);
                     }
-                    auxActivo = true;
+                    razas3[0].GetComponent<Button>().Select();
+                    onFocus = false;
                     break;
 
                 case 4:
@@ -61,11 +63,12 @@ public class ElegirRazas : MonoBehaviour
                     {
                         razas4[i].SetActive(true);
                     }
-                    auxActivo = true;
+                    razas4[0].GetComponent<Button>().Select();
+                    onFocus = false;
                     break;
 
                 default:
-                    auxActivo = false;
+                    //onFocus = false;
                     break;
             }
         }
@@ -115,5 +118,21 @@ public class ElegirRazas : MonoBehaviour
         //    razas[i].SetActive(true);
         //    //elegirRazas.GetComponent<Animator>().Play("desplazarNumerosElegirJugadores");//reproducir el clip por defecto
         //}
+    }
+
+    public void OnFocusTrue()
+    {
+        onFocus = true;
+    }
+
+    public void OcultarRazas()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            razas1[i].SetActive(false);
+            razas2[i].SetActive(false);
+            razas3[i].SetActive(false);
+            razas4[i].SetActive(false);
+        }
     }
 }
