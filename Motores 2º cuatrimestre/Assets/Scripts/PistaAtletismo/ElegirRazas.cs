@@ -17,6 +17,10 @@ public class ElegirRazas : MonoBehaviour
     public GameObject elegirRazas;
     [Tooltip("Arrastra el boton de play, el que inicia la selección de minijuego")]
     public GameObject btPlayElegirMinijuego;
+    [Tooltip("Arrastra la cámara situada en el inicio del juego")]
+    public GameObject camaraInicio;
+    [Tooltip("Arrastra la cámara situada en la pantalla gigante")]
+    public GameObject camaraPantalla;
 
     private bool onFocus;
     private bool minijuego;
@@ -75,12 +79,17 @@ public class ElegirRazas : MonoBehaviour
             }
         }
 
-        if (GameManagerGlobal.i.elegirRazasJugadorActual == 5 && minijuego)
-        {
-            minijuego = false;
-            OcultarRazas();
-            StartCoroutine(ActivarElegirMinijuego());
-        }
+        //if (GameManagerGlobal.i.elegirRazasJugadorActual == 5 && minijuego)
+        //{
+        //    ActivarMiniJuego();
+        //}
+    }
+
+    public void ActivarMiniJuego()
+    {
+        minijuego = false;
+        OcultarRazas();
+        StartCoroutine(ActivarElegirMinijuego());
     }
 
     public void ElegirRazaJugador (Text txtValue)
@@ -145,6 +154,8 @@ public class ElegirRazas : MonoBehaviour
     IEnumerator ActivarElegirMinijuego()
     {
         yield return new WaitForSeconds(1.583f);//esperar segundos antes de la siguiente activación
+        camaraInicio.SetActive(false);
+        camaraPantalla.SetActive(true);
         //for (int i = 0; i < GameManagerGlobal.i.numeroJugadores; i++)
         //{
         //    GameManagerGlobal.i.jugadores[i].SetActive(true);
