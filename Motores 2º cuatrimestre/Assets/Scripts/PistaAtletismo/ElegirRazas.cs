@@ -5,18 +5,25 @@ using UnityEngine.UI;
 
 public class ElegirRazas : MonoBehaviour
 {
+    [Header("Jugador1")]
     [Tooltip("Arrastra los botones con todas las razas del jugador 1")]
     public List<GameObject> razas1 = new List<GameObject>();
+    [Header("Jugador2")]
     [Tooltip("Arrastra los botones con todas las razas del jugador 2")]
     public List<GameObject> razas2 = new List<GameObject>();
+    [Header("Jugador3")]
     [Tooltip("Arrastra los botones con todas las razas del jugador 3")]
     public List<GameObject> razas3 = new List<GameObject>();
+    [Header("Jugador4")]
     [Tooltip("Arrastra los botones con todas las razas del jugador 4")]
     public List<GameObject> razas4 = new List<GameObject>();
+    [Header("Animaciones")]
     [Tooltip("Arrastra el objeto con las animaciones de las razas")]
     public GameObject elegirRazas;
+    [Header("boton Play")]
     [Tooltip("Arrastra el boton de play, el que inicia la selección de minijuego")]
     public GameObject btPlayElegirMinijuego;
+    [Header("Cámaras")]
     [Tooltip("Arrastra la cámara situada en el inicio del juego")]
     public GameObject camaraInicio;
     [Tooltip("Arrastra la cámara situada en la pantalla gigante")]

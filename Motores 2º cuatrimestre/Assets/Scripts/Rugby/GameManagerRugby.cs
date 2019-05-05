@@ -28,11 +28,12 @@ public class GameManagerRugby : MonoBehaviour
         }
 
         //si el contador es igual al numero de jugadores
-        if (contadorJugadoresAcabados == players.Capacity || TimeCount.i.time<=0)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
+        if (contadorJugadoresAcabados == (players.Capacity-1) || TimeCount.i.time<=0)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
         {
             //si no se habia acabado el juego todavía
             if (!finJuego)
             {
+                //animación de fin de juego
                 //llamar a la función que controla el fin de juego. Ganador, posiciones, llamar al podio...
                 finDeJuego();
             }

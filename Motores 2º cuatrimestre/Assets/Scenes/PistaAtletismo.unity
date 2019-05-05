@@ -1948,7 +1948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &78644835
 Transform:
   m_ObjectHideFlags: 0
@@ -7352,6 +7352,11 @@ MonoBehaviour:
   - {fileID: 1930954875}
   - {fileID: 616179386}
   elegirRazasJugadorActual: 0
+  minijuegos:
+  - Minar
+  - Rugby
+  - Baseball
+  siguienteMinijuego: 0
   inputMando: {fileID: 984841587}
   inputTeclado: {fileID: 386592859}
 --- !u!4 &369686124
@@ -10038,12 +10043,12 @@ RectTransform:
   m_Children:
   - {fileID: 591346340}
   m_Father: {fileID: 1628883388}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.06, y: -9.057}
-  m_SizeDelta: {x: 13.47, y: 5.925}
+  m_AnchoredPosition: {x: 21.113981, y: -9.017}
+  m_SizeDelta: {x: 13.362, y: 6.006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475882206
 MonoBehaviour:
@@ -10084,7 +10089,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 475882207}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787079865}
+        m_MethodName: StopImagenRandom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 475882204}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &475882207
@@ -12532,7 +12559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &558342236
 Transform:
   m_ObjectHideFlags: 0
@@ -13704,12 +13731,12 @@ RectTransform:
   m_Children:
   - {fileID: 395002586}
   m_Father: {fileID: 1628883388}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.06, y: -9.057}
-  m_SizeDelta: {x: 13.47, y: 5.925}
+  m_AnchoredPosition: {x: 21.113981, y: -9.017}
+  m_SizeDelta: {x: 13.362, y: 6.006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613509195
 MonoBehaviour:
@@ -13750,7 +13777,40 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 613509196}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787079865}
+        m_MethodName: ElegirMinijuego
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 475882204}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 613509193}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &613509196
@@ -38172,9 +38232,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 29.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1787079862}
   - {fileID: 475882205}
   - {fileID: 613509194}
-  - {fileID: 1787079862}
   m_Father: {fileID: 2048999674}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38241,7 +38301,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1001 &1634996175
 PrefabInstance:
@@ -41228,7 +41288,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1628883388}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -41285,11 +41345,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imagenes:
-  - {fileID: 21300000, guid: 7b5d304ed2a18e9418ca6b343e53fa1f, type: 3}
-  - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 21300000, guid: 139ffec1ae8f5e84fafbe1d2105cb631, type: 3}
+  - {fileID: 21300000, guid: f39df7baf4774a7478d8ecdeddcaed90, type: 3}
+  - {fileID: 21300000, guid: fe6658e4fee478849b3b4e40b13d2509, type: 3}
   segundos: 0.1
+  btPlay: {fileID: 613509195}
 --- !u!1001 &1789344123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48527,6 +48587,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: btPlayRaza
       objectReference: {fileID: 0}
+    - target: {fileID: 4258728174877480754, guid: 654915306bbfcc84a8adebe49cbc2c29,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4258728174877480755, guid: 654915306bbfcc84a8adebe49cbc2c29,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -48585,7 +48650,7 @@ PrefabInstance:
     - target: {fileID: 4258728174877480755, guid: 654915306bbfcc84a8adebe49cbc2c29,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 15.125
+      value: 15.105
       objectReference: {fileID: 0}
     - target: {fileID: 4258728174877480755, guid: 654915306bbfcc84a8adebe49cbc2c29,
         type: 3}
@@ -48635,7 +48700,7 @@ PrefabInstance:
     - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
         type: 3}
@@ -48710,6 +48775,31 @@ PrefabInstance:
     - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 475882206}
+    - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Select
+      objectReference: {fileID: 0}
+    - target: {fileID: 4258728174877480764, guid: 654915306bbfcc84a8adebe49cbc2c29,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
