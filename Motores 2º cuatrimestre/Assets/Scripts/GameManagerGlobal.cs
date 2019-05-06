@@ -75,6 +75,12 @@ public class GameManagerGlobal : MonoBehaviour
             Destroy(inputManager);
             Destroy(camaras);
         }
+
+        BarajarMinijuegos();
+        foreach  (string s in minijuegos)
+        {
+            Debug.Log(s);
+        }
     }
 
     private void BarajarMinijuegos()//baraja los minijuegos al azar para que no toque dos veces el mismo
