@@ -84,4 +84,10 @@ public class CambiarImagenRandom : MonoBehaviour
         Debug.Log("siguiente minijuego: " + GameManagerGlobal.i.minijuegos[GameManagerGlobal.i.siguienteMinijuego]);
         SceneManager.LoadScene(GameManagerGlobal.i.minijuegos[GameManagerGlobal.i.siguienteMinijuego]);
     }
+
+    public void ResetearVariables()
+    {
+        stop = false;
+        imagenEnPantalla = false;
+    }
 }

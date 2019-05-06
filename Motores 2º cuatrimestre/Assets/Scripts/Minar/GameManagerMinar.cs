@@ -27,19 +27,19 @@ public class GameManagerMinar : MonoBehaviour
             }
         }
         //si el contador es igual al numero de jugadores
-        if (contadorJugadoresAcabados == players.Capacity)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
+        if (contadorJugadoresAcabados == GameManagerGlobal.i.numeroJugadores)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
         {
             //si no se habia acabado el juego todavía
             if (!finJuego)
             {
                 //llamar a la función que controla el fin de juego. Ganador, posiciones, llamar al podio...
-                finDeJuego();
+                FinDeJuego();
             }
                 
         }
     }
 
-    private void finDeJuego()//esta función controla el ganador y las posiciones de los demás, llama a las animaciones de fin de juego y luego pasa a la escena del podio
+    private void FinDeJuego()//esta función controla el ganador y las posiciones de los demás, llama a las animaciones de fin de juego y luego pasa a la escena del podio
     {
         GameObject temporal;//varaible temporal para ordenar los jugadores
         int auxGanador=-10000;//variable auxiliar con la mayor puntiacion
@@ -64,8 +64,6 @@ public class GameManagerMinar : MonoBehaviour
         //guardar los puntos de la primera posición
         if(players[0].GetComponent<MiniGameScores>().onGoal == true)
             auxGanador = players[0].GetComponent<MiniGameScores>().points;
-        //mensajes en consola para comprobar que funciona, una vez se pueda llamar a la escena podio se pueden eliminar
-        Debug.Log(auxGanador + "auxGanador");
 
         //guardar los puntos de la segunda y tercera posición
         foreach (GameObject player in players)
@@ -84,13 +82,6 @@ public class GameManagerMinar : MonoBehaviour
                     auxTercero = player.GetComponent<MiniGameScores>().points;
                 }
             }
-        }
-        //mensajes en consola para comprobar que funciona, una vez se pueda llamar a la escena podio se pueden eliminar
-        Debug.Log(auxSegundo + "auxSegundo");
-        Debug.Log(auxTercero + "auxTercero");
-        foreach (GameObject player in players)
-        {//mensajes en consola para comprobar que funciona, una vez se pueda llamar a la escena podio se pueden eliminar
-            Debug.Log(player.GetComponent<MiniGameScores>().points + "puntos jugador " + player.GetComponent<Player>().numPlayer + " en meta " + player.GetComponent<MiniGameScores>().onGoal);
         }
 
         //añadir jugadores a las listas de posicion
@@ -113,52 +104,28 @@ public class GameManagerMinar : MonoBehaviour
             }
             //ultima posicion
             if (player.GetComponent<Player>().eliminated == true)
-            { //La liultima posición dependerá de una variable global para todo el juego que tiene la cantidad de jugadores que estan jugando
+            {
+                switch (GameManagerGlobal.i.numeroJugadores)//es nombre de esta variable es provisional, cuando se descomente el switch hay que poner la correspondiente
+                {
+                    case 2://hay 2 jugadores
+                        player.GetComponent<MiniGameScores>().position = 2;//se añade a la segunda posicion
+                        segundos.Add(player);//se añade a la lista de segundos
+                        break;
 
-                //switch (GameManagerGlobal.i.numeroJugadores)//es nombre de esta variable es provisional, cuando se descomente el switch hay que poner la correspondiente
-                //{
-                //    case 2://hay 2 jugadores
-                //        player.GetComponent<MiniGameScores>().position = 2;//se añade a la segunda posicion
-                //        segundos.Add(player);//se añade a la lista de segundos
-                //        break;
+                    case 3://hay 3 jugadores
+                        player.GetComponent<MiniGameScores>().position = 3;//se añade a la tercera posicion
+                        terceros.Add(player);//se añade a la lista de terceros
+                        break;
 
-                //    case 3://hay 3 jugadores
-                //        player.GetComponent<MiniGameScores>().position = 3;//se añade a la tercera posicion
-                //        terceros.Add(player);//se añade a la lista de terceros
-                //        break;
+                    case 4://hay 4 jugadores
+                        player.GetComponent<MiniGameScores>().position = 4;//se añade a la cuarta posicion
+                        cuartos.Add(player);//se añade a la lista de cuartos
+                        break;
 
-                //    case 4://hay 4 jugadores
-                //        player.GetComponent<MiniGameScores>().position = 4;//se añade a la cuarta posicion
-                //        cuartos.Add(player);//se añade a la lista de cuartos
-                //        break;
-
-                //    default://por si las moscas
-                //        break;
-                //}
-
-                player.GetComponent<MiniGameScores>().position = 4;//cuando tengamos el game manager golbal con el numero de jugadores, hay que descomentar el switch y borrar esta linea
-                cuartos.Add(player);//cuando tengamos el game manager golbal con el numero de jugadores, hay que descomentar el switch y borrar esta linea
-
+                    default://por si las moscas
+                        break;
+                }
             }
-
-        }
-
-        //mensajes en consola para comprobar que funciona, una vez se pueda llamar a la escena podio se pueden eliminar
-        foreach (GameObject player in ganadores)
-        {
-            Debug.Log("Ganador: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
-        }
-        foreach (GameObject player in segundos)
-        {
-            Debug.Log("Segundo: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
-        }
-        foreach (GameObject player in terceros)
-        {
-            Debug.Log("Tercero: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
-        }
-        foreach (GameObject player in cuartos)
-        {
-            Debug.Log("Perdedor: Jugador " + player.GetComponent<Player>().numPlayer + ", puntos " + player.GetComponent<MiniGameScores>().points + ", posicion " + player.GetComponent<MiniGameScores>().position);
         }
 
         //añadir al podio los jugadores

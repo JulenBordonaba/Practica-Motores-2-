@@ -8,10 +8,6 @@ public class GameManagerRugby : MonoBehaviour
 
     [Tooltip("Arrastra los gameObject de los jugadores")]
     public List<GameObject> players = new List<GameObject>();//
-    List<GameObject> ganadores = new List<GameObject>();//lista a la que se añadirán todos los ganadores
-    List<GameObject> segundos = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion
-    List<GameObject> terceros = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion
-    List<GameObject> cuartos = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion
 
     private bool finJuego;//booleana auxiliar para controlar que el juego ya ha acabado y no llamar constantemente a la función finDeJuego
 
@@ -21,39 +17,42 @@ public class GameManagerRugby : MonoBehaviour
         foreach (GameObject player in players)//bucle para recorrer todos los jugadores
         {
             //si el jugador ha llegado a meta o está eliminado se suman al contador
-            if (player.GetComponent<MiniGameScores>().onGoal == true || player.GetComponent<Player>().eliminated == true)
+            if (player.GetComponent<Player>().eliminated == true)
             {
                 contadorJugadoresAcabados++;
             }
         }
 
         //si el contador es igual al numero de jugadores
-        if (contadorJugadoresAcabados == (players.Capacity-1) || TimeCount.i.time<=0)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
+        if (contadorJugadoresAcabados == (GameManagerGlobal.i.numeroJugadores-1) || TimeCount.i.time<=0)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
         {
             //si no se habia acabado el juego todavía
             if (!finJuego)
             {
                 //animación de fin de juego
                 //llamar a la función que controla el fin de juego. Ganador, posiciones, llamar al podio...
-                finDeJuego();
+                FinDeJuego();
             }
 
         }
     }
 
-    void finDeJuego()
+    void FinDeJuego()
     {
         GameObject temporal;//varaible temporal para ordenar los jugadores
-        float auxGanador = -10000;//variable auxiliar con la mayor puntiacion
-        float auxSegundo = -10000;//variable auxiliar con la segunda mayor puntiacion
-        float auxTercero = -10000;//variable auxiliar con la tercera mayor puntiacion
-
         finJuego = true;//se pone a true la variable auxiliar que controla que el juego ha acabado
 
-        //primero ordeno los jugadores que han llegado a la meta de mayor a menor puntuación ignorando aquellos que no han llegado a la meta
-        for (int i = 0; i < players.Capacity; i++)
+        //primero otorgamos puntuacioón a aquellos jugadores que no han sido eliminados. Para que no tengan 10000 y cuenten como no participando
+        foreach (GameObject jugaodr in players)
         {
-            for (int j = 0; j < players.Capacity - 1; j++)
+            if (!jugaodr.GetComponent<Player>().eliminated && jugaodr.activeSelf==true)//si el jugador esta jugando y no ha sido eliminado
+                jugaodr.GetComponent<MiniGameScores>().time = -1;//optiene el menor tiempo
+        }
+
+        //luego ordeno los jugadores que han llegado a la meta de mayor a menor tiempo ignorando aquellos que no han llegado a la meta
+        for (int i = 0; i < players.Count; i++)
+        {
+            for (int j = 0; j < players.Count - 1; j++)
             {
                 if ((players[j].GetComponent<MiniGameScores>().time > players[j + 1].GetComponent<MiniGameScores>().time))
                 { // Ordena el array de menor a mayor
@@ -64,98 +63,26 @@ public class GameManagerRugby : MonoBehaviour
             }
         }
 
-        ////guardar los puntos de la primera posición
-        //auxGanador = players[0].GetComponent<MiniGameScores>().time;
-        ////mensajes en consola para comprobar que funciona, una vez se pueda llamar a la escena podio se pueden eliminar
-        //Debug.Log(auxGanador + "auxGanador");
-
-        ////guardar los puntos de la segunda y tercera posición
-        //foreach (GameObject player in players)
-        //{
-        //    //segunda posicion
-        //    if (player.GetComponent<MiniGameScores>().time > auxGanador && player.GetComponent<MiniGameScores>().time != auxGanador)
-        //    {
-        //        auxSegundo = player.GetComponent<MiniGameScores>().time;
-        //    }
-
-        //    //tercera posicion
-        //    else if (player.GetComponent<MiniGameScores>().time > auxSegundo && player.GetComponent<MiniGameScores>().time != auxSegundo && player.GetComponent<MiniGameScores>().time != auxGanador)
-        //    {
-        //        auxTercero = player.GetComponent<MiniGameScores>().time;
-        //    }
-        //}
-
-        ////añadir jugadores a las listas de posicion
-        //foreach (GameObject player in players)
-        //{   //primera posicion
-        //    if (player.GetComponent<MiniGameScores>().time == auxGanador)
-        //    {
-        //        player.GetComponent<MiniGameScores>().position = 1;
-        //        ganadores.Add(player);
-        //    }//segunda posicion
-        //    else if (player.GetComponent<MiniGameScores>().time == auxSegundo)
-        //    {
-        //        player.GetComponent<MiniGameScores>().position = 2;
-        //        segundos.Add(player);
-        //    }//tercera posicion
-        //    else if (player.GetComponent<MiniGameScores>().time == auxTercero)
-        //    {
-        //        player.GetComponent<MiniGameScores>().position = 3;
-        //        terceros.Add(player);
-        //    }
-        //    else
-        //    {
-        //        player.GetComponent<MiniGameScores>().position = 4;
-        //        cuartos.Add(player);
-        //    }
-        //}
-
-        ////añadir al podio los jugadores
-        //foreach (GameObject player in ganadores)
-        //{
-        //    G.positions[player.GetComponent<Player>().numPlayer] = player.GetComponent<MiniGameScores>().position;
-        //}
-        //foreach (GameObject player in segundos)
-        //{
-        //    G.positions[player.GetComponent<Player>().numPlayer] = player.GetComponent<MiniGameScores>().position;
-        //}
-        //foreach (GameObject player in terceros)
-        //{
-        //    G.positions[player.GetComponent<Player>().numPlayer] = player.GetComponent<MiniGameScores>().position;
-        //}
-        //foreach (GameObject player in cuartos)
-        //{
-        //    G.positions[player.GetComponent<Player>().numPlayer] = player.GetComponent<MiniGameScores>().position;
-        //}
-
-        for (int i = 0; i < 4; i++)
+        //por ultimo se añaden a su posicion
+        int primeros = -1;//variable auxiliar para calcular la cantidad de primeros en el juego
+        for (int i = 0; i < players.Count; i++)//añadir a cada jugador a su posicion 
         {
-            players[i].GetComponent<MiniGameScores>().position = i+1;
-            G.positions[players[i].GetComponent<Player>().numPlayer] = players[i].GetComponent<MiniGameScores>().position;
-        }
+            if (players[i].GetComponent<MiniGameScores>().time != 10000)//si no han participado. 10000 es el valor por defecto del tiempo. Si no es menor, es que no está jugando
+            {
+                if (players[i].GetComponent<MiniGameScores>().time == -1)//si ha quedado primero
+                {
+                    players[i].GetComponent<MiniGameScores>().position = 1;//añadir posicion
+                    G.positions[players[i].GetComponent<Player>().numPlayer] = players[i].GetComponent<MiniGameScores>().position;//añadir posicion para el podio
+                    primeros++;
+                }
+                else
+                {
+                    players[i].GetComponent<MiniGameScores>().position = (i + 1) -(primeros);//añadir posicion
+                    G.positions[players[i].GetComponent<Player>().numPlayer] = players[i].GetComponent<MiniGameScores>().position;//añadir posicion para el podio
+                }
 
-        foreach (GameObject player in players)
-        {
-            Debug.Log("Ganador: Jugador " + player.GetComponent<Player>().numPlayer + ", tiempo " + player.GetComponent<MiniGameScores>().time + ", posicion " + player.GetComponent<MiniGameScores>().position);
-        }
+            }
 
-
-        //mensajes en consola para comprobar que funciona, una vez se pueda llamar a la escena podio se pueden eliminar
-        foreach (GameObject player in ganadores)
-        {
-            Debug.Log("Ganador: Jugador " + player.GetComponent<Player>().numPlayer + ", tiempo " + player.GetComponent<MiniGameScores>().time + ", posicion " + player.GetComponent<MiniGameScores>().position);
-        }
-        foreach (GameObject player in segundos)
-        {
-            Debug.Log("Segundo: Jugador " + player.GetComponent<Player>().numPlayer + ", tiempo " + player.GetComponent<MiniGameScores>().time + ", posicion " + player.GetComponent<MiniGameScores>().position);
-        }
-        foreach (GameObject player in terceros)
-        {
-            Debug.Log("Tercero: Jugador " + player.GetComponent<Player>().numPlayer + ", tiempo " + player.GetComponent<MiniGameScores>().time + ", posicion " + player.GetComponent<MiniGameScores>().position);
-        }
-        foreach (GameObject player in cuartos)
-        {
-            Debug.Log("Perdedor: Jugador " + player.GetComponent<Player>().numPlayer + ", tiempo " + player.GetComponent<MiniGameScores>().time + ", posicion " + player.GetComponent<MiniGameScores>().position);
         }
 
         //cargar siguiente escena

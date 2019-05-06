@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PistaAtletismo.unity
+    guid: 61452c715ed596840968f2d2490d1a9a
+  - enabled: 1
     path: Assets/Scenes/Rugby.unity
     guid: 7ad81f2d5c3fd0549a6ae19f67ff6ed1
   - enabled: 1
@@ -20,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Podium2.unity
     guid: 96678cbc417880245a45ed233878d4b8
+  - enabled: 1
+    path: Assets/Scenes/Baseball.unity
+    guid: d924c00733860af43b47ce599d563659
   m_configObjects: {}

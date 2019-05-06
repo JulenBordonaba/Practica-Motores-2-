@@ -18,27 +18,63 @@ public class GameManagerGlobal : MonoBehaviour
     public List<string> minijuegos = new List<string>();
     [Tooltip("Variable de control para saber el siguiente minijuego que se va a jugar. No hay que asignarle ningún valor. Mejor dejarla a 0")]
     public int siguienteMinijuego;
-    [Header("Inputs mando y teclado")]
-    [Tooltip("Arrastra el event system para el mando")]
-    public GameObject inputMando;
-    [Tooltip("Arrastra el event system para el teclado")]
-    public GameObject inputTeclado;
+    [Tooltip("Variable de control para saber que han vuelto de un minijuego. No hay que asignarle ningún valor. Mejor dejarla a false")]
+    public bool finPodio;
 
+    [Header("Objetos que no se destruyen")]
+    [Tooltip("Arrastra el GameObject del Game Manager PistaAtletismo para que no se destruya")]
+    public GameObject gameManagerAtletismo;
+    [Tooltip("Arrastra el GameObject del Canvas elegir Numero Jugadores para que no se destruya")]
+    public GameObject canvasNumeroJugadores;
+    [Tooltip("Arrastra el GameObject del Canvas elegir Raza para que no se destruya")]
+    public GameObject canvasRaza;
+    [Tooltip("Arrastra el GameObject del Canvas elegir Minijuego para que no se destruya")]
+    public GameObject canvasMinijuegos;
+    [Tooltip("Arrastra el GameObject del Event System Teclado para que no se destruya")]
+    public GameObject eventSystemTeclado;
+    [Tooltip("Arrastra el GameObject del Event System Mando para que no se destruya")]
+    public GameObject eventSystemMando;
+    [Tooltip("Arrastra el GameObject del InputManager para que no se destruya")]
+    public GameObject inputManager;
+    [Tooltip("Arrastra el GameObject de las camaras para que no se destruya")]
+    public GameObject camaras;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        i = this;
+        if (i == null)//crea una serie de objetos que no deben destruirse al cambiar de escena, así al volver a esta se mantienen los datos
+        {
+            i = this;
+            DontDestroyOnLoad(gameObject);
+            foreach (GameObject jugador in jugadores)
+            {
+                DontDestroyOnLoad(jugador);
+            }
+            DontDestroyOnLoad(gameManagerAtletismo);
+            DontDestroyOnLoad(canvasNumeroJugadores);
+            DontDestroyOnLoad(canvasRaza);
+            DontDestroyOnLoad(canvasMinijuegos);
+            DontDestroyOnLoad(eventSystemTeclado);
+            DontDestroyOnLoad(eventSystemMando);
+            DontDestroyOnLoad(inputManager);
+            DontDestroyOnLoad(camaras);
 
-        ComprobarMandoOTeclado();
-        BarajarMinijuegos();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
+        }
+        else//si por algun casual hay duplicados los elimina
+        {
+            Destroy(gameObject);
+            foreach (GameObject jugador in jugadores)
+            {
+                Destroy(jugador);
+            }
+            Destroy(gameManagerAtletismo);
+            Destroy(canvasNumeroJugadores);
+            Destroy(canvasRaza);
+            Destroy(canvasMinijuegos);
+            Destroy(eventSystemTeclado);
+            Destroy(eventSystemMando);
+            Destroy(inputManager);
+            Destroy(camaras);
+        }
     }
 
     private void BarajarMinijuegos()//baraja los minijuegos al azar para que no toque dos veces el mismo
@@ -47,30 +83,14 @@ public class GameManagerGlobal : MonoBehaviour
         
         for (int i = 0; i < last; i++)
         {
-            swap(i, i + Random.Range(0,last-1));
+            Swap(i, i + Random.Range(0,last-1));
         }
     }
 
-    private void swap(int a, int b)//intercambia posiciones
+    private void Swap(int a, int b)//intercambia posiciones
     {
         string temp = minijuegos[a];
         minijuegos[a] = minijuegos[b];
         minijuegos[b] = temp;
-    }
-
-
-    public void ComprobarMandoOTeclado()
-    {
-        if (InputManager.MandosConectados > 0)
-        {
-            inputTeclado.SetActive(false);
-            inputMando.SetActive(true);
-        }
-        else
-        {
-            inputTeclado.SetActive(true);
-            inputMando.SetActive(false);
-
-        }
     }
 }
