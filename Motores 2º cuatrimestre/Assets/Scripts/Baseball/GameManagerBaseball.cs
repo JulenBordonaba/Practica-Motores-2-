@@ -10,14 +10,12 @@ public class GameManagerBaseball : MonoBehaviour
     public Text[] marcadoresText = new Text[4];
     public Marcador[] marcadores = new Marcador[4];
     public GameObject[] players = new GameObject[4];
-    public int activePlayers = 4;
 
     public float time;
 
     // Start is called before the first frame update
     void Start()
     {
-        G.activePlayers = activePlayers;
         for (int i = 0; i < 4; i++)
         {
             marcadoresText[i].gameObject.SetActive(i < G.activePlayers);
