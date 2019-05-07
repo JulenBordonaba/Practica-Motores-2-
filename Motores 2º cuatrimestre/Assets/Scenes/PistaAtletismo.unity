@@ -6104,6 +6104,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 286405172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &287578946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 287578947}
+  - component: {fileID: 287578948}
+  m_Layer: 0
+  m_Name: endGameInvisible
+  m_TagString: GameEnd
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &287578947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287578946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1190975839}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &287578948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287578946}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 65.17504}
+  m_Center: {x: -3.1993857e-14, y: 0, z: 32.08748}
 --- !u!1001 &288480850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14312,11 +14356,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: numPlayer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Enabled
@@ -14346,6 +14385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -28336,9 +28380,11 @@ GameObject:
   - component: {fileID: 1190975839}
   - component: {fileID: 1190975841}
   - component: {fileID: 1190975840}
+  - component: {fileID: 1190975842}
+  - component: {fileID: 1190975843}
   m_Layer: 0
   m_Name: lineaCuadros
-  m_TagString: Untagged
+  m_TagString: GameEnd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28353,7 +28399,8 @@ Transform:
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 100.49, y: -0.43, z: -73}
   m_LocalScale: {x: 12.338343, y: 1, z: 9.223265}
-  m_Children: []
+  m_Children:
+  - {fileID: 287578947}
   m_Father: {fileID: 838601615}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -28402,6 +28449,31 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190975838}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1190975842
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190975838}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000004, y: 1, z: 1.0000002}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1190975843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190975838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38108c3fb3f609f45b93606e27c2a810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1192620887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33077,11 +33149,12 @@ MonoBehaviour:
   - {fileID: 616179386}
   camara: {fileID: 836031221}
   seconds: 1
-  velocidad: 10
+  velocidad: 60
   canvasNumeroJugadores: {fileID: 455750907}
   canvasRazas: {fileID: 920645911}
   canvasElegirMinijuego: {fileID: 2048999673}
   btNextMinigame: {fileID: 107654897}
+  finJuego: 0
 --- !u!114 &1424946429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37571,11 +37644,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: numPlayer
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Enabled
@@ -37605,6 +37673,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -44616,11 +44689,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: numPlayer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Enabled
@@ -44650,6 +44718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: numPlayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}

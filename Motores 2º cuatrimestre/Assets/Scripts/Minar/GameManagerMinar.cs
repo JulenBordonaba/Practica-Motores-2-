@@ -22,20 +22,14 @@ public class GameManagerMinar : MonoBehaviour
         {  
             //si el jugador ha llegado a meta o está eliminado se suman al contador
             if(player.GetComponent<MiniGameScores>().onGoal == true || player.GetComponent<Player>().eliminated == true)
-            {
                 contadorJugadoresAcabados++;
-            }
         }
         //si el contador es igual al numero de jugadores
         if (contadorJugadoresAcabados == GameManagerGlobal.i.numeroJugadores)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
         {
             //si no se habia acabado el juego todavía
             if (!finJuego)
-            {
-                //llamar a la función que controla el fin de juego. Ganador, posiciones, llamar al podio...
-                FinDeJuego();
-            }
-                
+                FinDeJuego();//llamar a la función que controla el fin de juego. Ganador, posiciones, llamar al podio...
         }
     }
 
