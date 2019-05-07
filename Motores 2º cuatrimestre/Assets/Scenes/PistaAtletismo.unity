@@ -6146,8 +6146,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 65.17504}
-  m_Center: {x: -3.1993857e-14, y: 0, z: 32.08748}
+  m_Size: {x: 1, y: 1.5688915, z: 64.85305}
+  m_Center: {x: -3.067506e-14, y: 0.28444576, z: 32.248466}
 --- !u!1001 &288480850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28460,8 +28460,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000004, y: 1, z: 1.0000002}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.0000004, y: 1.4199467, z: 0.5832177}
+  m_Center: {x: -5.96405e-16, y: 0.20997334, z: 0.20839132}
 --- !u!114 &1190975843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33149,7 +33149,7 @@ MonoBehaviour:
   - {fileID: 616179386}
   camara: {fileID: 836031221}
   seconds: 1
-  velocidad: 60
+  velocidad: 20
   canvasNumeroJugadores: {fileID: 455750907}
   canvasRazas: {fileID: 920645911}
   canvasElegirMinijuego: {fileID: 2048999673}

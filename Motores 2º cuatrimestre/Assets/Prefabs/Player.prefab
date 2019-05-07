@@ -131,6 +131,8 @@ MonoBehaviour:
   velocity: 2
   horizontalMovement: 1
   verticalMovement: 1
+  invertHorizontal: 0
+  invertVertical: 0
 --- !u!114 &114640492920160536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad87c187a7f60624e93981b37525a9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cuartoOscuro: {fileID: 0}
 --- !u!114 &114102261112721440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +201,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: 0
   position: 0
+  time: 0
   Lap: 0
+  onGoal: 0
 --- !u!114 &1013592650306087554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,5 +217,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numPlayer: 0
+  racePlayer: 0
   eliminated: 0
   puntos: 0
