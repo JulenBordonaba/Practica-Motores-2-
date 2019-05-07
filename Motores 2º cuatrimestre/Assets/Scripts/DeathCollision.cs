@@ -32,10 +32,7 @@ public class DeathCollision : MonoBehaviour {
             if(TimeCount.i)
                 gameObject.GetComponent<MiniGameScores>().time = TimeCount.i.time;
             //y se le quitan todos los puntos
-            if(gameObject.GetComponent<MiniGameScores>())
-            {
-                gameObject.GetComponent<MiniGameScores>().points = -1000;
-            }
+            gameObject.GetComponent<MiniGameScores>().points = -1000;
             //Destroy(gameObject);
         }
         else if (other.tag == "Death")

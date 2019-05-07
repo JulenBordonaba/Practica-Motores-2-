@@ -11,7 +11,7 @@ public class FinalLaberinto : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        llegados = 0;
+        
     }
 
     // Update is called once per frame
@@ -27,7 +27,6 @@ public class FinalLaberinto : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerController>().enabled = false;
             G.positions[other.gameObject.GetComponent<Player>().numPlayer] = llegados + 1;
-            gmLaberinto.llegados[other.gameObject.GetComponent<Player>().numPlayer] = true;
             llegados += 1;
             if(llegados>=G.activePlayers-1)
             {
