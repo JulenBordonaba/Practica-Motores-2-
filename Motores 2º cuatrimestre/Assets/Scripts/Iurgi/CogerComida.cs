@@ -4,18 +4,34 @@ using UnityEngine;
 
 public class CogerComida : MonoBehaviour {
     bool eatable;
+    public GameObject[] comida;
+    
 	// Use this for initialization
 	void Start () {
-		
+        RecorrerComida();
+        
 	}
 
     // Update is called once per frame
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+        RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, fwd, 10))
-            print("There is something in front of the object!");
+        if (Physics.Raycast(transform.position, Vector3.forward, out hit, 100.0f))
+        {
+            foreach (GameObject comida in comida)
+            {
+                if (hit.transform.tag == comida.transform.tag)
+                {
+                    
+                    comida.SetActive(true);
+                    
+                }
+            }
+
+
+
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -25,4 +41,12 @@ public class CogerComida : MonoBehaviour {
             //Destroy(comida)
         }
     }
+    void RecorrerComida()
+    {
+        for (int i = 0; i < comida.Length; i++)
+        {
+
+        }
+    }
+   
 }
