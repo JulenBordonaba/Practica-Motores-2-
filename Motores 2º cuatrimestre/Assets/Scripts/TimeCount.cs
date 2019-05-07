@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class TimeCount : MonoBehaviour
@@ -14,6 +15,8 @@ public class TimeCount : MonoBehaviour
     private int timeNoFloat;//contiene el tiempo sin decimales
     private int minutes;//almacena solo los minutos
     private int seconds;//almacena solo los segundos
+
+    public UnityEvent onTimeEnd = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,12 @@ public class TimeCount : MonoBehaviour
             else
                 timeText.text = minutes.ToString() + ":" + seconds.ToString();//mostrar el tiempo con formato digital en la caja de texto
         }
+        else
+        {
+            onTimeEnd.Invoke();
+        }
 
     }
+
+
 }
