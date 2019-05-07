@@ -475,11 +475,11 @@ GameObject:
   - component: {fileID: 16475165}
   m_Layer: 0
   m_Name: Sushi_Ernesto
-  m_TagString: Untagged
+  m_TagString: comida8
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4930269894369706
 Transform:
   m_ObjectHideFlags: 0
