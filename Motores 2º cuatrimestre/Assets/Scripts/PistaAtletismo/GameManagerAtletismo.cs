@@ -11,7 +11,8 @@ public class GameManagerAtletismo : MonoBehaviour
     public List<GameObject> corredores = new List<GameObject>();
     [Header("Camaras")]
     [Tooltip("Arrastra la camara que sigue a los jugadores")]
-    public GameObject camara;
+    public GameObject camaraSeguir;
+    public GameObject camaraPantalla;
     [Header("Animacion")]
     [Tooltip("Segundos que dura la animación antes de activar el boton")]
     public float seconds;
@@ -47,7 +48,8 @@ public class GameManagerAtletismo : MonoBehaviour
         {
             canvasNumeroJugadores.SetActive(false);//desactivar los canvas no necesarios
             canvasRazas.SetActive(false);
-            camara.SetActive(true);//activar la camara que corresponde
+            camaraPantalla.SetActive(false);//activar la camara que corresponde
+            camaraSeguir.SetActive(true);//activar la camara que corresponde
             GameManagerGlobal.i.finPodio = false;
             GameManagerGlobal.i.siguienteMinijuego++;//aumentamos el contador para el siguiente minijuego
             if(GameManagerGlobal.i.siguienteMinijuego >= GameManagerGlobal.i.minijuegos.Count)//si se han hecho todos repetimos el ciclo

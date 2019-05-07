@@ -163,10 +163,6 @@ public class ElegirRazas : MonoBehaviour
         yield return new WaitForSeconds(1.583f);//esperar segundos antes de la siguiente activación
         camaraInicio.SetActive(false);
         camaraPantalla.SetActive(true);
-        //for (int i = 0; i < GameManagerGlobal.i.numeroJugadores; i++)
-        //{
-        //    GameManagerGlobal.i.jugadores[i].SetActive(true);
-        //}
     }
 
     public void OnFocusTrue()
