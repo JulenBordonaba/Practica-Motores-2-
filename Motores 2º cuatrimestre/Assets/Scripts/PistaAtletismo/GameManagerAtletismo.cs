@@ -43,16 +43,16 @@ public class GameManagerAtletismo : MonoBehaviour
 
     private void Update()
     {
-        if (GameManagerGlobal.i.finPodio)
+        if (GameManagerGlobal.i.finPodio)//cuando se vuelve desde la escena podio
         {
-            canvasNumeroJugadores.SetActive(false);
+            canvasNumeroJugadores.SetActive(false);//desactivar los canvas no necesarios
             canvasRazas.SetActive(false);
-            camara.SetActive(true);
+            camara.SetActive(true);//activar la camara que corresponde
             GameManagerGlobal.i.finPodio = false;
-            GameManagerGlobal.i.siguienteMinijuego++;
-            if(GameManagerGlobal.i.siguienteMinijuego >= GameManagerGlobal.i.minijuegos.Count)
+            GameManagerGlobal.i.siguienteMinijuego++;//aumentamos el contador para el siguiente minijuego
+            if(GameManagerGlobal.i.siguienteMinijuego >= GameManagerGlobal.i.minijuegos.Count)//si se han hecho todos repetimos el ciclo
                 GameManagerGlobal.i.siguienteMinijuego = 0;
-            StartCoroutine(IEMoverCorredores());
+            StartCoroutine(IEMoverCorredores());//mover a los jugadores
         }
 
         int contadorJugadoresAcabados = 0;//un contador que suma jugadores eliminados y/o en meta
@@ -158,28 +158,33 @@ public class GameManagerAtletismo : MonoBehaviour
     {
         foreach (GameObject corredor in corredores)
         {
-            corredor.GetComponent<Rigidbody>().velocity += new Vector3(velocidad, 0, 0);
-            switch (G.positions[corredor.GetComponent<Player>().numPlayer])
+            if (!corredor.GetComponent<MiniGameScores>().onGoal)
             {
-                case 1:
-                    StartCoroutine(IEPararCorredor(4f,corredor));
-                    break;
+                corredor.GetComponent<Rigidbody>().velocity += new Vector3(velocidad, 0, 0);
+                switch (G.positions[corredor.GetComponent<Player>().numPlayer])
+                {
+                    case 1:
+                        StartCoroutine(IEPararCorredor(4f,corredor));
+                        break;
 
-                case 2:
-                    StartCoroutine(IEPararCorredor(3f, corredor));
-                    break;
+                    case 2:
+                        StartCoroutine(IEPararCorredor(3f, corredor));
+                        break;
 
-                case 3:
-                    StartCoroutine(IEPararCorredor(2f, corredor));
-                    break;
+                    case 3:
+                        StartCoroutine(IEPararCorredor(2f, corredor));
+                        break;
 
-                case 4:
-                    StartCoroutine(IEPararCorredor(1f, corredor));
-                    break;
+                    case 4:
+                        StartCoroutine(IEPararCorredor(1f, corredor));
+                        break;
 
-                default:
-                    break;
+                    default:
+                        break;
+                }
             }
+            else
+                StartCoroutine(IEPararCorredor(0f, corredor));
         }
         LimpiarPosiciones();
         StartCoroutine(IEMinijuego());
