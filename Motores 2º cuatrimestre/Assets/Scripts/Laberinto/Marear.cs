@@ -56,15 +56,17 @@ public class Marear : MonoBehaviour
     public IEnumerator ActivarMarear(GameObject player)
     {
         print(player.name);
+        Vector3 pos = player.transform.position;
         
-        for(int i=20;i<100;i++)
+        for(int i=0;i<20;i++)
         {
             print("entra");
             //print(i);
-            player.transform.position=Vector3.Lerp(player.transform.position,transform.position/* new Vector3(transform.position.x,player.transform.position.y,transform.position.z)*/, 0.01f*i);
+            player.transform.position=Vector3.Lerp(pos, new Vector3(transform.position.x,pos.y,transform.position.z),0.05f*i);
             yield return null;
         }
 
         player.GetComponent<Animator>().SetTrigger("Marear");
+        Destroy(this);
     }
 }
