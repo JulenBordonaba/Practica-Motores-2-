@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Minar.unity
     guid: 2affadcbb9aad1e4a99611ee00f2b2c2
   - enabled: 1
-    path: Assets/Scenes/Pelotas.unity
+    path: Assets/Scenes/Pelotas2.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
     path: Assets/Scenes/Podium.unity
@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Baseball.unity
     guid: d924c00733860af43b47ce599d563659
+  - enabled: 1
+    path: Assets/Scenes/Pelotas.unity
+    guid: 1bfa3de2a4aabb24dae2ec0c28d17a68
   m_configObjects: {}
