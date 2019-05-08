@@ -48,7 +48,12 @@ public class GameManagePelotas : MonoBehaviour
             {
                 jugador.GetComponent<MiniGameScores>().time = -1;//optiene el menor tiempo
             }
+            else if(jugador.activeInHierarchy==false)
+            {
+                jugador.GetComponent<MiniGameScores>().time = float.MaxValue;
+            }
         }
+
 
         //luego ordeno los jugadores que han llegado a la meta de mayor a menor tiempo ignorando aquellos que no han llegado a la meta
         for (int i = 0; i < players.Count; i++)
@@ -90,7 +95,7 @@ public class GameManagePelotas : MonoBehaviour
         {
             if (i >= GameManagerGlobal.i.numeroJugadores)
             {
-                G.positions[i] = 4;
+                G.positions[i] = 0;
             }
         }
 
