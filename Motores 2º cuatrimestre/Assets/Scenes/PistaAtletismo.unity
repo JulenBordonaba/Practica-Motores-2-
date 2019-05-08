@@ -33661,7 +33661,7 @@ MonoBehaviour:
   camaraSeguir: {fileID: 551424726}
   camaraPantalla: {fileID: 1586818819}
   seconds: 1
-  velocidad: 20
+  velocidad: 10
   canvasNumeroJugadores: {fileID: 455750907}
   canvasRazas: {fileID: 920645911}
   canvasElegirMinijuego: {fileID: 2048999673}
@@ -42470,6 +42470,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 139ffec1ae8f5e84fafbe1d2105cb631, type: 3}
   - {fileID: 21300000, guid: f39df7baf4774a7478d8ecdeddcaed90, type: 3}
   - {fileID: 21300000, guid: fe6658e4fee478849b3b4e40b13d2509, type: 3}
+  - {fileID: 21300000, guid: 134d95200d1d5b44b8c1e8ff8c11d624, type: 3}
+  - {fileID: 21300000, guid: 40762127e97e6d4419ea3dd5af755307, type: 3}
   segundos: 0.2
   btPlay: {fileID: 613509195}
 --- !u!1001 &1789344123
