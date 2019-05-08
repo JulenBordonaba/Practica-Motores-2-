@@ -29,7 +29,7 @@ public class SeguirCamara : MonoBehaviour
         cameraPosition.x = izquierda + diferencia;
         cameraPosition.y = arriba / 5 + Mathf.Abs(diferencia * 0.4f);
         cameraPosition.z = profundidad / 5 - Mathf.Abs(diferencia * 0.6f);
-        Debug.Log(diferencia);
+        //Debug.Log(diferencia);
         camara.transform.position = cameraPosition;
     }
 }

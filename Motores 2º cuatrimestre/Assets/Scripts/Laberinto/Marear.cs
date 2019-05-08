@@ -27,22 +27,25 @@ public class Marear : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            print("a");
             if(vecesEntradas[other.GetComponent<Player>().numPlayer]%2==0)
             {
+                print("b");
                 bool horizontal = !other.GetComponent<PlayerController>().invertHorizontal;
                 other.GetComponent<PlayerController>().invertHorizontal = horizontal;
                 vecesEntradas[other.GetComponent<Player>().numPlayer] += 1;
-                other.gameObject.GetComponent<PlayerController>().enabled = false;
-                print("par");
+                other.gameObject.GetComponent<PlayerController>().disabled = true;
+                // print("par");
             }
             else
             {
+                print("c");
                 bool vertical = !other.GetComponent<PlayerController>().invertVertical;
                 other.GetComponent<PlayerController>().invertVertical = vertical;
                 vecesEntradas[other.GetComponent<Player>().numPlayer] += 1;
 
-                other.gameObject.GetComponent<PlayerController>().enabled = false;
-                print("impar");
+                other.gameObject.GetComponent<PlayerController>().disabled = true;
+                //print("impar");
             }
             StartCoroutine(ActivarMarear(other.gameObject));
 
@@ -58,14 +61,15 @@ public class Marear : MonoBehaviour
         print(player.name);
         Vector3 pos = player.transform.position;
         
-        for(int i=0;i<20;i++)
+        for (int i=0;i<20;i++)
         {
-            print("entra");
+            //print("entra");
             //print(i);
+            print("d");
+            
             player.transform.position=Vector3.Lerp(pos, new Vector3(transform.position.x,pos.y,transform.position.z),0.05f*i);
             yield return null;
         }
-
         player.GetComponent<Animator>().SetTrigger("Marear");
         Destroy(this);
     }

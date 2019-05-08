@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public bool invertVertical = false;
 
     private Rigidbody rb;
+    public bool disabled = false;
     
 
 	// Use this for initialization
@@ -25,10 +26,20 @@ public class PlayerController : MonoBehaviour {
 
     private void Controller()
     {
+        if (disabled) return;
         //Debug.Log(InputManager.controles[jugador].InputCode);
         transform.Translate( (horizontalMovement ? Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) * velocity * Time.deltaTime : 0f) * (invertHorizontal ? -1 : 1), 0, (verticalMovement ? Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) * velocity * Time.deltaTime : 0f) * (invertVertical ? -1 : 1), Space.World);
         rb.angularVelocity = Vector3.zero;
     }
 
-    
+    private void OnEnable()
+    {
+        print("onEnable" + gameObject.name);
+    }
+    private void OnDisable()
+    {
+        print("onDisable" + gameObject.name);
+    }
+
+
 }
