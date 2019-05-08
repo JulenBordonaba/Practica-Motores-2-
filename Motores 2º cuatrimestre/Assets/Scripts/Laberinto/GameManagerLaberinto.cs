@@ -36,6 +36,13 @@ public class GameManagerLaberinto : MonoBehaviour
 
     public void EndGame()
     {
+        for (int i = 0; i < 4; i++)
+        {
+            if (i >= GameManagerGlobal.i.numeroJugadores)
+            {
+                G.positions[i] = 0;
+            }
+        }
         SceneManager.LoadScene("Podium2");
     }
 

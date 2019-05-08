@@ -162,7 +162,7 @@ public class GameManagerBaseball : MonoBehaviour
         {
             if (i >= G.activePlayers)
             {
-                G.positions[i] = 4;
+                G.positions[i] = 0;
             }
             else
             {
