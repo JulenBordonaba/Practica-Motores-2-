@@ -7724,8 +7724,6 @@ MonoBehaviour:
   elegirRazasJugadorActual: 0
   minijuegos:
   - Rugby
-  - Minar
-  - Baseball
   siguienteMinijuego: 0
   finPodio: 0
   gameManagerAtletismo: {fileID: 1424946426}

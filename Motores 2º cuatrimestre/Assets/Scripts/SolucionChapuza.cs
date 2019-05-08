@@ -11,6 +11,7 @@ public class SolucionChapuza : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         print("active players: " + G.activePlayers);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     
@@ -19,12 +20,19 @@ public class SolucionChapuza : MonoBehaviour
         
     }
 
-    private void OnLevelWasLoaded(int level)
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-
         G.activePlayers = GameManagerGlobal.i.numeroJugadores;
         print("active players: " + G.activePlayers);
     }
+    
+
+    //private void OnLevelWasLoaded(int level)
+    //{
+
+    //    G.activePlayers = GameManagerGlobal.i.numeroJugadores;
+    //    print("active players: " + G.activePlayers);
+    //}
 
 
 }

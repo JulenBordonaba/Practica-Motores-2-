@@ -42,10 +42,12 @@ public class GameManagePelotas : MonoBehaviour
         finJuego = true;//se pone a true la variable auxiliar que controla que el juego ha acabado
 
         //primero otorgamos puntuacioón a aquellos jugadores que no han sido eliminados. Para que no tengan 10000 y cuenten como no participando
-        foreach (GameObject jugaodr in players)
+        foreach (GameObject jugador in players)
         {
-            if (!jugaodr.GetComponent<Player>().eliminated && jugaodr.activeSelf == true)//si el jugador esta jugando y no ha sido eliminado
-                jugaodr.GetComponent<MiniGameScores>().time = -1;//optiene el menor tiempo
+            if (!jugador.GetComponent<Player>().eliminated && jugador.activeInHierarchy == true)//si el jugador esta jugando y no ha sido eliminado
+            {
+                jugador.GetComponent<MiniGameScores>().time = -1;//optiene el menor tiempo
+            }
         }
 
         //luego ordeno los jugadores que han llegado a la meta de mayor a menor tiempo ignorando aquellos que no han llegado a la meta
@@ -82,6 +84,14 @@ public class GameManagePelotas : MonoBehaviour
 
             }
 
+        }
+
+        for (int i = 0; i < 4; i++)
+        {
+            if (i >= GameManagerGlobal.i.numeroJugadores)
+            {
+                G.positions[i] = 4;
+            }
         }
 
         //cargar siguiente escena

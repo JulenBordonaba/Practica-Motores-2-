@@ -3757,7 +3757,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726907907}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28704a9d7732d484fb97d724996aee29, type: 3}
   m_Name: 
@@ -4389,7 +4389,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 09d84dd276b56b14a98b24c2345ee90d, type: 2}
+      objectReference: {fileID: 2100000, guid: 650540b5b589eb4448cd90ad4752d1e6, type: 2}
     - target: {fileID: 5073964664272015851, guid: cd171ff4063246a41baac7269a2ceaed,
         type: 3}
       propertyPath: numPlayer
@@ -6613,7 +6613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1285622795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7046,6 +7046,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5201507716197805063, guid: cd171ff4063246a41baac7269a2ceaed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c3c76c28ce7a3744caa00ccfad7ae989, type: 2}
     - target: {fileID: 5073964664272015851, guid: cd171ff4063246a41baac7269a2ceaed,
         type: 3}
       propertyPath: numPlayer
@@ -8305,7 +8310,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c3c76c28ce7a3744caa00ccfad7ae989, type: 2}
+      objectReference: {fileID: 2100000, guid: 09d84dd276b56b14a98b24c2345ee90d, type: 2}
     - target: {fileID: 5073964664272015851, guid: cd171ff4063246a41baac7269a2ceaed,
         type: 3}
       propertyPath: numPlayer
@@ -11729,7 +11734,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 650540b5b589eb4448cd90ad4752d1e6, type: 2}
+      objectReference: {fileID: 2100000, guid: 8a2a3231860f4bd48bb2759ad198fa3a, type: 2}
     - target: {fileID: 5304626497277381083, guid: cd171ff4063246a41baac7269a2ceaed,
         type: 3}
       propertyPath: m_IsTrigger
