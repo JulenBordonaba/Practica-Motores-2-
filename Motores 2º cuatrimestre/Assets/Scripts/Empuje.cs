@@ -20,15 +20,19 @@ public class Empuje : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
+
         if (collision.gameObject.tag == "Ball")
         {
-            if(bajarMasa)
+            //Vector3 force = (transform.position - collision.transform.position).normalized * pushForce;
+
+            //rb.AddForce(force, ForceMode.VelocityChange);
+            if (bajarMasa)
             {
                 rb.mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
             }
-            
+
 
         }
         else if (collision.gameObject.tag == "Player")
@@ -39,9 +43,37 @@ public class Empuje : MonoBehaviour {
             if (bajarMasa)
             {
                 rb.mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
-                collision.gameObject.GetComponent<Rigidbody>().mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
+                //collision.gameObject.GetComponent<Rigidbody>().mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
             }
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(-force, ForceMode.VelocityChange);
+            //collision.gameObject.GetComponent<Rigidbody>().AddForce(-force, ForceMode.VelocityChange);
         }
     }
+
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Ball")
+    //    {
+    //        Vector3 force = (transform.position - collision.transform.position).normalized * pushForce;
+
+    //        rb.AddForce(force, ForceMode.VelocityChange);
+    //        if (bajarMasa)
+    //        {
+    //            rb.mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
+    //        }
+            
+
+    //    }
+    //    else if (collision.gameObject.tag == "Player")
+    //    {
+    //        Vector3 force = (transform.position - collision.transform.position).normalized * pushForce;
+
+    //        rb.AddForce(force, ForceMode.VelocityChange);
+    //        if (bajarMasa)
+    //        {
+    //            rb.mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
+    //            //collision.gameObject.GetComponent<Rigidbody>().mass -= Mathf.Clamp(rb.mass - 1f, 0.1f, float.MaxValue);
+    //        }
+    //        //collision.gameObject.GetComponent<Rigidbody>().AddForce(-force, ForceMode.VelocityChange);
+    //    }
+    //}
 }

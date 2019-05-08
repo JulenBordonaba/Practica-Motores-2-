@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pelota : MonoBehaviour {
 
     public float velocity = 1;
+    public float rotationVelocity = 1;
 
     private Rigidbody rb;
 
@@ -21,6 +22,7 @@ public class Pelota : MonoBehaviour {
         {
             RandomDirection();
         }
+        rb.angularVelocity = new Vector3(rb.velocity.z,rb.velocity.y,-rb.velocity.x).normalized * rotationVelocity;
 	}
 
     public void RandomDirection()
