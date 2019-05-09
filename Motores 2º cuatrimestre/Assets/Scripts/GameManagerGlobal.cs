@@ -31,9 +31,7 @@ public class GameManagerGlobal : MonoBehaviour
     [Tooltip("Arrastra el GameObject del Canvas elegir Minijuego para que no se destruya")]
     public GameObject canvasMinijuegos;
     [Tooltip("Arrastra el GameObject del Event System Teclado para que no se destruya")]
-    public GameObject eventSystemTeclado;
-    [Tooltip("Arrastra el GameObject del Event System Mando para que no se destruya")]
-    public GameObject eventSystemMando;
+    public GameObject eventSystem;
     [Tooltip("Arrastra el GameObject del InputManager para que no se destruya")]
     public GameObject inputManager;
     [Tooltip("Arrastra el GameObject de las camaras para que no se destruya")]
@@ -53,8 +51,7 @@ public class GameManagerGlobal : MonoBehaviour
             DontDestroyOnLoad(canvasNumeroJugadores);
             DontDestroyOnLoad(canvasRaza);
             DontDestroyOnLoad(canvasMinijuegos);
-            DontDestroyOnLoad(eventSystemTeclado);
-            DontDestroyOnLoad(eventSystemMando);
+            DontDestroyOnLoad(eventSystem);
             DontDestroyOnLoad(inputManager);
             DontDestroyOnLoad(camaras);
 
@@ -70,8 +67,7 @@ public class GameManagerGlobal : MonoBehaviour
             Destroy(canvasNumeroJugadores);
             Destroy(canvasRaza);
             Destroy(canvasMinijuegos);
-            Destroy(eventSystemTeclado);
-            Destroy(eventSystemMando);
+            Destroy(eventSystem);
             Destroy(inputManager);
             Destroy(camaras);
         }

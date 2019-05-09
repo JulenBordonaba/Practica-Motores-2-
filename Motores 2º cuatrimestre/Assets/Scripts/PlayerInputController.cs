@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerInputController : MonoBehaviour
 {
-    public string horizontal;
-    public string vertical;
-    public string submit;
-    public string cancel;
+
+
+
+    public const string horizontal="Horizontal";
+    public const string vertical="Vertical";
+    public const string submit= "Button1";
+    public const string cancel="Button2";
 
     private UnityEngine.EventSystems.StandaloneInputModule inputModule;
 
@@ -23,15 +26,15 @@ public class PlayerInputController : MonoBehaviour
     {
         if (GameManagerGlobal.i.elegirRazasJugadorActual < 1 || GameManagerGlobal.i.elegirRazasJugadorActual > 4)
         {
-            inputModule.horizontalAxis = horizontal + 1;
-            inputModule.verticalAxis = vertical + 1;
-            inputModule.submitButton = submit + 1;
-            inputModule.cancelButton = cancel + 1;
+            inputModule.horizontalAxis = horizontal + InputManager.controles[0].InputCode;
+            inputModule.verticalAxis = vertical + InputManager.controles[0].InputCode;
+            inputModule.submitButton = submit + InputManager.controles[0].InputCode;
+            inputModule.cancelButton = cancel + InputManager.controles[0].InputCode;
             return;
         }
-        inputModule.horizontalAxis = horizontal + GameManagerGlobal.i.elegirRazasJugadorActual;
-        inputModule.verticalAxis= vertical + GameManagerGlobal.i.elegirRazasJugadorActual;
-        inputModule.submitButton= submit + GameManagerGlobal.i.elegirRazasJugadorActual;
-        inputModule.cancelButton= cancel + GameManagerGlobal.i.elegirRazasJugadorActual;
+        inputModule.horizontalAxis = horizontal + InputManager.controles[GameManagerGlobal.i.elegirRazasJugadorActual-1].InputCode;
+        inputModule.verticalAxis= vertical + InputManager.controles[GameManagerGlobal.i.elegirRazasJugadorActual-1].InputCode;
+        inputModule.submitButton= submit + InputManager.controles[GameManagerGlobal.i.elegirRazasJugadorActual-1].InputCode;
+        inputModule.cancelButton= cancel + InputManager.controles[GameManagerGlobal.i.elegirRazasJugadorActual-1].InputCode;
     }
 }
