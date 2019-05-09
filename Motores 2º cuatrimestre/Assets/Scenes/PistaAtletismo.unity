@@ -8088,22 +8088,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2804270504854764756}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &386592860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386592859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d006a04328a6b4541ab0324a840c50c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal: HorizontalTeclado
-  vertical: VerticalTeclado
-  submit: Button1Teclado
-  cancel: Button2Teclado
 --- !u!1001 &386924207
 PrefabInstance:
   m_ObjectHideFlags: 0
