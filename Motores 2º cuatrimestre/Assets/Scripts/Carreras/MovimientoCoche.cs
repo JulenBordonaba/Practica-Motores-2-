@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MovimientoCoche : MonoBehaviour
 {
-
+    public bool carreras;
 
     private void Start()
     {
@@ -32,7 +32,9 @@ public class MovimientoCoche : MonoBehaviour
 
     private void Awake()
     {
+        if(carreras)
         contVueltas = GetComponent<ContadorVueltas>();
+
         rb = GetComponent<Rigidbody>();
         rotation = transform.eulerAngles.y;
 
@@ -56,12 +58,15 @@ public class MovimientoCoche : MonoBehaviour
         locVel = new Vector3(locVel.x * 0.93f, locVel.y, locVel.z);
         rb.velocity = transform.TransformDirection(locVel);
 
-        
-        if(contVueltas.vueltasActuales == contVueltas.vueltasMaximas )
-        {
-            FindObjectOfType<TiempoVuelta>().AddCarToArray(gameObject);
-            gameObject.GetComponent<MovimientoCoche>().enabled = false;
+        if (carreras == true)
+        { 
+            if (contVueltas.vueltasActuales == contVueltas.vueltasMaximas)
+            {
+                FindObjectOfType<TiempoVuelta>().AddCarToArray(gameObject);
+                gameObject.GetComponent<MovimientoCoche>().enabled = false;
+            }
         }
+        
 
 
     }

@@ -7,16 +7,19 @@ public class ManagerCollisiones : MonoBehaviour
     [HideInInspector]
     public string nombreCollider;
 
-    public Transform jugador;
+    public GameObject prefabJugador;
+
+    private Transform jugador;
 
     private void Awake()
     {
-        jugador = gameObject.transform.parent.parent;
-        nombreCollider = this.name;
+        jugador = gameObject.transform.parent;
+        nombreCollider = gameObject.name.ToString();
         Debug.Log(nombreCollider);
         Debug.Log(jugador.name);
     }
 
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "ColliderDelante")
@@ -24,12 +27,11 @@ public class ManagerCollisiones : MonoBehaviour
             if(nombreCollider == "ColliderDelante")
             {
                 other.gameObject.GetComponent<ManagerCollisiones>().jugador.GetComponent<Controlarvelocidad>().puntosEstabilidad -= 2;
-
-
+                
             }
             else if (nombreCollider == "ColliderAtras")
             {
-                //other.gameObject.GetComponent<ManagerCollisiones>().
+                other.gameObject.GetComponent<ManagerCollisiones>().jugador.GetComponent<Controlarvelocidad>().puntosEstabilidad -= 2;
             }
             else if (nombreCollider == "ColliderLados")
             {

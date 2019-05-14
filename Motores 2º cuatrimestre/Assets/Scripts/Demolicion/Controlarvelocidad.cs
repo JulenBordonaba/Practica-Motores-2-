@@ -9,7 +9,7 @@ public class Controlarvelocidad : MonoBehaviour
     private MovimientoCoche coche;
     private float contador;
     public int puntosEstabilidad = 10;
-
+    
     public Text texto;
 
     private void Start()
@@ -22,7 +22,12 @@ public class Controlarvelocidad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
+        if (puntosEstabilidad <= 0)
+        {
+            puntosEstabilidad = 0;
+            gameObject.SetActive(false);
+        }
         texto.text = puntosEstabilidad.ToString();
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
