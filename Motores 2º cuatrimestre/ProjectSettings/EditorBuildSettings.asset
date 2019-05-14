@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Laberinto.unity
     guid: ca052fa94f36aec47a32975bc9dc08c3
+  - enabled: 1
+    path: Assets/Scenes/Carreras.unity
+    guid: fc19bc471cc781544ae22e0a6892e8eb
   m_configObjects: {}

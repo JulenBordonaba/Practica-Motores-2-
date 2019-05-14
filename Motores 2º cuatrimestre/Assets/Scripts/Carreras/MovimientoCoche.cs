@@ -22,6 +22,7 @@ public class MovimientoCoche : MonoBehaviour
     public float maxAngleZ = 45;
     public float impactForce;
     public GameObject Tiempos;
+    public Podio podio;
 
     private float rotation;
     [HideInInspector]
@@ -46,7 +47,7 @@ public class MovimientoCoche : MonoBehaviour
 
         rotationLimit = transform.eulerAngles;
         tiempoCarrera += Time.deltaTime;
-        Debug.Log(InputManager.controles[jugador].InputCode);
+        Debug.Log(InputManager.controles[GetComponent<Player>().numPlayer].InputCode);
         rb.AddForce(transform.forward * Time.deltaTime * acceleration * Input.GetAxis("Vertical" + InputManager.controles[jugador].InputCode), ForceMode.VelocityChange);
 
         rotation += Input.GetAxis("Horizontal" + InputManager.controles[jugador].InputCode) * Time.deltaTime * manejo;
@@ -62,6 +63,7 @@ public class MovimientoCoche : MonoBehaviour
         { 
             if (contVueltas.vueltasActuales == contVueltas.vueltasMaximas)
             {
+                podio.Posicionar(GetComponent<Player>().numPlayer);
                 FindObjectOfType<TiempoVuelta>().AddCarToArray(gameObject);
                 gameObject.GetComponent<MovimientoCoche>().enabled = false;
             }
