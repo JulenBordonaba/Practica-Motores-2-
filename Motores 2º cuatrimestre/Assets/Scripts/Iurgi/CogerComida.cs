@@ -19,12 +19,13 @@ public class CogerComida : MonoBehaviour {
 
         if (Physics.Raycast(transform.position, Vector3.forward, out hit, 100.0f))
         {
-            foreach (GameObject comida in comida)
+            foreach (GameObject c in comida)
             {
-                if (hit.transform.tag == comida.transform.tag)
+                if (hit.transform.tag == c.transform.tag)
                 {
                     
-                    comida.SetActive(true);
+                    c.SetActive(true);
+                    print("hola");
                     
                 }
             }
@@ -33,14 +34,14 @@ public class CogerComida : MonoBehaviour {
 
         }
     }
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if(transform.tag=="comida"&& Input.GetButtonDown("Fire1") && eatable==true)
         {
             eatable = false;
             //Destroy(comida)
         }
-    }
+    }*/
     void RecorrerComida()
     {
         for (int i = 0; i < comida.Length; i++)
