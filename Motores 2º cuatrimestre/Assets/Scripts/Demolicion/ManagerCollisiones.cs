@@ -7,7 +7,6 @@ public class ManagerCollisiones : MonoBehaviour
     [HideInInspector]
     public string nombreCollider;
 
-    public GameObject prefabJugador;
 
     private Transform jugador;
 
