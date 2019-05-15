@@ -54,26 +54,26 @@ public class PlayerController_Sacos : MonoBehaviour
         if (disabled) return;
         if (playernum != 0 && Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == -1)
         {
-            GM_Sacos.Move(0);
+            //GM_Sacos.Move(0);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;
         }
 
         if (playernum != 1 && Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == 1)
         {
-            GM_Sacos.Move(1);
+            //GM_Sacos.Move(1);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;
         }
             if (playernum != 2 && Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == 1)
         {
-            GM_Sacos.Move(2);
+            //GM_Sacos.Move(2);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;
         }
         if (playernum != 3 && Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == -1)
         {
-            GM_Sacos.Move(3);
+            //GM_Sacos.Move(3);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;
         }

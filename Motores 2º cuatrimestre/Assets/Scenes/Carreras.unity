@@ -318,7 +318,7 @@ Transform:
   m_LocalScale: {x: 1.6287413, y: 1.628735, z: 4.072343}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 169.376, z: 0}
 --- !u!54 &323707434
 Rigidbody:
@@ -1204,6 +1204,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   podio: 0
+  jugador0: {fileID: 1171591968}
+  jugador1: {fileID: 1157789666}
+  jugador2: {fileID: 1535806955}
+  jugador3: {fileID: 323707432}
 --- !u!1 &1001899041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1771,7 @@ Transform:
   m_LocalScale: {x: 1.6287413, y: 1.628735, z: 4.072343}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 169.376, z: 0}
 --- !u!114 &1157789675
 MonoBehaviour:
@@ -1953,7 +1957,7 @@ Transform:
   m_LocalScale: {x: 1.6287413, y: 1.628735, z: 4.072343}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 169.376, z: 0}
 --- !u!114 &1171591977
 MonoBehaviour:
@@ -2808,7 +2812,7 @@ Transform:
   m_LocalScale: {x: 1.6287413, y: 1.628735, z: 4.072343}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 169.376, z: 0}
 --- !u!54 &1535806957
 Rigidbody:
