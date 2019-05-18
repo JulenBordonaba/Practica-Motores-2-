@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     {
         if (disabled) return;
         //Debug.Log(InputManager.controles[jugador].InputCode);
-        transform.Translate((horizontalMovement ? Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) * velocity * Time.deltaTime : 0f) * (invertHorizontal ? -1 : 1), 0, (verticalMovement ? Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) * velocity * Time.deltaTime : 0f) * (invertVertical ? -1 : 1), Space.World);
+        Vector3 desplazamiento = new Vector3((horizontalMovement ? Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) : 0f) * (invertHorizontal ? -1 : 1), 0, (verticalMovement ? Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) : 0f) * (invertVertical ? -1 : 1));
+        transform.Translate(desplazamiento.normalized * velocity * Time.deltaTime, Space.World);
         rb.angularVelocity = Vector3.zero;
 
         //transform.rotation = Quaternion.Euler(0, MovementKeys ? PlayerDirection : transform.rotation.eulerAngles.y, 0);
