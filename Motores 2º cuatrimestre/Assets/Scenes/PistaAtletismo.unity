@@ -7728,6 +7728,8 @@ MonoBehaviour:
   - Minar
   - Laberinto
   - Pelotas
+  - Carreras
+  - DerbyDemolicion
   siguienteMinijuego: 0
   finPodio: 0
   gameManagerAtletismo: {fileID: 1424946426}
