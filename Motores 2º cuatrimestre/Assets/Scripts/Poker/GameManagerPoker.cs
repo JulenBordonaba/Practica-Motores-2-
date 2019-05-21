@@ -5,10 +5,13 @@ using UnityEngine;
 public class GameManagerPoker : MonoBehaviour
 {
     public int rondas = 1;
+    public int cartaABuscar = 0;
 
     public GameObject[] jugadores;
 
     public GameObject[] posiciones;
+
+    public PuntosSeleccionLado[] seleccionLados;
 
     public int[] posicion;
     public int[] carta;
@@ -16,45 +19,165 @@ public class GameManagerPoker : MonoBehaviour
 
     public int seleccionados;
 
-    private string estado = "Colocar Imagenes";
+    private string estado = "Rondas";
+    private float contador = 0;
 
     public bool imagenesPuestas = false;
-    
-    
+
+    private void Awake()
+    {
+        cartaABuscar = Random.Range(0, 3);
+        Debug.Log(cartaABuscar);
+    }
+
     void Update()
     {
         switch (estado)
         {
-            case "Colocar Imagenes":
+            case "Rondas":
 
-               
-
-                if (rondas == 1 && !imagenesPuestas)
+               switch (rondas)
                 {
-                    for (int i = 0; i <= 3; i++)
-                        jugadores[i].GetComponent<ElegirLadoPoker>().Activo = true;
-                    posicion[0] = RandomNumber(1, posicion);
-                    for (int i = 0; i <= 3; i++)
-                    {
-                        if (i == posicion[0])
-                            posiciones[posicion[0]].GetComponent<PuntosSeleccionLado>().ActivarImagen(0, 0, true,true);
-                        else
-                            posiciones[i].GetComponent<PuntosSeleccionLado>().ActivarImagen(4, 1, false,false);
-                    }
-                    imagenesPuestas = true;
-                    estado = "Elegir Lados";
-                }
-                else if (rondas == 2 && !imagenesPuestas)
-                {
-                    print("Entra");
+                    case 1:
+                        print("ronda1");
+                        posicion[0] = RandomNumber(1, posicion,false);
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            carta[0] = RandomNumber(1, carta, true);
+                            if (i == posicion[0])
+                                posiciones[posicion[0]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[0], 0, true, true);
+                            else
+                                posiciones[i].GetComponent<PuntosSeleccionLado>().ActivarImagen(4, 1, false, false);
+                        }
+                        estado = "Elegir Lados";
+                        break;
 
-                    /*for (int i = 0; i <= 3; i++)
-                        jugadores[i].GetComponent<ElegirLadoPoker>().Activo = true;
-                    */
-                    
-                    estado = "Elegir Lados";
-                }
+                    case 2:
+                        print("ronda2");
+                        for (int i = 0; i <= 3; i++)
+                            jugadores[i].GetComponent<ElegirLadoPoker>().centrar = false;
 
+                        posicion[0] = RandomNumber(1, posicion,false);
+                        posicion[1] = RandomNumber(2, posicion,false);
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            carta[0] = RandomNumber(1, carta, true);
+                            carta[1] = RandomNumber(2, carta, false);
+
+                            if (i == posicion[0])
+                                posiciones[posicion[0]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[0], 0, true, true);
+                            else if(i == posicion[1])
+                                posiciones[posicion[1]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[1], 0, false, true);
+                            else
+                                posiciones[i].GetComponent<PuntosSeleccionLado>().ActivarImagen(4, 1, false, false);
+                        }
+                        estado = "Elegir Lados";
+                        break;
+
+                    case 3:
+                        print("ronda3");
+                        for (int i = 0; i <= 3; i++)
+                            jugadores[i].GetComponent<ElegirLadoPoker>().centrar = false;
+
+                        posicion[0] = RandomNumber(1, posicion, true);
+                        posicion[1] = RandomNumber(2, posicion, false);
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            carta[0] = RandomNumber(1, carta, true);
+                            carta[1] = RandomNumber(2, carta, false);
+
+                            if (i == posicion[0])
+                                posiciones[posicion[0]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[0], 0, true, false);
+                            else if (i == posicion[1])
+                                posiciones[posicion[1]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[1], 0, false, true);
+                            else
+                                posiciones[i].GetComponent<PuntosSeleccionLado>().ActivarImagen(4, 1, false, false);
+                        }
+                        estado = "Elegir Lados";
+                        break;
+                    case 4:
+                        print("ronda4");
+                        for (int i = 0; i <= 3; i++)
+                            jugadores[i].GetComponent<ElegirLadoPoker>().centrar = false;
+
+                        posicion[0] = RandomNumber(1, posicion, true);
+                        posicion[1] = RandomNumber(2, posicion, false);
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            carta[0] = RandomNumber(1, carta, true);
+                            carta[1] = RandomNumber(2, carta, false);
+
+                            if (i == posicion[0])
+                                posiciones[posicion[0]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[0], 0, true, false);
+                            else if (i == posicion[1])
+                                posiciones[posicion[1]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[1], 0, false, false);
+                            else
+                                posiciones[i].GetComponent<PuntosSeleccionLado>().ActivarImagen(4, 1, false, false);
+                        }
+                        estado = "Elegir Lados";
+                        break;
+                    case 5:
+                        print("ronda5");
+                        for (int i = 0; i <= 3; i++)
+                            jugadores[i].GetComponent<ElegirLadoPoker>().centrar = false;
+
+                        posicion[0] = RandomNumber(1, posicion, true);
+                        posicion[1] = RandomNumber(2, posicion, false);
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            carta[0] = RandomNumber(1, carta, true);
+                            carta[1] = RandomNumber(2, carta, false);
+
+                            if (i == posicion[0])
+                                posiciones[posicion[0]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[0], 0, true, false);
+                            else if (i == posicion[1])
+                                posiciones[posicion[1]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[1], 0, false, false);
+                            else
+                                posiciones[i].GetComponent<PuntosSeleccionLado>().ActivarImagen(4, 1, false, false);
+                        }
+
+                        estado = "Elegir Lados";
+                        break;
+                    case 6:
+                    case 7:
+                        print("ronda6");
+                        posicion[0] = RandomNumber(1, posicion, true);
+                        posicion[1] = RandomNumber(2, posicion, false);
+                        posicion[2] = RandomNumber(3, posicion, false);
+
+                        for (int i = 0; i <= 3; i++)
+                        {
+                            carta[0] = RandomNumber(1, carta, true);
+                            carta[1] = RandomNumber(2, carta, false);
+                            carta[2] = RandomNumber(3, carta, false);
+
+                            if (i == posicion[0])
+                                posiciones[posicion[0]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[0], 0, true, false);
+                            else if (i == posicion[1])
+                                posiciones[posicion[1]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[1], 0, false, false);
+                            else if (i == posicion[2])
+                                posiciones[posicion[2]].GetComponent<PuntosSeleccionLado>().ActivarImagen(carta[2], 0, false, false);
+                            else
+                                posiciones[i].GetComponent<PuntosSeleccionLado>().ActivarImagen(4, 1, false, false);
+                        }
+
+                        estado = "Elegir Lados";
+                        break;
+                    /*case 7:
+                        print("ronda7");
+
+                        break;*/
+                    case 8:
+                        print("ronda2");
+                        break;
+                    case 9:
+                        print("ronda2");
+                        break;
+                    case 10:
+                        print("ronda2");
+                        break;
+
+                }
                 break;
 
             case "Elegir Lados":
@@ -66,11 +189,11 @@ public class GameManagerPoker : MonoBehaviour
             case "ResetearValores":
                     rondas++;
                     seleccionados = 0;
-                    imagenesPuestas = false;
                     for (int i = 0; i <= 3; i++)
                     {
                         jugadores[i].GetComponent<ElegirLadoPoker>().ResetearPosicion();
                         posiciones[i].GetComponent<PuntosSeleccionLado>().ResetearImagenes();
+                        
                     }
                     for (int i = 0; i < posicion.Length; i++)
                         posicion[i] = 0;
@@ -79,16 +202,24 @@ public class GameManagerPoker : MonoBehaviour
                     for (int i = 0; i < carta.Length; i++)
                         carta[i] = 0;
 
-
-                estado = "Resetear Posicion";
-                break;
-
-            case "Resetear Posicion":
+                    estado = "Tiempo entre rondas";
                 
-                estado = "Colorcar Imagenes";
+                    break;
+
+            case "Tiempo entre rondas":
+                contador += Time.deltaTime;
+                if (contador >= 1)
+                {
+                    for(int i = 0; i <= 3; i++)
+                    {
+                        jugadores[i].GetComponent<ElegirLadoPoker>().Activo = true;
+                        Debug.Log(jugadores[i].GetComponent<ElegirLadoPoker>().Activo);
+
+                    }
+                    contador = 0;
+                    estado = "Rondas";
+                }
                 break;
-
-
             case "Fin de Juego":
 
                 break;
@@ -99,13 +230,16 @@ public class GameManagerPoker : MonoBehaviour
         
     }
 
-    public int RandomNumber(int caso,int[] array)
+    public int RandomNumber(int caso,int[] array,bool carta)
     {
         switch (caso)
         {
             case 1:
-                int number = Random.Range(0, 3);
-                return number;
+                if (carta)
+                    return cartaABuscar;
+                else
+                    return Random.Range(0, 3);
+
             case 2:
                 int number2 = Random.Range(0, 3);
                     do

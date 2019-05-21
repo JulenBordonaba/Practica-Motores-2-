@@ -21,6 +21,14 @@ public class PuntosSeleccionLado : MonoBehaviour
         acierto = Buena;
         if (colorPropio)
             materialCartas[Carta].color = colores[Carta];
+        else if (Color == Carta)
+        {
+            do
+            {
+                Color = Random.Range(0, 3);
+            } while (Color == Carta);
+            materialCartas[Carta].color = colores[Color];
+        }
         else
             materialCartas[Carta].color = colores[Color];
 
@@ -73,6 +81,7 @@ public class PuntosSeleccionLado : MonoBehaviour
         for(int i = 0; i <= 4; i++)
         {
             cartas[i].SetActive(false);
+            llegado = 0;
         }
     }
 }

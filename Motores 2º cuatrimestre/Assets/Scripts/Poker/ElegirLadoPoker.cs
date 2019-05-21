@@ -7,12 +7,8 @@ public class ElegirLadoPoker : MonoBehaviour
 
     public Transform[] direcciones;
     public bool Activo = true;
-
-    private void Awake()
-    {
-        transform.position = direcciones[4].position;
-        Debug.Log(name);
-    }
+    public bool centrar = false;
+    
 
     private void Update()
     {
@@ -39,11 +35,15 @@ public class ElegirLadoPoker : MonoBehaviour
                 Activo = false;
             }
         }
+
+        
         
     }
 
     public void ResetearPosicion()
     {
         transform.position = direcciones[4].position;
+
+        
     }
 }
