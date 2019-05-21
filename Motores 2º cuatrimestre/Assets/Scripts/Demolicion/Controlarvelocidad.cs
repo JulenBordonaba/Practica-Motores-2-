@@ -9,6 +9,7 @@ public class Controlarvelocidad : MonoBehaviour
     private MovimientoCoche coche;
     private float contador;
     public int puntosEstabilidad = 10;
+    public GameManagerDerby gameManager;
     
     public Text texto;
 
@@ -22,24 +23,28 @@ public class Controlarvelocidad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       // print("Normal: " + coche.vel);
         
         if (puntosEstabilidad <= 0)
         {
             puntosEstabilidad = 0;
-            gameObject.SetActive(false);
+            gameManager.Posicionar(gameObject);
         }
         texto.text = puntosEstabilidad.ToString();
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        if (Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) != 0)
         {
             coche.vel = maxVel / 2;
+            //print("Girando: " + coche.vel);
             contador += Time.deltaTime;
+            print("Contador: " + contador);
             if(contador >= 2)
             {
-                
+
+                print("GirandoPoco: " + coche.vel);
                 coche.vel = maxVel / 20;
             }
         }
-        else if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
+        else if(Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == 0)
         {
             contador = 0;
             coche.vel = maxVel;
