@@ -6,30 +6,40 @@ public class ElegirLadoPoker : MonoBehaviour
 {
 
     public Transform[] direcciones;
+    public bool Activo = true;
 
     private void Awake()
     {
         transform.position = direcciones[4].position;
+        Debug.Log(name);
     }
 
     private void Update()
     {
-        if(Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) < 0)
+        if (Activo)
         {
-            transform.position = direcciones[1].position;
+            if (Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) < 0)
+            {
+                transform.position = direcciones[1].position;
+                Activo = false;
+            }
+            else if (Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) > 0)
+            {
+                transform.position = direcciones[0].position;
+                Activo = false;
+            }
+            else if (Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) < 0)
+            {
+                transform.position = direcciones[2].position;
+                Activo = false;
+            }
+            else if (Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) > 0)
+            {
+                transform.position = direcciones[3].position;
+                Activo = false;
+            }
         }
-        else if(Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) > 0)
-        {
-            transform.position = direcciones[0].position;
-        }
-        else if (Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) < 0)
-        {
-            transform.position = direcciones[2].position;
-        }
-        else if (Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) > 0)
-        {
-            transform.position = direcciones[3].position;
-        }
+        
     }
 
     public void ResetearPosicion()

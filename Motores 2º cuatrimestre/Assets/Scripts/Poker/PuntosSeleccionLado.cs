@@ -15,11 +15,15 @@ public class PuntosSeleccionLado : MonoBehaviour
 
     
 
-    public void ActivarImagen(int Carta, int Color, bool Buena)
+    public void ActivarImagen(int Carta, int Color, bool Buena,bool colorPropio)
     {
         cartas[Carta].SetActive(true);
-        materialCartas[Carta].color = colores[Color];
         acierto = Buena;
+        if (colorPropio)
+            materialCartas[Carta].color = colores[Carta];
+        else
+            materialCartas[Carta].color = colores[Color];
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,46 +32,38 @@ public class PuntosSeleccionLado : MonoBehaviour
         {
             if (acierto)
             {
-                if(llegado == 0 && other.GetComponent<ElegirLadoPoker>().enabled == true)
+                if(llegado == 0 )
                 {
                     other.GetComponent<ManagerPuntosPoker>().puntos += 5;
                     llegado++;
-                    other.GetComponent<ElegirLadoPoker>().enabled = false;
                     gameManager.sumarSeleccionados();
                     return;
                 }
-                else if(llegado == 1 && other.GetComponent<ElegirLadoPoker>().enabled == true)
+                else if(llegado == 1 )
                 {
                     other.GetComponent<ManagerPuntosPoker>().puntos += 3;
                     llegado++;
-                    other.GetComponent<ElegirLadoPoker>().enabled = false;
                     gameManager.sumarSeleccionados();
                     return;
                 }
-                else if (llegado == 2 && other.GetComponent<ElegirLadoPoker>().enabled == true)
+                else if (llegado == 2)
                 {
                     other.GetComponent<ManagerPuntosPoker>().puntos += 2;
                     llegado++;
-                    other.GetComponent<ElegirLadoPoker>().enabled = false;
                     gameManager.sumarSeleccionados();
                     return;
                 }
-                else if (llegado == 3 && other.GetComponent<ElegirLadoPoker>().enabled == true)
+                else if (llegado == 3)
                 {
                     other.GetComponent<ManagerPuntosPoker>().puntos += 1;
                     llegado++;
-                    other.GetComponent<ElegirLadoPoker>().enabled = false;
                     gameManager.sumarSeleccionados();
                     return;
                 }
             }
             else
             {
-                if (other.GetComponent<ElegirLadoPoker>().enabled == true)
-                {
-                    other.GetComponent<ElegirLadoPoker>().enabled = false;
                     gameManager.sumarSeleccionados();
-                }
             }
         }
     }

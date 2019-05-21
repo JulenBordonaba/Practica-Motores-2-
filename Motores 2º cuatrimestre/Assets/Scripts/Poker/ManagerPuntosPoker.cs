@@ -13,7 +13,6 @@ public class ManagerPuntosPoker : MonoBehaviour
     public void Update()
     {
         puntosText.text = puntos.ToString();
-        
     }
     
 

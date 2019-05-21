@@ -5,18 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerDerby : MonoBehaviour
 {
-    private int llegados = G.activePlayers;
+    private int llegados = GameManagerGlobal.i.numeroJugadores;
     private int llegados1 = 1;
     public GameObject[] jugadores;
 
-   /* private void Awake()
-    {
-        for (int i = 0; i <= 3; i++)
-        {
-            if(jugadores[i].activeInHierarchy == true)
-                llegados++;
-        }
-    }*/
+   
 
     public void Posicionar(GameObject other)
     {

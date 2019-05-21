@@ -79,9 +79,9 @@ public class GameManagerGlobal : MonoBehaviour
     {
         int last = minijuegos.Count;
         
-        for (int i = 0; i < last; i++)
+        for (int i = 0; i < 20; i++)
         {
-            Swap(i, i + Random.Range(0,last-1));
+            Swap(Random.Range(0, last - 1), Random.Range(0,last-1));
         }
     }
 
