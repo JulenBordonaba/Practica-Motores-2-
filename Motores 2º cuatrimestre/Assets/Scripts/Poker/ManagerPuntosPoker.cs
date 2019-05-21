@@ -15,8 +15,6 @@ public class ManagerPuntosPoker : MonoBehaviour
         puntosText.text = puntos.ToString();
         
     }
-
-
-    int
+    
 
 }
