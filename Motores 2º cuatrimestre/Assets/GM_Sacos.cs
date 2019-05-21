@@ -72,7 +72,7 @@ public class GM_Sacos : MonoBehaviour
             for (j = 0; j == 4; j++) if(direct[j]>3) casilla[j] = j + 5;
 
         }
-        PlayerController_Sacos.jugadores.
+       // PlayerController_Sacos.jugadores.
     }
 
     IEnumerator Second()
