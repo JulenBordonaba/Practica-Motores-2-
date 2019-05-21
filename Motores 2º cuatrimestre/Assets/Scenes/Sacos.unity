@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 434208273}
   - component: {fileID: 434208272}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Casilla 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -440,7 +440,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446178943
 GameObject:
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 446178945}
   - component: {fileID: 446178944}
   m_Layer: 0
-  m_Name: Cylinder (8)
+  m_Name: Casilla 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +532,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &457517536
 GameObject:
@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 562492671}
   - component: {fileID: 562492670}
   m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Name: Casilla 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -856,7 +856,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &582836015
 GameObject:
@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 582836017}
   - component: {fileID: 582836016}
   m_Layer: 0
-  m_Name: Cylinder (5)
+  m_Name: Casilla 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -948,7 +948,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &750965723 stripped
 GameObject:
@@ -1068,7 +1068,7 @@ GameObject:
   - component: {fileID: 842474030}
   - component: {fileID: 842474029}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: Casilla 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1145,7 +1145,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &946928248
 GameObject:
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 946928250}
   - component: {fileID: 946928249}
   m_Layer: 0
-  m_Name: Cylinder (7)
+  m_Name: Casilla 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1237,7 +1237,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &961435423
 PrefabInstance:
@@ -1827,7 +1827,7 @@ GameObject:
   - component: {fileID: 1660606608}
   - component: {fileID: 1660606607}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Casilla 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2065,7 +2065,7 @@ GameObject:
   - component: {fileID: 1973819196}
   - component: {fileID: 1973819195}
   m_Layer: 0
-  m_Name: Cylinder (6)
+  m_Name: Casilla 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2142,7 +2142,7 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2056689602
 GameObject:
@@ -2157,7 +2157,7 @@ GameObject:
   - component: {fileID: 2056689604}
   - component: {fileID: 2056689603}
   m_Layer: 0
-  m_Name: Cylinder (4)
+  m_Name: Casilla 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2234,5 +2234,5 @@ Transform:
   m_LocalScale: {x: 1.8, y: 0.1, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
