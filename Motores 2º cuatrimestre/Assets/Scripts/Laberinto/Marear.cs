@@ -70,7 +70,8 @@ public class Marear : MonoBehaviour
             player.transform.position=Vector3.Lerp(pos, new Vector3(transform.position.x,pos.y,transform.position.z),0.05f*i);
             yield return null;
         }
-        player.GetComponent<Animator>().SetTrigger("Marear");
+        player.GetComponentInChildren<Animator>().SetTrigger("Marear");
         Destroy(this);
     }
+    
 }
