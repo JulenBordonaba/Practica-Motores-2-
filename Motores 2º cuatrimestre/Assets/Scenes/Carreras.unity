@@ -352,7 +352,6 @@ MonoBehaviour:
   acceleration: 70
   vel: 40
   manejo: 90
-  jugador: 3
   minAngleX: -20
   maxAngleX: 20
   minAngleZ: -20
@@ -1667,7 +1666,6 @@ MonoBehaviour:
   acceleration: 70
   vel: 40
   manejo: 90
-  jugador: 1
   minAngleX: -20
   maxAngleX: 20
   minAngleZ: -20
@@ -1766,7 +1764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157789666}
   m_LocalRotation: {x: -0, y: 0.9957057, z: -0, w: 0.09257528}
-  m_LocalPosition: {x: -289.42, y: 740.73, z: -249.34}
+  m_LocalPosition: {x: -288.95, y: 740.73, z: -249.25}
   m_LocalScale: {x: 1.6287413, y: 1.628735, z: 4.072343}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1855,7 +1853,6 @@ MonoBehaviour:
   acceleration: 70
   vel: 40
   manejo: 90
-  jugador: 0
   minAngleX: -20
   maxAngleX: 20
   minAngleZ: -20
@@ -2806,7 +2803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535806955}
   m_LocalRotation: {x: -0, y: 0.9957057, z: -0, w: 0.09257528}
-  m_LocalPosition: {x: -292.74875, y: 740.5, z: -250.07039}
+  m_LocalPosition: {x: -292.27875, y: 740.5, z: -249.9804}
   m_LocalScale: {x: 1.6287413, y: 1.628735, z: 4.072343}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2844,7 +2841,6 @@ MonoBehaviour:
   acceleration: 70
   vel: 40
   manejo: 90
-  jugador: 2
   minAngleX: -20
   maxAngleX: 20
   minAngleZ: -20
