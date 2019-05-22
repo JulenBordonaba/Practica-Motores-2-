@@ -4,84 +4,42 @@ using UnityEngine;
 
 public class PuntosSeleccionLado : MonoBehaviour
 {
-    public GameObject[] cartas; // corazones rombos treboles picas y vacio
-    public Material[] materialCartas;
+    public GameObject carta;
+    public Material[] materiales;
     public Color[] colores; // rojo azul verde amarillo
     public GameManagerPoker gameManager;
+    private Renderer renderer;
 
     public bool acierto;
-    public int llegado;
-    
+    public int llegados;
 
-    
-
-    public void ActivarImagen(int Carta, int Color, bool Buena,bool colorPropio)
+    private void Awake()
     {
-        cartas[Carta].SetActive(true);
-        acierto = Buena;
-        if (colorPropio)
-            materialCartas[Carta].color = colores[Carta];
-        else if (Color == Carta)
-        {
-            do
-            {
-                Color = Random.Range(0, 3);
-            } while (Color == Carta);
-            materialCartas[Carta].color = colores[Color];
-        }
+        renderer = carta.GetComponent<Renderer>();
+        OcultarImagenes();
+    }
+
+    public void OcultarImagenes()
+    {
+        renderer.material = materiales[4];
+    }
+
+
+    public void CambiarColor(int num)
+    {
+
+    }
+
+    public void CambiarMaterial(int num, bool buena, bool cartaBuenaColorOriginal, bool CartasMalasColorOriginal, bool TodosMismoColor)
+    {
+        if (buena)
+            acierto = true;
         else
-            materialCartas[Carta].color = colores[Color];
+            acierto = false;
+
+        renderer.material = materiales[num];
+        Debug.Log("Material :"+num);
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Player")
-        {
-            if (acierto)
-            {
-                if(llegado == 0 )
-                {
-                    other.GetComponent<ManagerPuntosPoker>().puntos += 5;
-                    llegado++;
-                    gameManager.sumarSeleccionados();
-                    return;
-                }
-                else if(llegado == 1 )
-                {
-                    other.GetComponent<ManagerPuntosPoker>().puntos += 3;
-                    llegado++;
-                    gameManager.sumarSeleccionados();
-                    return;
-                }
-                else if (llegado == 2)
-                {
-                    other.GetComponent<ManagerPuntosPoker>().puntos += 2;
-                    llegado++;
-                    gameManager.sumarSeleccionados();
-                    return;
-                }
-                else if (llegado == 3)
-                {
-                    other.GetComponent<ManagerPuntosPoker>().puntos += 1;
-                    llegado++;
-                    gameManager.sumarSeleccionados();
-                    return;
-                }
-            }
-            else
-            {
-                    gameManager.sumarSeleccionados();
-            }
-        }
-    }
-
-    public void ResetearImagenes()
-    {
-        for(int i = 0; i <= 4; i++)
-        {
-            cartas[i].SetActive(false);
-            llegado = 0;
-        }
-    }
 }

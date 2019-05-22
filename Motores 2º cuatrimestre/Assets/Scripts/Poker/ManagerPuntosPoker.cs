@@ -8,12 +8,10 @@ public class ManagerPuntosPoker : MonoBehaviour
 
     public int puntos;
     public Text puntosText;
-    public int[] puntosArray;
 
     public void Update()
     {
         puntosText.text = puntos.ToString();
     }
-    
 
 }
