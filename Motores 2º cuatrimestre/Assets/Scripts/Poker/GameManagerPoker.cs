@@ -146,8 +146,9 @@ public class GameManagerPoker : MonoBehaviour
                         break;
                     case 10:
 
-                        for (int i = 0; i <= 3; i++)
-                            AplicarPosicion(i, 5, false, false, false, true);
+
+                        for (int i = 0; i < 4; i++)
+                            AplicarPosicion(i, 4, false, false, false, true);
                         estado = "ElegirLado";
                         break;
 
@@ -205,7 +206,7 @@ public class GameManagerPoker : MonoBehaviour
         {
             if (!cartaBuenaPintada)
             {
-                for (int n = 0; n <= 3; n++)
+                for (int n = 0; n < 4; n++)
                 {
                     if (carta[n] == CartaBuscada)
                     {
