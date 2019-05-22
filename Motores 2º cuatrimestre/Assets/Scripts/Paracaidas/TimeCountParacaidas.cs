@@ -42,7 +42,7 @@ public class TimeCountParacaidas : MonoBehaviour
         else
         {
             timeText.text = "";
-            platform.
+            //platform. comentado porque daba error
            
             onTimeEnd.Invoke();
 
