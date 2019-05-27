@@ -23,9 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Podium2.unity
     guid: 96678cbc417880245a45ed233878d4b8
-  - enabled: 1
-    path: Assets/Scenes/Paracaidas.unity
-    guid: 8ed274dd6fbaef6438c5ddf083937955
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Baseball.unity
     guid: d924c00733860af43b47ce599d563659
@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DerbyDemolicion.unity
     guid: eecab70ad5a0d7447898cff0331eea7c
+  - enabled: 1
+    path: Assets/Scenes/Rompecajas.unity
+    guid: cdfe3b0076933174c99a18870154c42c
   m_configObjects: {}

@@ -23,9 +23,15 @@ public class Hammer : MonoBehaviour
         if (stun > 0)
         {
             stun -= 1;
-            //Animación de estuneado (pajaritos en la cabeza)
-            
-            
+            //Animación de estuneado (pajaritos en la cabeza?)
+            transform.localScale = new Vector3(1, 0.34f, 1); // para ver visualmente que esta estuneado. quitar cuando se ponga la animacion
+            GetComponent<PlayerController>().disabled = true;
+        }
+
+        if (stun == 0)
+        {
+            if (GetComponent<PlayerController>().disabled == true) { GetComponent<PlayerController>().disabled = false; }
+            transform.localScale = new Vector3(1, 1f, 1);
         }
     }
 
