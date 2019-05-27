@@ -610,9 +610,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b078e6e9a3ab14c4ea369b217be7151e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  stun: 0
-  usableObject: {fileID: 0}
 --- !u!136 &65370393
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -949,6 +946,11 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: onGoal
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1491,6 +1493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: numPlayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: onGoal
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -5464,6 +5471,11 @@ PrefabInstance:
       propertyPath: numPlayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: onGoal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
 --- !u!1001 &888055028
@@ -8042,6 +8054,11 @@ PrefabInstance:
       propertyPath: numPlayer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: onGoal
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
 --- !u!1 &1246526323 stripped
@@ -8062,9 +8079,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b078e6e9a3ab14c4ea369b217be7151e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  stun: 0
-  usableObject: {fileID: 0}
 --- !u!136 &1246526325
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -11150,7 +11164,6 @@ MonoBehaviour:
   scorep2: {fileID: 1967136352}
   scorep3: {fileID: 365565053}
   scorep4: {fileID: 849220534}
-  Countdown: {fileID: 1535348888}
 --- !u!114 &1689161228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12106,9 +12119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b078e6e9a3ab14c4ea369b217be7151e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  stun: 0
-  usableObject: {fileID: 0}
 --- !u!136 &1896736173
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13036,9 +13046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b078e6e9a3ab14c4ea369b217be7151e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  stun: 0
-  usableObject: {fileID: 0}
 --- !u!136 &2032339106
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13397,6 +13404,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 30
+  players:
+  - {fileID: 1896736159}
+  - {fileID: 65370391}
+  - {fileID: 1246526323}
+  - {fileID: 2032339104}
+  finJuego: 0
 --- !u!1001 &2101827249
 PrefabInstance:
   m_ObjectHideFlags: 0
