@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController_Sacos : MonoBehaviour
 {
-    static public List<GameObject> jugadores = new List<GameObject>();
+    
 
     public float velocity = 1;
     public bool horizontalMovement = true;
@@ -16,16 +16,17 @@ public class PlayerController_Sacos : MonoBehaviour
     private Rigidbody rb;
     public bool disabled = false;
 
-    private int playernum;
-    private int direccion=-1;
+    public int playernum;
+    public int direccion=-1;
+    public int casilla;
 
 
     // Use this for initialization
     void Start()
     {
-        jugadores.Add(gameObject);
         rb = GetComponent<Rigidbody>();
         playernum = gameObject.GetComponent<Player>().numPlayer;
+        casilla = playernum + 5;
     }
 
     // Update is called once per frame
@@ -59,7 +60,7 @@ public class PlayerController_Sacos : MonoBehaviour
         if (playernum != 0 && Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == -1)
         {
             direccion = 0;
-            GM_Sacos.i.Mover(playernum,0);
+            //GM_Sacos.i.Mover(playernum,0);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;            
         }
@@ -67,21 +68,21 @@ public class PlayerController_Sacos : MonoBehaviour
         if (playernum != 1 && Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == 1)
         {
             direccion = 1;
-            GM_Sacos.i.Mover(playernum,1);
+            //GM_Sacos.i.Mover(playernum,1);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;
         }
             if (playernum != 2 && Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == 1)
         {
             direccion = 2;
-            GM_Sacos.i.Mover(playernum,2);
+            //GM_Sacos.i.Mover(playernum,2);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;
         }
         if (playernum != 3 && Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) == -1)
         {
             direccion = 3;
-            GM_Sacos.i.Mover(playernum,3);
+            //GM_Sacos.i.Mover(playernum,3);
             //Ejecutarainmacion de seleccion (un saltito) 
             disabled = true;
             
