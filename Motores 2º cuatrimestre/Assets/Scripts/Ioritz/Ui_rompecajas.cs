@@ -26,11 +26,7 @@ public class Ui_rompecajas : MonoBehaviour
     public Text scorep3;
     [Tooltip("Arrastrar text de los puntos del jugador 4")]
     public Text scorep4;
-    //public Text Countdown;
-
-
-
-    // Use this for initialization
+    
     void Start()
     {
         i = this;

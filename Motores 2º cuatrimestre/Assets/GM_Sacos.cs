@@ -11,7 +11,8 @@ public class GM_Sacos : MonoBehaviour
     public int roundDuration;
 
     [Tooltip("Arrastra los gameObject de los jugadores")]
-    public List<GameObject> players = new List<GameObject>();//
+    public List<GameObject> players = new List<GameObject>();
+    public List<GameObject> casillas = new List<GameObject>();
     List<GameObject> ganadores = new List<GameObject>();//lista a la que se añadirán todos los ganadores
     List<GameObject> segundos = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion
     List<GameObject> terceros = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion
@@ -21,22 +22,6 @@ public class GM_Sacos : MonoBehaviour
     private int time; //tiempo restante
 
     private bool intime = false;
-
-    /*private bool check0 = false;
-    private bool check1 = false;
-    private bool check2 = false;
-    private bool check3 = false;*/
-
-    /*private int dir0 = -1;
-    private int dir1 = -1;
-    private int dir2 = -1;
-    private int dir3 = -1;*/
-
-    /*private int casilla0=5;
-    private int casilla1=6;
-    private int casilla2=7;
-    private int casilla3=8;*/
-
 
     private Vector4 direct;
     private Vector4 casilla;
@@ -52,13 +37,15 @@ public class GM_Sacos : MonoBehaviour
         round = 1;
         i = this;
         time = roundDuration;
+        foreach (GameObject b in casillas) b.GetComponent<Casilla>().Spawn(round);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (ok)
-        {
+        {            
             foreach (GameObject b in players)
             {
                 switch (b.GetComponent<PlayerController_Sacos>().direccion)
@@ -66,23 +53,18 @@ public class GM_Sacos : MonoBehaviour
                     case -1:
                         b.GetComponent<Transform>().Translate(0, -0.1f, 0);
                         break;
-
                     case 0:
                         b.GetComponent<Transform>().Translate(0, 0, -0.1f);
                         break;
-
                     case 1:
                         b.GetComponent<Transform>().Translate(0.1f, 0, 0);
                         break;
-
                     case 2:
                         b.GetComponent<Transform>().Translate(0, 0, 0.1f);
                         break;
-
                     case 3:
                         b.GetComponent<Transform>().Translate(-0.1f, 0, 0);
                         break;
-
                     case 4:
                         b.GetComponent<Transform>().Translate(0, 0.1f, 0);
                         break;
@@ -95,37 +77,17 @@ public class GM_Sacos : MonoBehaviour
                     case 7:
                         b.GetComponent<Transform>().Translate(0, 0.1f, 0);
                         break;
-
-
                 }
 
             }
         }
-
 
         if (intime == false && time > 0)
         {
             intime = true;
             StartCoroutine(Second());
         }
-
-        /*if ((direct[0] >= 0 && direct[1] >= 0 && direct[2] >= 0 && direct[3] >= 0) || time == 0)
-        {
-            for (j = 0; j == 4; j++)
-            {
-                for (k = 0; k == 4; k++)
-                {
-                    if (j != k)
-                    {
-                        if (casilla[j] == casilla[k]) { direct[j] = direct[j] + 4; }
-                    }
-                }
-            }
-
-            for (j = 0; j == 4; j++) if (direct[j] > 3) casilla[j] = j + 5;
-
-        }*/
-
+        
         check = 1;
         foreach (GameObject b in players)
         {
@@ -134,6 +96,7 @@ public class GM_Sacos : MonoBehaviour
         if (time == 0) check = 1;
         if (check == 1)
         {
+            check = 0;
             foreach (GameObject b in players)
             {
                 b.GetComponent<PlayerController_Sacos>().disabled = true;
@@ -166,7 +129,7 @@ public class GM_Sacos : MonoBehaviour
                 {
                     if (b != c)
                     {
-                        if (b.GetComponent<PlayerController_Sacos>().casilla == c.GetComponent<PlayerController_Sacos>().casilla) b.GetComponent<PlayerController_Sacos>().direccion += 4;
+                        if (b.GetComponent<PlayerController_Sacos>().casilla == c.GetComponent<PlayerController_Sacos>().casilla) { b.GetComponent<PlayerController_Sacos>().direccion += 4; break;}
                     }
                 }
 
@@ -176,9 +139,11 @@ public class GM_Sacos : MonoBehaviour
                 if (b.GetComponent<PlayerController_Sacos>().direccion > 3) b.GetComponent<PlayerController_Sacos>().casilla = b.GetComponent<PlayerController_Sacos>().playernum + 5;
             }
 
+
             StartCoroutine(Anim());
             StartCoroutine(Estart());
-           
+            StartCoroutine(Espawnear());
+
         }
     }
 
@@ -203,14 +168,28 @@ public class GM_Sacos : MonoBehaviour
          * 7 choque izquierda*/
         ok = true;
         
-        yield return new WaitForSeconds(6f);
-          
+        yield return new WaitForSeconds(2f);
+
+        foreach (GameObject b in Scoreobjectdos.scorelist)
+        {
+            b.GetComponent<Scoreobjectdos>().destruir();
+        }
+    }
+
+    IEnumerator Espawnear()
+    {
+        yield return new WaitForSeconds(4f);
+
+        ok = false;
+        round++;
+        foreach (GameObject b in casillas) b.GetComponent<Casilla>().Spawn(round);
+
     }
 
     IEnumerator Estart()
     {
-
-        yield return new WaitForSeconds(3f);
+       
+        yield return new WaitForSeconds(6f);
         foreach (GameObject b in players)
         {
             b.GetComponent<PlayerController_Sacos>().direccion = -1;
@@ -218,41 +197,9 @@ public class GM_Sacos : MonoBehaviour
             b.GetComponent<PlayerController_Sacos>().disabled = false;
         }
 
-        check = 0;
-        round++;
+        
+        
         time = roundDuration;
-    }
-
-    /*public void Mover(int jugador, int dir)
-    {
-        switch(jugador)
-        {
-            case 0:
-                //check0 = true;
-               direct[0] = dir;
-                switch (dir) { case 1: casilla[0] = 4;break; case 2: casilla[0] = 0; break; case 3: casilla[0] = 1; break; }
-                break;
-
-            case 1:
-                //check1 = true;
-                direct[1] = dir;
-                switch (dir) { case 0: casilla[1] = 4; break; case 3: casilla[1] = 0; break; case 2: casilla[1] = 3; break; }
-                break;
-
-            case 2:
-                //check2 = true;
-                direct[2] = dir;
-                switch (dir) { case 0: casilla[2] = 0; break; case 1: casilla[2] = 3; break; case 3: casilla[2] = 2; break; }
-                break;
-
-            case 3:
-                //check3 = true;
-                direct[3] = dir;
-                switch (dir) { case 0: casilla[3] = 1; break; case 1: casilla[3] = 0; break; case 2: casilla[3] = 2; break; }
-                break;
-        }
-
-
-    }*/
-
+                
+    }    
 }
