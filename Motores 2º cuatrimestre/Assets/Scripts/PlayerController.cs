@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         transform.rotation = MovementKeys ? Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, PlayerDirection, transform.eulerAngles.z), rotationVelocity * Time.deltaTime) : transform.rotation;
 
         print("Player direction: " + PlayerDirection + " " + gameObject.name);
+        //gameObject.GetComponentInChildren<Animator>().SetBool("", MovementKeys);
     }
 
     private float PlayerDirection
