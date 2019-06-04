@@ -24,7 +24,7 @@ public class Casilla : MonoBehaviour
     {
         for (int i = 0; i < scores[ronda]; i++)
         {
-            Instantiate(scoreobject, transform.position + new Vector3(0,0.3f+0.4f*i,0), Quaternion.identity);
+            Instantiate(scoreobject, transform.position + new Vector3(ronda,0.3f+0.4f*i,0), Quaternion.identity);
         }
     }
 }

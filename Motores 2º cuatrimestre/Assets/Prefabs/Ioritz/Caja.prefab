@@ -132,7 +132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95dfb9a445e25cf408aaa955bb307722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 0
-  max: 10
   ScorePrefab: {fileID: 1024415872020288, guid: 79b844857772c5646be74cfd15c921fd,
     type: 3}
+  max: 10

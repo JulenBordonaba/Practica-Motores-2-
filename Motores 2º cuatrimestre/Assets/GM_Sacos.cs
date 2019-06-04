@@ -18,8 +18,8 @@ public class GM_Sacos : MonoBehaviour
     List<GameObject> terceros = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion
     List<GameObject> cuartos = new List<GameObject>();//lista a la que se añadirán todos los jugadores en segunda posicion
 
-    private int round; //Ronda actual
-    private int time; //tiempo restante
+    public int round; //Ronda actual
+    public int time; //tiempo restante
 
     private bool intime = false;
 
@@ -28,13 +28,13 @@ public class GM_Sacos : MonoBehaviour
     //private Vector4 choque;
 
     private int k, j;
-    private int check = 0;
+    public int check = 0;
     private bool ok = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        round = 1;
+        round = 0;
         i = this;
         time = roundDuration;
         foreach (GameObject b in casillas) b.GetComponent<Casilla>().Spawn(round);
@@ -51,35 +51,38 @@ public class GM_Sacos : MonoBehaviour
                 switch (b.GetComponent<PlayerController_Sacos>().direccion)
                 {
                     case -1:
-                        b.GetComponent<Transform>().Translate(0, -0.1f, 0);
+                        b.GetComponent<Transform>().Translate(0, -2f, 0);
                         break;
                     case 0:
-                        b.GetComponent<Transform>().Translate(0, 0, -0.1f);
+                        b.GetComponent<Transform>().Translate(0, 0, -2f);
                         break;
                     case 1:
-                        b.GetComponent<Transform>().Translate(0.1f, 0, 0);
+                        b.GetComponent<Transform>().Translate(2f, 0, 0);
                         break;
                     case 2:
-                        b.GetComponent<Transform>().Translate(0, 0, 0.1f);
+                        b.GetComponent<Transform>().Translate(0, 0, 2f);
                         break;
                     case 3:
-                        b.GetComponent<Transform>().Translate(-0.1f, 0, 0);
+                        b.GetComponent<Transform>().Translate(-2f, 0, 0);
                         break;
                     case 4:
-                        b.GetComponent<Transform>().Translate(0, 0.1f, 0);
+                        b.GetComponent<Transform>().Translate(0, 2f, 0);
                         break;
                     case 5:
-                        b.GetComponent<Transform>().Translate(0, 0.1f, 0);
+                        b.GetComponent<Transform>().Translate(0, 2f, 0);
                         break;
                     case 6:
-                        b.GetComponent<Transform>().Translate(0, 0.1f, 0);
+                        b.GetComponent<Transform>().Translate(0, 2f, 0);
                         break;
                     case 7:
-                        b.GetComponent<Transform>().Translate(0, 0.1f, 0);
+                        b.GetComponent<Transform>().Translate(0, 2f, 0);
                         break;
-                }
 
+                        
+                }
+                
             }
+            ok = false;
         }
 
         if (intime == false && time > 0)
@@ -140,10 +143,24 @@ public class GM_Sacos : MonoBehaviour
             }
 
 
-            StartCoroutine(Anim());
+            /*StartCoroutine(Anim());
             StartCoroutine(Estart());
-            StartCoroutine(Espawnear());
+            StartCoroutine(Espawnear());*/
 
+            ok = true;         
+            foreach (GameObject b in Scoreobjectdos.scorelist)
+            {
+                b.GetComponent<Scoreobjectdos>().destruir();
+            }            
+            round++;
+            foreach (GameObject b in casillas) b.GetComponent<Casilla>().Spawn(round);
+            foreach (GameObject b in players)
+            {
+                b.GetComponent<PlayerController_Sacos>().direccion = -1;
+                b.GetComponent<PlayerController_Sacos>().casilla = b.GetComponent<PlayerController_Sacos>().playernum + 5;
+                b.GetComponent<PlayerController_Sacos>().disabled = false;
+            }
+            time = roundDuration;
         }
     }
 
@@ -178,18 +195,19 @@ public class GM_Sacos : MonoBehaviour
 
     IEnumerator Espawnear()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
         ok = false;
         round++;
-        foreach (GameObject b in casillas) b.GetComponent<Casilla>().Spawn(round);
+       
 
     }
 
     IEnumerator Estart()
     {
        
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(4f);
+        foreach (GameObject b in casillas) b.GetComponent<Casilla>().Spawn(round);
         foreach (GameObject b in players)
         {
             b.GetComponent<PlayerController_Sacos>().direccion = -1;
