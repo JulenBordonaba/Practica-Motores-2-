@@ -12799,7 +12799,6 @@ GameObject:
   m_Component:
   - component: {fileID: 551424727}
   - component: {fileID: 551424729}
-  - component: {fileID: 551424728}
   m_Layer: 0
   m_Name: CM vcam VistaCompleta
   m_TagString: Untagged
@@ -12814,33 +12813,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551424726}
-  m_LocalRotation: {x: 0.31852984, y: -0, z: -0, w: 0.9479129}
-  m_LocalPosition: {x: -44.7, y: 86.9, z: -439.8}
+  m_LocalRotation: {x: 0.15469997, y: 0.68997675, z: -0.15010816, w: 0.69099027}
+  m_LocalPosition: {x: -62, y: 147.53151, z: -425.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1984508886}
   - {fileID: 113459661}
   m_Father: {fileID: 1497032789}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 37.148003, y: 0, z: 0}
---- !u!114 &551424728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551424726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f26fa6c89ce77d48989966f2fc4bdf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camara: {fileID: 1117248217}
-  players:
-  - {fileID: 812914596}
-  - {fileID: 1594409242}
-  - {fileID: 1930954875}
-  - {fileID: 616179386}
+  m_LocalEulerAnglesHint: {x: 9.1710005, y: 11.336, z: 0.35000002}
 --- !u!114 &551424729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12859,8 +12840,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 1056082750}
+  m_Follow: {fileID: 1056082750}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 10
@@ -14214,6 +14195,17 @@ MonoBehaviour:
       - m_Target: {fileID: 558342235}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1056082752}
+        m_MethodName: AsignarTargetsSeguidorCorredores
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -20506,7 +20498,6 @@ GameObject:
   - component: {fileID: 836031222}
   - component: {fileID: 836031224}
   - component: {fileID: 836031223}
-  - component: {fileID: 836031225}
   m_Layer: 0
   m_Name: vistaCompleta
   m_TagString: MainCamera
@@ -20578,24 +20569,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &836031225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836031221}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f26fa6c89ce77d48989966f2fc4bdf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camara: {fileID: 836031224}
-  players:
-  - {fileID: 812914596}
-  - {fileID: 1594409242}
-  - {fileID: 1930954875}
-  - {fileID: 616179386}
 --- !u!1001 &836064543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25690,6 +25663,66 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1056082749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056082750}
+  - component: {fileID: 1056082752}
+  - component: {fileID: 1056082751}
+  m_Layer: 0
+  m_Name: seguir jugadores
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056082750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056082749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 91.5, y: 76.3, z: -425.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1497032789}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1056082751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056082749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5eb80d8e62d9d145bb50fb783c0f731, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionMode: 0
+  m_RotationMode: 0
+  m_UpdateMethod: 2
+  m_Targets: []
+--- !u!114 &1056082752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056082749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b038d8fdc088d4da7ff2f70578b8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1062997366
@@ -32238,7 +32271,6 @@ GameObject:
   - component: {fileID: 1321519378}
   - component: {fileID: 1321519381}
   - component: {fileID: 1321519380}
-  - component: {fileID: 1321519379}
   m_Layer: 0
   m_Name: vistaCompleta (1)
   m_TagString: MainCamera
@@ -32260,24 +32292,6 @@ Transform:
   m_Father: {fileID: 501462693}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 37.148003, y: 0, z: 0}
---- !u!114 &1321519379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321519377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f26fa6c89ce77d48989966f2fc4bdf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camara: {fileID: 1321519381}
-  players:
-  - {fileID: 812914596}
-  - {fileID: 1594409242}
-  - {fileID: 1930954875}
-  - {fileID: 616179386}
 --- !u!81 &1321519380
 AudioListener:
   m_ObjectHideFlags: 0
@@ -35505,6 +35519,7 @@ Transform:
   - {fileID: 616575589}
   - {fileID: 1586818820}
   - {fileID: 551424727}
+  - {fileID: 1056082750}
   m_Father: {fileID: 501462693}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46303,8 +46318,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1984508886}
   - component: {fileID: 1984508889}
-  - component: {fileID: 1984508888}
   - component: {fileID: 1984508887}
+  - component: {fileID: 1984508888}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -46339,7 +46354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
+  m_FollowOffset: {x: -153.5, y: 71.23151, z: 0}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -46357,7 +46372,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1984508885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f7633c93f0364a418841eeb8b058634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
@@ -46375,6 +46390,18 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
+  m_GroupFramingSize: 0.5
+  m_FramingMode: 2
+  m_FrameDamping: 2
+  m_AdjustmentMode: 2
+  m_MaxDollyIn: 5000
+  m_MaxDollyOut: 5000
+  m_MinimumDistance: 1
+  m_MaximumDistance: 5000
+  m_MinimumFOV: 94.1
+  m_MaximumFOV: 179
+  m_MinimumOrthoSize: 1
+  m_MaximumOrthoSize: 5000
 --- !u!114 &1984508889
 MonoBehaviour:
   m_ObjectHideFlags: 3
