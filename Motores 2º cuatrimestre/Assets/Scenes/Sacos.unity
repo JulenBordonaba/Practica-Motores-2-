@@ -1327,7 +1327,6 @@ GameObject:
   - component: {fileID: 1049204057}
   - component: {fileID: 1049204056}
   - component: {fileID: 1049204055}
-  - component: {fileID: 1049204054}
   - component: {fileID: 1049204053}
   m_Layer: 5
   m_Name: Canvas
@@ -1345,35 +1344,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049204052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 425e08893a9e4c54b93836af8107057d, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bd5d27b410d85b47bc6639a865df6ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 0}
-  player2: {fileID: 0}
-  player3: {fileID: 0}
-  player4: {fileID: 0}
+  player1: {fileID: 1027472409}
+  player2: {fileID: 1199997681}
+  player3: {fileID: 750965723}
+  player4: {fileID: 965799532}
   time: {fileID: 1922449459}
   scorep1: {fileID: 457517537}
   scorep2: {fileID: 1633873475}
   scorep3: {fileID: 1296419022}
   scorep4: {fileID: 790999885}
---- !u!114 &1049204054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049204052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &1049204055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1582,7 +1564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rounds: 5
-  roundDuration: 5
+  roundDuration: 2
   players:
   - {fileID: 1027472409}
   - {fileID: 1199997681}
@@ -1594,6 +1576,9 @@ MonoBehaviour:
   - {fileID: 789109514}
   - {fileID: 1338410949}
   - {fileID: 930385689}
+  round: 0
+  time: 0
+  check: 0
 --- !u!114 &1305036091
 MonoBehaviour:
   m_ObjectHideFlags: 0
