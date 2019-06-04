@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool verticalMovement = true;
     public bool invertHorizontal = false;
     public bool invertVertical = false;
+    public bool girarPersonaje = true;
 
     private Rigidbody rb;
     public bool disabled = false;
@@ -49,9 +50,10 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y + 360, transform.rotation.z));
         }*/
         //transform.forward= new Vector3(-(horizontalMovement ? Input.GetAxis("Horizontal" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) : 0f) * (invertHorizontal ? -1 : 1), 0, (verticalMovement ? Input.GetAxis("Vertical" + InputManager.controles[gameObject.GetComponent<Player>().numPlayer].InputCode) : 0f) * (invertVertical ? -1 : 1))
-
-        transform.rotation = MovementKeys ? Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, PlayerDirection, transform.eulerAngles.z), rotationVelocity * Time.deltaTime) : transform.rotation;
-
+        if (girarPersonaje)
+        {
+            transform.rotation = MovementKeys ? Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(transform.eulerAngles.x, PlayerDirection, transform.eulerAngles.z), rotationVelocity * Time.deltaTime) : transform.rotation;
+        }
         print("Player direction: " + PlayerDirection + " " + gameObject.name);
         //gameObject.GetComponentInChildren<Animator>().SetBool("", MovementKeys);
     }

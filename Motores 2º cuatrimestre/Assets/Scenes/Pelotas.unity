@@ -13064,6 +13064,11 @@ PrefabInstance:
       propertyPath: velocity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5327197772281736037, guid: cd171ff4063246a41baac7269a2ceaed,
+        type: 3}
+      propertyPath: girarPersonaje
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5326665669129828977, guid: cd171ff4063246a41baac7269a2ceaed,
         type: 3}
       propertyPath: pushForce
