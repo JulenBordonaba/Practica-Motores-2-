@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2db606868a4d0b4cb65302a11f23863
+guid: 21fd7572f52be524781fe292edba00b4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: "rectaPeque\xF1a"
+    4300000: gradas
   externalObjects: {}
   materials:
     importMaterials: 1
