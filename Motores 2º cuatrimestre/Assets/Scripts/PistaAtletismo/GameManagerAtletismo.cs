@@ -77,6 +77,8 @@ public class GameManagerAtletismo : MonoBehaviour
         }
 
         //si el contador es igual al numero de jugadores
+        Debug.Log("cont: " + contadorJugadoresAcabados);
+        Debug.Log("numj: " + GameManagerGlobal.i.numeroJugadores);
         if (contadorJugadoresAcabados >= GameManagerGlobal.i.numeroJugadores - 1)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
         {
             //si no se habia acabado el juego todavía

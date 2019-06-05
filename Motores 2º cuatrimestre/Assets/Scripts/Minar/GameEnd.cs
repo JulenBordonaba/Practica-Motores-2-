@@ -11,4 +11,12 @@ public class GameEnd : MonoBehaviour
             other.GetComponent<MiniGameScores>().onGoal = true;
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<MiniGameScores>().onGoal = true;
+        }
+    }
 }
