@@ -8,7 +8,14 @@ public class VolverPistaAtletismo : MonoBehaviour
 {
     public void Volver()
     {
-        GameManagerGlobal.i.finPodio = true;
-        SceneManager.LoadScene("PistaAtletismo");
+        if (!GameManagerGlobal.i.FinDeLaCarrera)
+        {
+            GameManagerGlobal.i.finPodio = true;
+            SceneManager.LoadScene("PistaAtletismo");
+        }
+        else
+        {
+            SceneManager.LoadScene("Creditos");
+        }
     }
 }

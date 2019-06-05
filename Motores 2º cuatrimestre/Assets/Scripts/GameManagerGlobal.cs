@@ -39,6 +39,10 @@ public class GameManagerGlobal : MonoBehaviour
     [Tooltip("Arrastra el Canvas con el Menu Options")]
     public Canvas menuOptions;
 
+    [Header("Fin del juego")]
+    [Tooltip("Variable booleana para indicar el fin del juego")]
+    public bool FinDeLaCarrera;
+
 
     private void Awake()
     {

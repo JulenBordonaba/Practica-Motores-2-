@@ -41,6 +41,7 @@ public class GameManagerAtletismo : MonoBehaviour
 
     private bool llegaAMeta = false;
     private int jugadoresFinalizados = 0;
+    int contadorJugadoresAcabados = 0;//un contador que suma jugadores eliminados y/o en meta
 
     private void Update()
     {
@@ -57,26 +58,26 @@ public class GameManagerAtletismo : MonoBehaviour
             StartCoroutine(IEMoverCorredores());//mover a los jugadores
         }
 
-        int contadorJugadoresAcabados = 0;//un contador que suma jugadores eliminados y/o en meta
+       
         foreach (GameObject player in corredores)//bucle para recorrer todos los jugadores
         {
             //si el jugador ha llegado a meta o está eliminado se suman al contador
-            if (player.GetComponent<MiniGameScores>().onGoal == true)
+            if (player.GetComponent<MiniGameScores>().onGoal == true )
             {
                 contadorJugadoresAcabados++;//se añade uno al contador para controlar los jugadores en meta para ver si acaba el juego
                 llegaAMeta = true;//variable para controlar si un jugador a llegado a meta
+
+                if (llegaAMeta)//si un jugador ha llegado a meta se guarda su posicion en la carrera
+                {
+                    llegaAMeta = false;
+                    jugadoresFinalizados++;//se añade uno al contador de los jugadores en meta para ir añadiendolos a ganador, segundo...
+                    AnadirGanadores(player);//función que añade a cada jugador a su posicion, en la pista de atletismo, según llegan al final   
+                }
             }
         }
 
-        if (llegaAMeta)//si un jugador ha llegado a meta se guarda su posicion en la carrera
-        {
-            llegaAMeta = false;
-            jugadoresFinalizados++;//se añade uno al contador de los jugadores en meta para ir añadiendolos a ganador, segundo...
-            AnadirGanadores();//función que añade a cada jugador a su posicion, en la pista de atletismo, según llegan al final   
-        }
-
         //si el contador es igual al numero de jugadores
-        if (contadorJugadoresAcabados == GameManagerGlobal.i.numeroJugadores - 1)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
+        if (contadorJugadoresAcabados >= GameManagerGlobal.i.numeroJugadores - 1)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
         {
             //si no se habia acabado el juego todavía
             if (!finJuego)
@@ -84,40 +85,36 @@ public class GameManagerAtletismo : MonoBehaviour
         }
     }
 
-    private void AnadirGanadores()
+    private void AnadirGanadores(GameObject player)
     {
-        foreach (GameObject player in corredores)//bucle para recorrer todos los jugadores
+
+        switch (jugadoresFinalizados)//según cuantos corredores vayan llegando a meta se añade su posicion
         {
-            if (player.GetComponent<MiniGameScores>().onGoal == true)
-            {
-                switch (jugadoresFinalizados)//según cuantos corredores vayan llegando a meta se añade su posicion
-                {
-                    case 1:
-                        player.GetComponent<MiniGameScores>().position = 1;//se añade a la primera posicion
-                        ganadores.Add(player);//se añade a la lista de segundos
-                        break;
+            case 1:
+                player.GetComponent<MiniGameScores>().position = 1;//se añade a la primera posicion
+                ganadores.Add(player);//se añade a la lista de segundos
+                break;
 
-                    case 2:
-                        player.GetComponent<MiniGameScores>().position = 2;//se añade a la primera posicion
-                        segundos.Add(player);//se añade a la lista de segundos
-                        break;
+            case 2:
+                player.GetComponent<MiniGameScores>().position = 2;//se añade a la primera posicion
+                segundos.Add(player);//se añade a la lista de segundos
+                break;
 
-                    case 3:
-                        player.GetComponent<MiniGameScores>().position = 3;//se añade a la primera posicion
-                        terceros.Add(player);//se añade a la lista de segundos
-                        break;
+            case 3:
+                player.GetComponent<MiniGameScores>().position = 3;//se añade a la primera posicion
+                terceros.Add(player);//se añade a la lista de segundos
+                break;
 
-                    case 4:
-                        player.GetComponent<MiniGameScores>().position = 4;//se añade a la primera posicion
-                        cuartos.Add(player);//se añade a la lista de segundos
-                        break;
+            case 4:
+                player.GetComponent<MiniGameScores>().position = 4;//se añade a la primera posicion
+                cuartos.Add(player);//se añade a la lista de segundos
+                break;
 
 
-                    default:
-                        break;
-                }
-            }
+            default:
+                break;
         }
+
     }
 
     private void FinDeJuego()
@@ -146,6 +143,7 @@ public class GameManagerAtletismo : MonoBehaviour
             Debug.Log("jugador : " + i + ", posicion: " + corredores[i].GetComponent<MiniGameScores>().position);
         }
 
+        GameManagerGlobal.i.FinDeLaCarrera = true;
         //cargar siguiente escena
         SceneManager.LoadScene("Podium2");
     }

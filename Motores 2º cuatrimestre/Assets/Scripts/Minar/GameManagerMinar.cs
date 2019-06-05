@@ -56,7 +56,8 @@ public class GameManagerMinar : MonoBehaviour
             }
         }
         //guardar los puntos de la primera posición
-        auxGanador = players[0].GetComponent<MiniGameScores>().points;
+        if(players[0].GetComponent<MiniGameScores>().points!=-10000)
+            auxGanador = players[0].GetComponent<MiniGameScores>().points;
 
         //guardar los puntos de la segunda y tercera posición
         foreach (GameObject player in players)
