@@ -11,6 +11,7 @@ public class BallGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        print("start ball generator");
         InvokeRepeating("GenerateBall", 0, timeBetweentBalls);
 	}
 
@@ -24,6 +25,7 @@ public class BallGenerator : MonoBehaviour {
 
     public void GenerateBall()
     {
+        print("genera bola");
         GameObject nuevo=Instantiate(ball, spawn.position, Quaternion.identity);
         nuevo.GetComponent<Pelota>().RandomDirection();
     }
