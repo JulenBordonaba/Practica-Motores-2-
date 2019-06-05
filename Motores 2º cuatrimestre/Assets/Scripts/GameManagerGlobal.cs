@@ -36,6 +36,9 @@ public class GameManagerGlobal : MonoBehaviour
     public GameObject inputManager;
     [Tooltip("Arrastra el GameObject de las camaras para que no se destruya")]
     public GameObject camaras;
+    [Tooltip("Arrastra el Canvas con el Menu Options")]
+    public Canvas menuOptions;
+
 
     private void Awake()
     {
@@ -54,6 +57,7 @@ public class GameManagerGlobal : MonoBehaviour
             DontDestroyOnLoad(eventSystem);
             DontDestroyOnLoad(inputManager);
             DontDestroyOnLoad(camaras);
+            DontDestroyOnLoad(menuOptions);
 
         }
         else//si por algun casual hay duplicados los elimina
@@ -70,6 +74,7 @@ public class GameManagerGlobal : MonoBehaviour
             Destroy(eventSystem);
             Destroy(inputManager);
             Destroy(camaras);
+            Destroy(menuOptions);
         }
 
         BarajarMinijuegos();
@@ -91,4 +96,5 @@ public class GameManagerGlobal : MonoBehaviour
         minijuegos[a] = minijuegos[b];
         minijuegos[b] = temp;
     }
+
 }
