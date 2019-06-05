@@ -985,8 +985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bda998d29976fa45a28d97f1ae4cf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 0.5
-  bajarMasa: 0
+  pushForce: 5
+  bajarMasa: 1
 --- !u!1 &134967408
 GameObject:
   m_ObjectHideFlags: 0
@@ -2511,12 +2511,22 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: velocity
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: fuerza
-      value: 20
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionTag
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -2843,6 +2853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: StartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590882123370404105, guid: 919396ef56357984eae157131942d7f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7063833870474445879, guid: 919396ef56357984eae157131942d7f4,
         type: 3}
@@ -3493,8 +3508,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bda998d29976fa45a28d97f1ae4cf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 0.5
-  bajarMasa: 0
+  pushForce: 5
+  bajarMasa: 1
 --- !u!1 &509555549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 692880642065655807, guid: 8c672bbf7e5a6624794e0c0b146791bf,
@@ -5353,12 +5368,22 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: velocity
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: fuerza
-      value: 20
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionTag
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -5386,8 +5411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bda998d29976fa45a28d97f1ae4cf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 0.5
-  bajarMasa: 0
+  pushForce: 5
+  bajarMasa: 1
 --- !u!1 &821039510
 GameObject:
   m_ObjectHideFlags: 0
@@ -6666,7 +6691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4750624743717976, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 54098581922298406, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -6701,7 +6726,7 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: velocity
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -6711,7 +6736,17 @@ PrefabInstance:
     - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: fuerza
-      value: 20
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionTag
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -8814,8 +8849,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bda998d29976fa45a28d97f1ae4cf51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushForce: 0.5
-  bajarMasa: 0
+  pushForce: 5
+  bajarMasa: 1
 --- !u!1001 &1298622312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11556,7 +11591,7 @@ Transform:
   - {fileID: 1731695080}
   - {fileID: 1014532930}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636439232
 GameObject:
@@ -13475,12 +13510,22 @@ PrefabInstance:
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: velocity
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: fuerza
-      value: 20
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionTag
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: collisionType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7607155708900314292, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
