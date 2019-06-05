@@ -7741,8 +7741,7 @@ MonoBehaviour:
   - Minar
   - Laberinto
   - Pelotas
-  - Carreras
-  - DerbyDemolicion
+  - Rompecajas
   siguienteMinijuego: 0
   finPodio: 0
   gameManagerAtletismo: {fileID: 1424946426}
@@ -42502,6 +42501,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fe6658e4fee478849b3b4e40b13d2509, type: 3}
   - {fileID: 21300000, guid: 134d95200d1d5b44b8c1e8ff8c11d624, type: 3}
   - {fileID: 21300000, guid: 40762127e97e6d4419ea3dd5af755307, type: 3}
+  - {fileID: 21300000, guid: 4d3911055505d0e4ca33406ffeb35f34, type: 3}
   segundos: 0.2
   btPlay: {fileID: 613509195}
 --- !u!1001 &1789344123
