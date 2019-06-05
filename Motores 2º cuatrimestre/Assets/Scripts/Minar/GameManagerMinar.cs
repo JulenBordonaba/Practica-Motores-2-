@@ -25,7 +25,7 @@ public class GameManagerMinar : MonoBehaviour
                 contadorJugadoresAcabados++;
         }
         //si el contador es igual al numero de jugadores
-        if (contadorJugadoresAcabados == GameManagerGlobal.i.numeroJugadores)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
+        if (contadorJugadoresAcabados == GameManagerGlobal.i.numeroJugadores-1)//puede que haya que cambiar las referencias de players.Capacity por el numero de jugadores del GameManager
         {
             //si no se habia acabado el juego todavía
             if (!finJuego)
@@ -56,8 +56,7 @@ public class GameManagerMinar : MonoBehaviour
             }
         }
         //guardar los puntos de la primera posición
-        if(players[0].GetComponent<MiniGameScores>().onGoal == true)
-            auxGanador = players[0].GetComponent<MiniGameScores>().points;
+        auxGanador = players[0].GetComponent<MiniGameScores>().points;
 
         //guardar los puntos de la segunda y tercera posición
         foreach (GameObject player in players)

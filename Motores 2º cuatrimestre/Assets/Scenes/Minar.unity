@@ -3022,21 +3022,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: fuerza
-      value: 10
+      propertyPath: numPlayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 23680637408761710, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c3c76c28ce7a3744caa00ccfad7ae989, type: 2}
-    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 54098581922298406, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Mass
@@ -3047,6 +3042,16 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: cuartoOscuro
+      value: 
+      objectReference: {fileID: 1138721372}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: verticalMovement
@@ -3067,15 +3072,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: cuartoOscuro
-      value: 
-      objectReference: {fileID: 1138721372}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+      propertyPath: girarPersonaje
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: numPlayer
-      value: 1
+      propertyPath: fuerza
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -7189,21 +7194,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: fuerza
-      value: 10
+      propertyPath: numPlayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: eliminated
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23680637408761710, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 650540b5b589eb4448cd90ad4752d1e6, type: 2}
-    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 54098581922298406, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Mass
@@ -7214,6 +7219,16 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: cuartoOscuro
+      value: 
+      objectReference: {fileID: 1138721372}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: verticalMovement
@@ -7229,20 +7244,15 @@ PrefabInstance:
       propertyPath: velocity
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: cuartoOscuro
-      value: 
-      objectReference: {fileID: 1138721372}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: numPlayer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: eliminated
+      propertyPath: girarPersonaje
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: fuerza
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -8549,20 +8559,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: fuerza
-      value: 10
+      propertyPath: eliminated
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 23680637408761710, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 54098581922298406, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
@@ -8574,6 +8579,21 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: cuartoOscuro
+      value: 
+      objectReference: {fileID: 1138721372}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: verticalMovement
@@ -8594,20 +8614,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: cuartoOscuro
-      value: 
-      objectReference: {fileID: 1138721372}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: eliminated
+      propertyPath: girarPersonaje
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: fuerza
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114640492920160536, guid: 70727c18f0bb5164fb81c52a1f07d77e, type: 3}
@@ -16885,21 +16900,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: fuerza
-      value: 10
+      propertyPath: numPlayer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 23680637408761710, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 09d84dd276b56b14a98b24c2345ee90d, type: 2}
-    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 54098581922298406, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: m_Mass
@@ -16910,6 +16920,16 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 136945746018988722, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+        type: 3}
+      propertyPath: cuartoOscuro
+      value: 
+      objectReference: {fileID: 1138721372}
     - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
       propertyPath: verticalMovement
@@ -16925,15 +16945,15 @@ PrefabInstance:
       propertyPath: velocity
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114525117215295528, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+    - target: {fileID: 114090797040357388, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: cuartoOscuro
-      value: 
-      objectReference: {fileID: 1138721372}
-    - target: {fileID: 1013592650306087554, guid: 70727c18f0bb5164fb81c52a1f07d77e,
+      propertyPath: girarPersonaje
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114102261112721440, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
-      propertyPath: numPlayer
-      value: 2
+      propertyPath: fuerza
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3081755239222053456, guid: 70727c18f0bb5164fb81c52a1f07d77e,
         type: 3}
